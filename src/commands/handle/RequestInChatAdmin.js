@@ -1,3 +1,5 @@
+const responseTemplate = require("../responseTemplate/responseTemplate");
+
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 
 class RequestInChatAdmin {
@@ -7,20 +9,19 @@ class RequestInChatAdmin {
       }
 
        //простой текстовый ответ
-  requestOrder(post) {
+  requestOrder(post, user) {
     console.log("this.request", this.request);
     setTimeout(async () => {
-      await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT, `Номер заявки в Google Sheets ${this.request} содержание заявки ${JSON.stringify(post)}`);
-      await this.bot.sendMessage(post.tlgId, `Заявка принята в Google Sheets ${this.request} содержание заявки ${JSON.stringify(post)}`);
-    }, 2000);    
+      await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT, responseTemplate.responseToAdminChat(this.request, post, user));
+      await this.bot.sendMessage(post.tlgId, responseTemplate.responseToAgentChat(this.request, post, user));
+    }, 1000);    
   }
 
-  requestUSer(post) {
-    
+  requestUSer(post) {    
     setTimeout(async () => {
-      await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT, `Пользователь внес данные в таблицу пользователей ${JSON.stringify(post)}`);
+      await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT,  `Пользователь внес данные в таблицу пользователей ${JSON.stringify(post)}`);
       await this.bot.sendMessage(post.tlgId, "Ваши данные обновлены");
-    }, 2000);    
+    }, 1000);    
   }
 
 }

@@ -28,7 +28,7 @@ class HandleForm {
     if (user) {    
 
       const request = await api.postOrder(post);     
-      await new RequestInChatAdmin(this.bot, request).requestOrder(post)
+      await new RequestInChatAdmin(this.bot, request).requestOrder(post, user)
       return;
 
 

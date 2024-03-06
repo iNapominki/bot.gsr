@@ -1,4 +1,5 @@
 const Command = require("./command.class");
+const responseTemplate = require("./responseTemplate/responseTemplate");
 
 class HelpCommand extends Command {
   constructor(bot) {
@@ -7,7 +8,7 @@ class HelpCommand extends Command {
   handle() {
       this.bot.onText(/\/help/, (msg) => {
         const chatId = msg.chat.id;
-        this.bot.sendMessage(chatId, 'Команда помощь.');
+        this.bot.sendMessage(chatId, responseTemplate.help);
       });
     }
   }

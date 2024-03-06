@@ -1,4 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
+const responseTemplate = require('../commands/responseTemplate/responseTemplate');
 
 class Bot {
   constructor(token) {
@@ -19,8 +20,13 @@ class Bot {
 
     this.bot.onText(/\/start/, (msg) => {
       const chatId = msg.chat.id;
+      
       this.bot.sendMessage(chatId, 'Добро пожаловать в бот Сети поминальных залов');
       this.bot.sendMessage(chatId, 'Обратите внимание для работы с ботом обязательно должно быть заполнено имя в телеграм'); 
+      this.bot.sendMessage(chatId, responseTemplate.start); 
+
+
+      
       return;     
     });
 

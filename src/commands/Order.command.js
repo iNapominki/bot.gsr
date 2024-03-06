@@ -9,7 +9,7 @@ class OrderCommand extends Command {
   handle() {
     this.bot.onText(/\/order/, (msg) => {
         const chatId = msg.chat.id;
-        this.bot.sendMessage(chatId, 'Заяка на регистрацию.');
+        this.bot.sendMessage(chatId, 'Форма для заполнения находится ниже.');
       });
     }
   }
