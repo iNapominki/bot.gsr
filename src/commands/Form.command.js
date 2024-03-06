@@ -1,73 +1,58 @@
 const Api = require("../utils/api/api");
 const option_registration = require("../utils/option/options-reg");
 const Command = require("./command.class");
+const HandleForm = require("./handle/HandleForm");
 
 class FormCommand extends Command {
   constructor(bot) {
-    super(bot)
+    super(bot);
   }
   handle() {
-        this.bot.on("message", async (msg) => {
-        const chatId = msg.chat.id;
-        const chatUsername = msg.chat.username;
-        
-        // проверка заполнено ли имя
+    this.bot.on("message", async (msg) => {
+      const chatId = msg.chat.id;
+      const chatUsername = msg.chat.username;
+      const isMessageForm = msg?.web_app_data?.data ? "form" : false;
 
-        if(!chatUsername) {
-          this.requestMessage(chatId, "Вы не можете пользоваться ботом, заполните имя телеграмм" );
-           return;
-       }
+      if (msg.text === "/start") {
+        return;
+      }
+      if (msg.text === "/help") {
+        return;
+      }
+      if (msg.text === "/form") {
+        return;
+      }
+      // if (msg.text === "/order") {
+      //   return;
+      // }
 
+      let isCheckUserName = this.checkUserName(chatId, chatUsername);
+      if (!isCheckUserName) {
+        return;
+      }
 
+      if (!isMessageForm) {
+        this.requestMessage(
+          chatId,
+          "Вы не можете отправлять сообщения, для взаимодействия заполните необходимую форму"
+        );
+        return;
+      }
+      console.log("Обработка формы");
 
-        //this.checkUserName(chatId, chatUsername);
-
-
-        
-        console.log("Работаю");
-        const isMessageForm = msg?.web_app_data?.data ? 'form': false;
-
-              
-
-        if(isMessageForm) { 
-
-// закончил тут
-          const accaunttlgName = msg?.chat?.username;
-          
-          
-          ///////
-const api = new Api(this.bot);
-
-const data = JSON.parse(msg?.web_app_data?.data)  
-
-console.log(msg);
-
-const postData = {
-  action: "update",
-  name: data?.name,
-  tlgName: accaunttlgName,// data?.tlgName,
-  number: data?.number,
-  tlgId: `${chatId}`,
-  role: data?.organization
-};
-
-api.postUser(postData);
-
-
-//this.requestMessage(chatId, "тестовое сообщение");
-                      
-           
-    
-            return;
-       
-    }
-
-
-
-      })
-
-      
-    }
+      try {
+        const handleForm = new HandleForm(this.bot, msg);
+        handleForm.start();
+      } catch (e) {
+        console.log("NEW ERROR", e);
+        this.requestMessage(
+          chatId,
+          `Проблемы с отправкой формы, попробуйте еще или обратитесь к администратору. Текст ошибки и класс: ${e.message}`
+        );
+        return;
+      }
+    });
   }
-  
-  module.exports = FormCommand;
+}
+
+module.exports = FormCommand;

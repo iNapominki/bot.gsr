@@ -3,6 +3,8 @@ class Command {
     this.bot = bot;
   }
 
+  
+
   //простой текстовый ответ
   requestMessage(chatId, message) {
     setTimeout(async () => {
@@ -10,14 +12,17 @@ class Command {
     }, 2000);
   }
 
+
+
   //быстрая проверка заполнено ли имя у пользователя телеграмм
-//   async checkUserName(chatId, chatUsername) {
-//     if(!chatUsername) {
-//        await this.requestMessage(chatId, "Вы не можете пользоваться ботом, заполните имя телеграмм" );
-//         return;
-//     }
-//    await this.requestMessage(chatId, `Ваше имя телеграмм ${chatUsername}` );
-//   }
+   checkUserName(chatId, chatUsername) {
+    let isCheckUserName = true;
+    if(!chatUsername) {
+        this.requestMessage(chatId, `Вы не можете пользоваться ботом, заполните имя телеграмм ваш ИД ${chatId}` );
+        isCheckUserName = false;       
+    }
+    return isCheckUserName;
+  }
 }
 
 module.exports = Command;
