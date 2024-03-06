@@ -1,3 +1,4 @@
+const LoggerManager = require("../log/LoggerManager");
 const Api = require("../utils/api/api");
 const option_registration = require("../utils/option/options-reg");
 const Command = require("./command.class");
@@ -10,6 +11,7 @@ class FormCommand extends Command {
   }
   handle() {
     this.bot.on("message", async (msg) => {
+      new LoggerManager().logMessage("log", "bot.on(message)", msg);
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;
       const isMessageForm = msg?.web_app_data?.data ? "form" : false;

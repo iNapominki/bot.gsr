@@ -1,0 +1,80 @@
+[
+  {
+    "timestamp": "2024-03-06T13:50:32.923Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:50:47.531Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:51:34.195Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:51:39.038Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:53:11.410Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:53:12.043Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "{\"message_id\":1630,\"from\":{\"id\":931824462,\"is_bot\":false,\"first_name\":\"Михаил\",\"username\":\"MihailDiper\",\"language_code\":\"ru\"},\"chat\":{\"id\":931824462,\"first_name\":\"Михаил\",\"username\":\"MihailDiper\",\"type\":\"private\"},\"date\":1709733110,\"text\":\"/start\",\"entities\":[{\"offset\":0,\"length\":6,\"type\":\"bot_command\"}]}"
+  },
+  {
+    "timestamp": "2024-03-06T13:54:11.763Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:54:15.492Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\"message_id\":1635,\"from\":{\"id\":931824462,\"is_bot\":false,\"first_name\":\"Михаил\",\"username\":\"MihailDiper\",\"language_code\":\"ru\"},\"chat\":{\"id\":931824462,\"first_name\":\"Михаил\",\"username\":\"MihailDiper\",\"type\":\"private\"},\"date\":1709733255,\"text\":\"/start\",\"entities\":[{\"offset\":0,\"length\":6,\"type\":\"bot_command\"}]}"
+  },
+  {
+    "timestamp": "2024-03-06T13:54:38.439Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:57:03.733Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-03-06T13:57:12.726Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 1639,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1709733432,\n  \"text\": \"/form\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 5,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-03-06T13:58:04.994Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 1642,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1709733484,\n  \"text\": \"/form\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 5,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-03-06T14:06:19.106Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 1645,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1709733978,\n  \"web_app_data\": {\n    \"button_text\": \"Форма (Регистрации/Заявки/Сообщения)\",\n    \"data\": \"{\\\"role\\\":\\\"agent\\\",\\\"form\\\":\\\"update\\\",\\\"name\\\":\\\"Михаил 15\\\",\\\"number\\\":\\\"89013437024\\\"}\"\n  }\n}"
+  }
+]
