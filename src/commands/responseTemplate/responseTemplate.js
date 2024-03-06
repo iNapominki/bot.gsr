@@ -67,7 +67,7 @@ const responseTemplate = {
            let spzId = user.spzId ? user.spzId : "не определено";
            let name = user.name ? user.name : "не определено";
            let tlgName = user.tlgName ? user.tlgName : "не определено";
-           let sponsor = user.tlgName ? user.tlgName : "не определено";
+           let sponsor = user.sponsor ? user.sponsor : "не определено";
 
             return `Информация по заявке №${order}: \
             \n \n Сообщение в чате под номером ${tlgMessageId} \
@@ -119,7 +119,7 @@ const responseTemplate = {
            let spzId = user.spzId ? user.spzId : "не определено";
            let name = user.name ? user.name : "не определено";
            let tlgName = user.tlgName ? user.tlgName : "не определено";
-           let sponsor = user.tlgName ? user.tlgName : "не определено";
+           let sponsor = user.sponsor ? user.sponsor : "не определено";
 
             return `Ваша заявка принята под №${order}: \            
              \n \n Тип заявки ${typeOrder} \
@@ -134,7 +134,22 @@ const responseTemplate = {
              \n Написать куратору @${sponsor}\
             `;
         },
+        
+        responseToAdminChatAboutRegostration: function(user) {
+           // variant user  {"action":"update","name":"Агент 007","tlgName":"ManagerTest2","number":"89683289173","tlgId":"6136123702","role":"agent"}
+           let name = user.name ? user.name : "не определено" ;    
+           let tlgName = user.tlgName ?  user.tlgName  : "не определено" ;
+           let number = user.number  ? user.number  : "не определено" ;     
+           let role = user.role ? user.role  : "не определено" ;
 
+           return `Пользователь внес данные в таблицу пользователей: \            
+           \n Имя ${name} \
+           \n Имя телеграмм @${tlgName} \
+           \n Номер телефона ${number} \
+           \n Роль ${role} \
+           
+          `;
+        }
             
             
         

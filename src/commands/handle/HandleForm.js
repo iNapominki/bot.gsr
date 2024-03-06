@@ -10,6 +10,12 @@ class HandleForm {
   async _useApiUpdate(post) {
     const api = await new Api(this.bot);
     const request = await api.updateUser(post);
+
+    if(!request) {
+       return
+    }
+
+    console.log(request, "request");
     await new RequestInChatAdmin(this.bot, request).requestUSer(post)
     return
   }

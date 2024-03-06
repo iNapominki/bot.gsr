@@ -26,17 +26,19 @@ class Api {
         body: JSON.stringify(postData),
       });
 
-      let manager = await response.json();
-      console.log(manager, "ответ 1");
-      //     if (response.status === 200) {
+      let user = await response.json();
+      console.log(user, "ответ updateUser");
+           if (user.result.code === 200)  {
 
-      // console.log(manager, 200)
-      //       return;
-      //     } else {
+       console.log(user, 200)
+            return user.result.message;
+           } else {
 
-      //       console.log(manager, "не 200")
-      //       return;
-      //     }
+            this.requestMessageOnApi(postData.tlgId, "Регистрация не удалась, возможно неправильно выбрана организация")
+
+             console.log(user, "не 200")
+             return false;
+           }
     } catch (error) {
       console.error("Ошибка при выполнении запроса:", error);
     }
@@ -95,7 +97,7 @@ class Api {
       });
 
       let order = await response.json();
-      console.log(order, "ответ 1");
+      console.log(order, "ответ postOrder");
 
       if (order.result.code === 200) {
         return order.result.message;
