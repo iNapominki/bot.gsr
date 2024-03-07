@@ -11,6 +11,9 @@ class FormCommand extends Command {
   }
   handle() {
     this.bot.on("message", async (msg) => {
+
+      try {
+     
       new LoggerManager().logMessage("log", "bot.on(message)", msg);
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;
@@ -56,8 +59,14 @@ class FormCommand extends Command {
           chatId,
           `Проблемы с отправкой формы, попробуйте еще или обратитесь к администратору. Текст ошибки и класс: ${e.message}`
         );
+        new LoggerManager().logMessage("error", "Проблема с отправкой формы", e.message);
         return;
       }
+
+    } catch (error) {
+      new LoggerManager().logMessage("error", "error", error.message);
+      //console.log(error);
+    }
     });
   }
 }
