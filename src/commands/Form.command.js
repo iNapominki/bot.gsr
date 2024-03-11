@@ -50,7 +50,16 @@ class FormCommand extends Command {
       }
       console.log("Обработка формы");
 
+
+      this.requestMessage(
+        chatId,
+        "Ваша заявка обрабатывается, если не пришел ответ пожалуйста обратитесь к администратору"
+      );
+
       try {
+
+
+
         const handleForm = new HandleForm(this.bot, msg);
         handleForm.start();
       } catch (e) {

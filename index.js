@@ -6,6 +6,7 @@ const HelpCommand = require("./src/commands/Help.command");
 const OrderCommand = require("./src/commands/Order.command");
 const FormCommand = require("./src/commands/Form.command");
 const Command = require("./src/commands/command.class");
+const Buttoncommand = require("./src/commands/Button.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
 
@@ -18,12 +19,14 @@ try {
   const help = new HelpCommand(bot.bot);
   const order = new OrderCommand(bot.bot);
   const form = new FormCommand(bot.bot);
+  const button = new  Buttoncommand(bot.bot);
 
   help.handle();
   registration.handle();
   order.handle();
   form.handle();
-
+  button.handle();
+  
   loggerManager.logMessage("log", "старт", "Произошел старт бота");
   // Пример обработки ошибки
 

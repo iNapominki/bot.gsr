@@ -1,5 +1,6 @@
 const GOOGLE_SHEETS_KEY_USERS = process.env.GOOGLE_SHEETS_KEY_USERS;
 const GOOGLE_SHEETS_KEY_ORDERS = process.env.GOOGLE_SHEETS_KEY_ORDERS;
+const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const fetch = require("node-fetch");
 
 class Api {
@@ -28,17 +29,18 @@ class Api {
 
       let user = await response.json();
       console.log(user, "ответ updateUser");
-           if (user.result.code === 200)  {
+      if (user.result.code === 200) {
+        console.log(user, 200);
+        return user.result.message;
+      } else {
+        this.requestMessageOnApi(
+          postData.tlgId,
+          "Регистрация не удалась, возможно неправильно выбрана организация"
+        );
 
-       console.log(user, 200)
-            return user.result.message;
-           } else {
-
-            this.requestMessageOnApi(postData.tlgId, "Регистрация не удалась, возможно неправильно выбрана организация")
-
-             console.log(user, "не 200")
-             return false;
-           }
+        console.log(user, "не 200");
+        return false;
+      }
     } catch (error) {
       console.error("Ошибка при выполнении запроса:", error);
     }
@@ -80,7 +82,10 @@ class Api {
         return;
       }
     } catch (error) {
-      console.error("Ошибка при выполнении запроса проверки пользователя:", error);
+      console.error(
+        "Ошибка при выполнении запроса проверки пользователя:",
+        error
+      );
     }
   }
 
@@ -104,6 +109,13 @@ class Api {
       } else {
         console.log(" postOrder до конца не отработал");
       }
+      this.requestMessageOnApi(
+        TELEGRAMM_ADMIN_CHAT,
+        `Записать в Google Sheets не удалось, возможно гугл таблицы не отвечают, вот информация ${JSON.stringify(
+          postData
+        )} `
+      );
+      return;
       //     if (response.status === 200) {
 
       // console.log(manager, 200)

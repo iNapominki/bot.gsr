@@ -15,7 +15,7 @@ class RegisrtationCommand extends Command {
         return;
       }
 
-      this.bot.sendMessage(chatId, "Команда регистрации.", option_registration);
+      this.bot.sendMessage(chatId, "Формы для заполнения", option_registration);
     });
   }
 }
