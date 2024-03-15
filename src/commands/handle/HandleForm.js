@@ -1,21 +1,19 @@
 const Api = require("../../utils/api/api");
+const AipUse = require("../../utils/api/apiUse");
 const RequestInChatAdmin = require("./RequestInChatAdmin");
 
 class HandleForm {
   constructor(bot, msg) {
     this.bot = bot;
     this.message = msg;
+    this.api = new Api(this.bot);
   }
 
-  async _useApiUpdate(post) {
-    const api = await new Api(this.bot);
-    const request = await api.updateUser(post);
-
+  async _useApiUpdate(post) {    
+    const request = await new AipUse(this.api).updateUser(post);
     if(!request) {
        return
-    }
-
-    console.log(request, "request");
+    }    
     await new RequestInChatAdmin(this.bot, request).requestUSer(post)
     return
   }

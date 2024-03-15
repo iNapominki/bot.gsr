@@ -2,13 +2,14 @@ const GOOGLE_SHEETS_KEY_USERS = process.env.GOOGLE_SHEETS_KEY_USERS;
 const GOOGLE_SHEETS_KEY_ORDERS = process.env.GOOGLE_SHEETS_KEY_ORDERS;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const fetch = require("node-fetch");
+const LoggerManager = require("../../log/LoggerManager");
 
 class Api {
   constructor(bot) {
     this.bot = bot;
   }
 
-  //простой текстовый ответ
+  //простой текстовый ответ вынести в apiUse
   requestMessageOnApi(chatId, message) {
     setTimeout(async () => {
       await this.bot.sendMessage(chatId, message);
@@ -16,8 +17,6 @@ class Api {
   }
 
   async updateUser(postData) {
-    console.log(postData);
-
     try {
       const response = await fetch(`${GOOGLE_SHEETS_KEY_USERS}`, {
         method: "POST",
@@ -27,21 +26,10 @@ class Api {
         body: JSON.stringify(postData),
       });
 
-      let user = await response.json();
-      console.log(user, "ответ updateUser");
-      if (user.result.code === 200) {
-        console.log(user, 200);
-        return user.result.message;
-      } else {
-        this.requestMessageOnApi(
-          postData.tlgId,
-          "Регистрация не удалась, возможно неправильно выбрана организация"
-        );
-
-        console.log(user, "не 200");
-        return false;
-      }
+      let res = await response.json();
+      return res;
     } catch (error) {
+      new LoggerManager().logMessage("error", "error", error.message);
       console.error("Ошибка при выполнении запроса:", error);
     }
   }
@@ -77,8 +65,6 @@ class Api {
         // return user.result;
       } else {
         throw new Error("Непредвиденная ошибка в api");
-        // ответ в чат что что то сломалось
-        console.log(user, "Ошибка Статус не 200");
         return;
       }
     } catch (error) {

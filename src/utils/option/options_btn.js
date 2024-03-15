@@ -7,3 +7,16 @@ const options_btn = {
   };
 
   module.exports = options_btn;
+
+
+  // const input_btn = {
+  //   reply_markup: {
+  //     keyboard: [
+  //       [{ text: "Введите данные", request_contact: false, request_location: false }],
+  //     ],
+  //     resize_keyboard: true,
+  //     one_time_keyboard: true,
+  //   },
+  // };
+  
+  // module.exports = input_btn;
