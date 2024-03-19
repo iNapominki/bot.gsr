@@ -1,9 +1,11 @@
 const LoggerManager = require("../log/LoggerManager");
+const SessionRegistration = require("../session/session.registration");
 const Api = require("../utils/api/api");
 const option_registration = require("../utils/option/options-reg");
 const Command = require("./command.class");
 const HandleForm = require("./handle/HandleForm");
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
+const SESSION_RESPONSE = require("../session/session.respons");
 
 class FormCommand extends Command {
   constructor(bot) {
@@ -28,6 +30,10 @@ class FormCommand extends Command {
       if (msg.text === "/form") {
         return;
       }
+
+      if (msg.text === "/registration") {
+        return;
+      }
       if (msg.chat.id == TELEGRAMM_ADMIN_CHAT) {
         this.requestMessage(
           chatId,
@@ -40,6 +46,28 @@ class FormCommand extends Command {
       if (!isCheckUserName) {
         return;
       }
+
+
+/** начинаем проверять сессии, если есть то 
+ * ловим данные, приоритет у регистрации, 
+ * если есть незакрая сессия у регистрации 
+ * то обрабатывается на */ 
+
+
+      let stepRegistration = new SessionRegistration(msg).handleSession();
+      let option = SESSION_RESPONSE.REG[stepRegistration]?.option; 
+      this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, option);
+      return;
+
+
+
+      this.requestMessage(
+        chatId,
+        "Я не знаю что нужно сделать обратитесь к администратору"
+      );
+
+
+      return;
 
       if (!isMessageForm) {
         this.requestMessage(

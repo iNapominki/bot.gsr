@@ -1,3 +1,6 @@
-/node_moduls
+/node_modules
 /.env
+/log.json
+/registration.json
+/order.json
 /log.json

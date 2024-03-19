@@ -4,6 +4,8 @@ class AipUse {
   }
 
   async updateUser(postData) {
+    
+    
     let res = await this.api.updateUser(postData);
     if(!res) {
       return
@@ -28,6 +30,36 @@ class AipUse {
       return false;
     }
   }
+
+  async checkUser(postData) {
+    console.log("AipUse checkUser", postData);
+    let res = await this.api.checkUser(postData);
+    if(!res) {
+      return
+    }
+    if (res.result.code === 200) {
+      const { result } = res;
+      const { message } = result;
+      return message;
+    } else if (res.result.code === 403) {
+      const { tlgId } = postData;
+      this.api.requestMessageOnApi(
+        tlgId,
+        res.result.message
+      );
+      return false;
+    } else {
+      const { tlgId } = postData;
+      this.api.requestMessageOnApi(
+        tlgId,
+        "Произошла ошибка, обратитесь к администратору"
+      );
+      return false;
+    }
+
+  }
+
+
 }
 
 module.exports = AipUse;

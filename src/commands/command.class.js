@@ -6,9 +6,9 @@ class Command {
   
 
   //простой текстовый ответ
-  requestMessage(chatId, message) {
+  requestMessage(chatId, message, option) {
     setTimeout(async () => {
-      await this.bot.sendMessage(chatId, message);
+      await this.bot.sendMessage(chatId, message, option);
     }, 2000);
   }
 

@@ -46,32 +46,12 @@ class Api {
         body: JSON.stringify(postData),
       });
 
-      let user = await response.json();
-
-      console.log(user, "checkUser");
-
-      if (user.result.code === 200) {
-        return user.result.message;
-      } else if (user.result.code === 403) {
-        console.log(postData.tlgId, user.result.message);
-
-        this.requestMessageOnApi(
-          postData.tlgId,
-          "Вы неможете отправлять заявки, либо заблокированы либо не зарегистрированы, обратитесь к администратору"
-        );
-
-        return false;
-        // console.log(user.result, "Данные при ответе при неудачном ответе")
-        // return user.result;
-      } else {
-        throw new Error("Непредвиденная ошибка в api");
-        return;
-      }
+      let res = await response.json();
+      console.log(res);
+      return res;
     } catch (error) {
-      console.error(
-        "Ошибка при выполнении запроса проверки пользователя:",
-        error
-      );
+      new LoggerManager().logMessage("error", "checkUser", error.message);
+      console.error("Ошибка при выполнении запроса:", error);
     }
   }
 

@@ -91,68 +91,68 @@ class HandleForm {
 
 module.exports = HandleForm;
 
-const registration = {
-  message_id: 695,
-  from: {
-    id: 931824462,
-    is_bot: false,
-    first_name: "Михаил",
-    username: "MihailDiper",
-    language_code: "ru",
-  },
-  chat: {
-    id: 931824462,
-    first_name: "Михаил",
-    username: "MihailDiper",
-    type: "private",
-  },
-  date: 1709538029,
-  web_app_data: {
-    button_text: "Форма регистрации",
-    data: '{"role":"agent","form":"update","name":"вввввввввв","number":"89013437024"}',
-  },
-};
+// const registration = {
+//   message_id: 695,
+//   from: {
+//     id: 931824462,
+//     is_bot: false,
+//     first_name: "Михаил",
+//     username: "MihailDiper",
+//     language_code: "ru",
+//   },
+//   chat: {
+//     id: 931824462,
+//     first_name: "Михаил",
+//     username: "MihailDiper",
+//     type: "private",
+//   },
+//   date: 1709538029,
+//   web_app_data: {
+//     button_text: "Форма регистрации",
+//     data: '{"role":"agent","form":"update","name":"вввввввввв","number":"89013437024"}',
+//   },
+// };
 
-const message = {
-  message_id: 696,
-  from: {
-    id: 931824462,
-    is_bot: false,
-    first_name: "Михаил",
-    username: "MihailDiper",
-    language_code: "ru",
-  },
-  chat: {
-    id: 931824462,
-    first_name: "Михаил",
-    username: "MihailDiper",
-    type: "private",
-  },
-  date: 1709538089,
-  web_app_data: {
-    button_text: "Форма регистрации",
-    data: '{"idAgent":"1254","messageFromAgent":"Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст "}',
-  },
-};
+// const message = {
+//   message_id: 696,
+//   from: {
+//     id: 931824462,
+//     is_bot: false,
+//     first_name: "Михаил",
+//     username: "MihailDiper",
+//     language_code: "ru",
+//   },
+//   chat: {
+//     id: 931824462,
+//     first_name: "Михаил",
+//     username: "MihailDiper",
+//     type: "private",
+//   },
+//   date: 1709538089,
+//   web_app_data: {
+//     button_text: "Форма регистрации",
+//     data: '{"idAgent":"1254","messageFromAgent":"Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст "}',
+//   },
+// };
 
-const order = {
-  message_id: 697,
-  from: {
-    id: 931824462,
-    is_bot: false,
-    first_name: "Михаил",
-    username: "MihailDiper",
-    language_code: "ru",
-  },
-  chat: {
-    id: 931824462,
-    first_name: "Михаил",
-    username: "MihailDiper",
-    type: "private",
-  },
-  date: 1709538165,
-  web_app_data: {
-    button_text: "Форма регистрации",
-    data: '{"form":"order","typeOrder":"wake","city":"Москва","timeWake":"9:00-9:30","nameContact":"Михаил","number":"89013437024","fio":"Иванов Иван Иванович","dateLeft":"2024-03-06","dateWake":"2024-03-01","comment":"Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент "}',
-  },
-};
+// const order = {
+//   message_id: 697,
+//   from: {
+//     id: 931824462,
+//     is_bot: false,
+//     first_name: "Михаил",
+//     username: "MihailDiper",
+//     language_code: "ru",
+//   },
+//   chat: {
+//     id: 931824462,
+//     first_name: "Михаил",
+//     username: "MihailDiper",
+//     type: "private",
+//   },
+//   date: 1709538165,
+//   web_app_data: {
+//     button_text: "Форма регистрации",
+//     data: '{"form":"order","typeOrder":"wake","city":"Москва","timeWake":"9:00-9:30","nameContact":"Михаил","number":"89013437024","fio":"Иванов Иван Иванович","dateLeft":"2024-03-06","dateWake":"2024-03-01","comment":"Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент Комент "}',
+//   },
+// };
