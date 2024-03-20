@@ -3,8 +3,8 @@ const Session = require('./session');
 
 
 class SessionOrder extends Session {
-  constructor(msg) {
-    super();
+  constructor(msg, bot) {
+    super(bot);
     this.FileName = "order.json";
     this.message = [];
     this.file = this.getfileJsonFormessage(this.FileName);

@@ -54,9 +54,13 @@ class FormCommand extends Command {
  * то обрабатывается на */ 
 
 
-      let stepRegistration = new SessionRegistration(msg).handleSession();
-      let option = SESSION_RESPONSE.REG[stepRegistration]?.option; 
-      this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, option);
+      // let stepRegistration = new SessionRegistration(msg, this.bot).handleSession();
+      // let option = SESSION_RESPONSE.REG[stepRegistration]?.option; 
+      // this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, option);
+
+      let {step, message, option} = new SessionRegistration(msg, this.bot).handleSession();
+      this.requestMessage(chatId, message, option);
+
       return;
 
 

@@ -3,9 +3,7 @@ class AipUse {
     this.api = api;
   }
 
-  async updateUser(postData) {
-    
-    
+  async updateUser(postData) {    
     let res = await this.api.updateUser(postData);
     if(!res) {
       return

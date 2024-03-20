@@ -1,7 +1,7 @@
 const options_role = {
     reply_markup: {
       inline_keyboard: [          
-        [{ text: "Работник СПЗ", callback_data: "button_emploee" }, 
+        [{ text: "Сотрудник СПЗ", callback_data: "button_employee" }, 
         { text: "Агент", callback_data: "button_agent" }],
       ],
     },

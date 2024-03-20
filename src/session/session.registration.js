@@ -1,155 +1,168 @@
 //const fs = require('fs');
 const Session = require("./session");
+const SESSION_RESPONSE = require("./session.respons");
 
 class SessionRegistration extends Session {
-  constructor(msg) {
-    super();
+  constructor(msg, bot) {
+    super(bot);
     this.FileName = "registration.json";
     this.message = [];
     this.file = this.getfileJsonFormessage(this.FileName);
     this.step = 0;
     this.msg = msg;
-    this.tlgId = this.msg.from.id;
+    this.tlgId = `${this.msg.from.id}`;
     this.tlgName = this.msg.from.username;
   }
 
   _writeToFile(data, session) {
-    
     // собираем данные другие сесии + новая и записываем обновленный файл
     data.push(session);
 
     return this.writeTofilesession(this.FileName, data);
   }
 
+  _validationValueMessage(value, step) {
+    console.log("validationMessage", value, step);
+    console.log(SESSION_RESPONSE.REG[step].validation(value));
+    return SESSION_RESPONSE.REG[step].validation(value);
+  }
+
+  _getTitleStep(step) {
+    return SESSION_RESPONSE.REG[step].title;
+  }
+
   createSession() {
-//console.log("ss")
-    
     if (this.file.length < 1) {
       // [] это для первого значения, если сессий нет
-        // собираем сессию
-    const session = {
-      action: "update",
-      tlgId: this.tlgId,
-      tlgName: this.tlgName,
-      step: this.step,
-    };
+      // собираем сессию
+      const session = {
+        action: "update",
+        tlgId: this.tlgId,
+        tlgName: this.tlgName,
+        step: this.step,
+      };
       this._writeToFile([], session);
-      return this.step;
+      let message = this._getTitleStep(this.step);
+      return { step: this.step, message: message, option: {} };
     }
 
     const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
 
-    
-//return 1
     if (itemSession) {
-      console.log(itemSession.step)
-      return itemSession.step;
+      console.log(itemSession.step);
+      let message = this._getTitleStep(itemSession.step);
+      return { step: itemSession.step, message: message, option: {} };
     } else {
-
       // собираем сессию
-    const session = {
-      action: "update",
-      tlgId: this.tlgId,
-      tlgName: this.tlgName,
-      step: this.step,
-    };
+      const session = {
+        action: "update",
+        tlgId: this.tlgId,
+        tlgName: this.tlgName,
+        step: this.step,
+      };
       this._writeToFile(this.file, session);
-      return this.step;
+      let message = this._getTitleStep(this.step);
+      return { step: this.step, message: message, option: {} };
     }
   }
 
   // обновление сессии
-handleSession() {
-
+  handleSession() {
     const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
     const dataSession = this.file.filter((item) => item.tlgId != this.tlgId);
-  
+
     if (itemSession) {
-        let step = itemSession.step;
-        let { text } = this.msg;
-        switch (step) {
-            case 0:
-              itemSession.step = 1;
-              itemSession.name = text;                
-              this._writeToFile(dataSession, itemSession);              
-                console.log('Вносим имя');
-                return 1;             
-              break
-            case 1:
+      let step = itemSession.step;
+      let { text } = this.msg;
+      let message;
+      let validationMessage;
+      switch (step) {
+        case 0:
+          validationMessage = this._validationValueMessage(text, step);
+          if (validationMessage) {
+            message = this._getTitleStep(itemSession.step);
+            return { step: 1, message: validationMessage, option: {} };
+          }
 
-              itemSession.step = 2;
-              itemSession.number = text;                
-              this._writeToFile(dataSession, itemSession);
-              console.log('Вносим телефон')
-              return 2;   
-              break
-            case 2:
-              itemSession.step = 3;
-              itemSession.name = text;                
-              this._writeToFile(dataSession, itemSession);
-              return 3;  
-              console.log('ВНосим роль')
-              break            
-            default:
-              // выполнится, если ни один другой случай не сработал
-              console.log('Что делать незнаю')
-              break
-          }        
+          itemSession.step = 1;
+          itemSession.name = text;
+          this._writeToFile(dataSession, itemSession);
 
+          message = this._getTitleStep(itemSession.step);
+          return { step: 1, message: message, option: {} };
+
+          break;
+        case 1:
+          validationMessage = this._validationValueMessage(text, step);
+
+          if (validationMessage) {
+            message = this._getTitleStep(itemSession.step);
+            return { step: 1, message: validationMessage, option: {} };
+          }
+          itemSession.step = 2;
+          itemSession.number = text;
+          this._writeToFile(dataSession, itemSession);
+
+          message = this._getTitleStep(itemSession.step);
+          let option = SESSION_RESPONSE.REG[itemSession.step].option;
+
+          return { step: 2, message: message, option: option };
+
+          break;
+
+        default:
+          // выполнится, если ни один другой случай не сработал
+          console.log("Что делать незнаю");
+          break;
+      }
 
       return itemSession;
     } else {
-      return 404;
+      return {
+        step: 3,
+        message: "Команда не распознана (сессия регистрации)",
+        option: {},
+      };
     }
+  }
 
-}
+  handleButton(command, chatId) {
+    const itemSession = this.file.find((item) => item.tlgId == chatId);
+    const dataSession = this.file.filter((item) => item.tlgId != chatId);
 
-handleButton(command, chatId) {
-
-  const itemSession = this.file.find((item) => item.tlgId == chatId);
-  const dataSession = this.file.filter((item) => item.tlgId != chatId);
-
-  if (itemSession) {
-   // let step = itemSession.step;    
-    switch (command) {
-        case "button_emploee":
+    if (itemSession) {
+      switch (command) {
+        case "button_employee":
           itemSession.step = 3;
-          itemSession.role = "emploee";                
-          this._writeToFile(dataSession, itemSession);              
-            console.log('Вносим имя');
-            return 4;             
-          break
-        case "button_agent":
-
-          itemSession.step = 3;
-          itemSession.role = "agent";                
+          itemSession.role = "employee";
           this._writeToFile(dataSession, itemSession);
-          console.log('Вносим телефон')
-          return 4;   
-          break                  
+          this.endSession(this.FileName, chatId);
+
+          return { step: 3, message: this._getTitleStep(3), option: {} };
+          break;
+        case "button_agent":
+          itemSession.step = 3;
+          itemSession.role = "agent";
+          this._writeToFile(dataSession, itemSession);
+          // завершение сесии
+          this.endSession(this.FileName, chatId);
+
+          return { step: 3, message: this._getTitleStep(3), option: {} };
+          break;
         default:
+          console.log("Что делать незнаю");
           // выполнится, если ни один другой случай не сработал
-          console.log('Что делать незнаю')
-          break
+          break;
       }
-  return itemSession;
-} else {
-  return 404;
+      return itemSession;
+    } else {
+      return {
+        step: 3,
+        message: "Команда не распознана (сессия регистрации)",
+        option: {},
+      };
+    }
+  }
 }
-
-
-
-}
-
-}
-
-
 
 module.exports = SessionRegistration;
-
-// dataFormToQuery.action = data.form;
-// dataFormToQuery.name = data.name;
-// dataFormToQuery.tlgName = this.message.from.username;
-// dataFormToQuery.number = data.number;
-// dataFormToQuery.tlgId = `${this.message.from.id}`;
-// dataFormToQuery.role = data.role;

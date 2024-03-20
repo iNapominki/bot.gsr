@@ -23,9 +23,10 @@ class RegisrtationCommand extends Command {
       }
 
     
-
-      let stepRegistration = new SessionRegistration(msg).createSession();
-      this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, SESSION_RESPONSE.REG[stepRegistration].option);
+      let {step, message, option} = new SessionRegistration(msg, this.bot).createSession();
+      this.requestMessage(chatId, message, option);
+      //let stepRegistration = new SessionRegistration(msg, this.bot).createSession();
+      //this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, SESSION_RESPONSE.REG[stepRegistration].option);
       return;
     });
   }

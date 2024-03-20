@@ -38,7 +38,7 @@ class Bot {
       const chatId = msg.chat.id;
       this.bot.sendMessage(
         chatId,
-        "Добро пожаловать в бот Сети поминальных залов, Обратите внимание для работы с ботом обязательно должно быть заполнено имя в телеграм"
+        "Добро пожаловать в бот Сети Поминальных Залов, Обратите внимание для работы с ботом обязательно должно быть заполнено имя в телеграм"
       );
       this._useCheskUser(chatId)
       //this.bot.sendMessage(chatId, responseTemplate.start);

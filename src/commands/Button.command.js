@@ -2,6 +2,7 @@ const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const LoggerManager = require("../log/LoggerManager");
 const SessionRegistration = require("../session/session.registration");
 const Command = require("./command.class");
+const SESSION_RESPONSE = require("../session/session.respons");
 class Buttoncommand extends Command {
   constructor(bot) {
     super(bot);
@@ -17,7 +18,7 @@ class Buttoncommand extends Command {
         new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
 
 
-        let stepRegistration;
+        //let stepRegistration;
         switch (command) {
 
           case "button_status":
@@ -32,12 +33,15 @@ class Buttoncommand extends Command {
 
             return;
             break;
-          case "button_emploee":
+          case "button_employee": 
           case "button_agent":
+
+          let {step, message, option} = new SessionRegistration(query, this.bot).handleButton(command, chatId);
+      this.requestMessage(chatId, message, option);
             
-            stepRegistration = new SessionRegistration(query).handleButton(command, chatId);
-               return stepRegistration;
-            //console.log(stepRegistration);
+              // let stepRegistration = new SessionRegistration(query, this.bot).handleButton(command, chatId);               
+              //  this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title);
+               return;
             return;
             break;           
           default:
