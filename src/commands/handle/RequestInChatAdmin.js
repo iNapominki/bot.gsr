@@ -18,7 +18,7 @@ class RequestInChatAdmin {
     setTimeout(async () => {
       await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT, responseTemplate.responseToAdminChat(this.request, post, user));
       await this.bot.sendMessage(post.tlgId, responseTemplate.responseToAgentChat(this.request, post, user), options_btn);
-    }, 1000);    
+    }, 500);    
   }
 
   requestUSer(post) {    

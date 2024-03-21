@@ -1,6 +1,5 @@
-//const fs = require('fs');
-const Session = require('./session');
-
+const Session = require("./session");
+const SESSION_RESPONSE = require("./session.respons");
 
 class SessionOrder extends Session {
   constructor(msg, bot) {
@@ -10,28 +9,440 @@ class SessionOrder extends Session {
     this.file = this.getfileJsonFormessage(this.FileName);
     this.step = 0;
     this.msg = msg;
+    this.tlgId = `${this.msg.from.id}`;
+    this.tlgName = this.msg.from.username;
+    this.apiUseMethod = "postOrder";
+    this.requestMethod = "requestOrder";
   }
 
-  
+  clear(tlgId) {
+   return this.clearSession(this.FileName, tlgId);
+  }
 
-//   logMessage(type = "error", message = "короткое название события", stack = "отсутствует" ) {
-//     if (!fs.existsSync(this.logFileName)) {
-//       fs.writeFileSync(this.logFileName, '[]', 'utf8');
-//     }
+  _writeToFile(data, session) {
+    // собираем данные другие сесии + новая и записываем обновленный файл
+    data.push(session);
+    return this.writeTofilesession(this.FileName, data);
+  }
 
-//     const fileContent = fs.readFileSync(this.logFileName, 'utf8');
-//     this.log = JSON.parse(fileContent);
-   
+  _validationValueMessage(value, step) {
+    return SESSION_RESPONSE.ORDER[step].validation(value);
+  }
 
-//     this.log.push({
-//       timestamp: new Date().toISOString(),
-//       type: type,
-//       message: message,
-//       stack: JSON.stringify(stack, null, 2)
-//     });
+  _getTitleStep(step) {
+    return SESSION_RESPONSE.ORDER[step].title;
+  }
 
-//     fs.writeFileSync(this.logFileName, JSON.stringify(this.log, null, 2), 'utf8');
-//   }
+  _getOptionStep(step) {
+    return SESSION_RESPONSE.ORDER[step].option;
+  }
+
+  createSession() {
+    if (this.file.length < 1) {
+      // [] это для первого значения, если сессий нет
+      // собираем сессию
+      const session = {
+        action: "order",
+        typeOrder: "wake",
+        tlgId: this.tlgId,
+        tlgName: this.tlgName,
+        step: this.step,
+      };
+      this._writeToFile([], session);
+      let message = this._getTitleStep(this.step);
+      return { step: this.step, message: message, option: {}, status: true };
+    }
+
+    // если сесии какие то есть то ищем у текущего пользователя
+    const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
+    // сессию нашли для текущего tlgId получаем  ее и начинаем работать с ней
+    if (itemSession) {
+      let message = this._getTitleStep(itemSession.step);
+      return {
+        step: itemSession.step,
+        message: message,
+        option: {},
+        status: true,
+      };
+    } else {
+      // собираем новую сессию для пользователя если ранее у нт сесии
+      const session = {
+        action: "order",
+        typeOrder: "wake",
+        tlgId: this.tlgId,
+        tlgName: this.tlgName,
+        step: this.step,
+      };
+      this._writeToFile(this.file, session);
+      let message = this._getTitleStep(this.step);
+      return { step: this.step, message: message, option: {}, status: true };
+    }
+  }
+
+  async _useCheskUser(tlgId) {
+    let checkPost = {
+      action: "check",
+      tlgId: `${tlgId}`,
+    };
+    const api = new Api(this.bot);
+    const request = await new AipUse(api).checkUser(checkPost);
+    
+    if (!request) {
+      return;
+    }
+
+    return request;
+  }
+
+  // обновление сессии
+  handleSession() {
+    const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
+    const dataSession = this.file.filter((item) => item.tlgId != this.tlgId);
+
+    if (itemSession) {
+      let step = itemSession.step;
+      let { text } = this.msg;
+      let message;      
+      let option;
+      let chatId = itemSession.tlgId;
+
+      console.log(itemSession);
+
+      // валидация сообщений
+let validationMessage = this._validationValueMessage(text, step);
+if (validationMessage) {
+  message = this._getTitleStep(itemSession.step);
+  return { step: 1, message: validationMessage, option: {}, status: true };
+}
+
+
+
+      switch (step) {
+        case 0:
+          // validationMessage = this._validationValueMessage(text, step);
+          // if (validationMessage) {
+          //   message = this._getTitleStep(itemSession.step);
+          //   return { step: 1, message: validationMessage, option: {}, status: true };
+          // }
+
+          itemSession.step = 1;
+          itemSession.nameContact = text;
+          this._writeToFile(dataSession, itemSession);
+
+          message = this._getTitleStep(itemSession.step);
+          return { step: 1, message: message, option: {}, status: true };
+
+          break;
+        case 1:
+          // validationMessage = this._validationValueMessage(text, step);
+
+          // if (validationMessage) {
+          //   message = this._getTitleStep(itemSession.step);
+          //   return { step: 1, message: validationMessage, option: {}, status: true };
+          // }
+          itemSession.step = 2;
+          itemSession.number = text;
+          this._writeToFile(dataSession, itemSession);
+          message = this._getTitleStep(itemSession.step);
+          //option = this._getOptionStep(itemSession.step);
+          return {
+            step: 2,
+            message: message,
+            option: { option },
+            status: true,
+          };
+          break;
+
+        ///
+        case 2:
+          // validationMessage = this._validationValueMessage(text, step);
+
+          // if (validationMessage) {
+          //   message = this._getTitleStep(itemSession.step);
+          //   return { step: 2, message: validationMessage, option: {}, status: true };
+          // }
+          itemSession.step = 3;
+          itemSession.dateLeft = text;
+          this._writeToFile(dataSession, itemSession);
+          message = this._getTitleStep(itemSession.step);
+          //option = this._getOptionStep(itemSession.step);
+          return { step: 3, message: message, option: {}, status: true };
+          break;
+        ///
+
+        ///
+        case 3:
+          // validationMessage = this._validationValueMessage(text, step);
+
+          // if (validationMessage) {
+          //   message = this._getTitleStep(itemSession.step);
+          //   return { step: 2, message: validationMessage, option: {}, status: true };
+          // }
+          itemSession.step = 4;
+          itemSession.dateWake = text;
+          this._writeToFile(dataSession, itemSession);
+          message = this._getTitleStep(itemSession.step);
+          option = this._getOptionStep(itemSession.step);
+          return { step: 4, message: message, option: option, status: true };
+          break;
+        ///
+
+        ///
+        case 4:
+          // validationMessage = this._validationValueMessage(text, step);
+
+          // if (validationMessage) {
+          //   message = this._getTitleStep(itemSession.step);
+          //   return { step: 2, message: validationMessage, option: {}, status: true };
+          // }
+          itemSession.step = 5;
+          itemSession.timeWake = text;
+          this._writeToFile(dataSession, itemSession);
+          message = this._getTitleStep(itemSession.step);
+          option = this._getOptionStep(itemSession.step);
+          return { step: 5, message: message, option: option, status: true };
+          break;
+        ///
+
+        ///
+        case 6:
+          // validationMessage = this._validationValueMessage(text, step);
+
+          // if (validationMessage) {
+          //   message = this._getTitleStep(itemSession.step);
+          //   return { step: 2, message: validationMessage, option: {}, status: true };
+          // }
+          itemSession.step = 7;
+          itemSession.comment = text;
+          this._writeToFile(dataSession, itemSession);
+          message = this._getTitleStep(itemSession.step);
+          //option = this._getOptionStep(itemSession.step);
+
+          // завершение сесии
+          
+          console.log("завершение сесии", this.FileName, chatId, "order")
+          this.endSession(this.FileName, chatId, "order");
+          return { step: 7, message: message, option: {}, status: true };
+          break;
+        ///
+
+        default:
+          // выполнится, если ни один другой случай не сработал
+          console.log("Что делать незнаю");
+          break;
+      }
+
+      return itemSession;
+    } else {
+
+      return {
+        step: 3,
+        message: "Если вы хотите оформить заявку нажмите /order",
+        option: {},
+        status: false,
+      };
+    }
+  }
+
+  handleButton(command, chatId) {
+    // получаем данные о текущей сесии
+    const itemSession = this.file.find((item) => item.tlgId == chatId);
+    // получаем остальные сесии
+    const dataSession = this.file.filter((item) => item.tlgId != chatId);
+
+    if (itemSession) {
+      let message;
+      let option;
+      switch (command) {
+
+        // кнопки по городам
+          case "button_order_moscow":
+          case "button_order_mo":
+          case "button_order_cpb":
+          case "button_order_lo":
+          case "button_order_nn":
+              const cityMap = {
+                  "button_order_moscow": "Москва",
+                  "button_order_mo": "МО",
+                  "button_order_cpb": "СПб",
+                  "button_order_lo": "ЛО",
+                  "button_order_nn": "НН"
+              };
+      
+              itemSession.step = 6;
+              itemSession.city = cityMap[command];
+              this._writeToFile(dataSession, itemSession);
+      
+              message = this._getTitleStep(itemSession.step);
+              return { step: 6, message: message, option: {}, status: true };
+              break;
+// кнопки времени поминок
+
+case "9:00-9:30": 
+case "9:30-10:00":     
+case"10:00-10:30":       
+case "10:30-11:00": 
+case "11:00-11:30":       
+case "11:30-12:00":      
+case "12:00-12:30":       
+case "12:30-13:00":      
+case"13:00-13:30": 
+case "13:30-14:00": 
+case "14:00-14:30": 
+case"14:30-15:00": 
+case "15:00-15:30": 
+case "15:30-16:00": 
+case "16:00-16:30": 
+case"16:30-17:00": 
+case"17:00-17:30": 
+case"17:30-18:00": 
+case"18:00-18:30": 
+case "18:30-19:00": 
+case"19:00-19:30": 
+case "19:30-20:00": 
+case "20:00-20:30": 
+case "20:30-21:00": 
+case"21:00-21:30": 
+case "21:30-22:00": 
+
+const timeWake = {
+
+  "9:00-9:30": "9:00-9:30",
+"9:30-10:00": "9:30-10:00",      
+"10:00-10:30": "10:00-10:30",       
+ "10:30-11:00": "10:30-10:00",
+ "11:00-11:30": "11:00-11:30",        
+ "11:30-12:00": "11:30-12:00",       
+ "12:00-12:30": "12:00-12:30",       
+ "12:30-13:00": "12:30-13:00",      
+"13:00-13:30": "13:00-13:30",
+ "13:30-14:00": "13:30-14:00",
+ "14:00-14:30": "14:00-14:30",
+"14:30-15:00": "14:30-15:00",
+ "15:00-15:30": "15:00-15:30",
+ "15:30-16:00": "15:30-16:00",
+ "16:00-16:30": "16:00-16:30",
+"16:30-17:00": "16:30-17:00",
+"17:00-17:30": "17:00-17:30",
+"17:30-18:00": "17:30-18:00",
+"18:00-18:30": "18:00-18:30",
+ "18:30-19:00": "18:30-19:00",
+"19:00-19:30": "19:00-19:30",
+ "19:30-20:00": "19:30-20:00",
+ "20:00-20:30": "20:00-20:30",
+ "20:30-21:00": "20:30-21:00",
+"21:00-21:30": "21:00-21:30",
+ "21:30-22:00": "21:30-22:00",
+
+}
+
+
+
+itemSession.step = 5;
+itemSession.timeWake = timeWake[command];
+this._writeToFile(dataSession, itemSession);
+option = this._getOptionStep(itemSession.step);
+message = this._getTitleStep(itemSession.step);
+return { step: 5, message: message, option: option, status: true };
+break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // case "button_order_moscow":
+        //   itemSession.step = 6;
+        //   itemSession.city = "Москва";
+        //   this._writeToFile(dataSession, itemSession);
+
+        //   message = this._getTitleStep(6);
+        //   return { step: 6, message: message, option: {}, status: true };
+        //   break;
+
+        // case "button_order_mo":
+        //   itemSession.step = 6;
+        //   itemSession.city = "МО";
+        //   this._writeToFile(dataSession, itemSession);
+
+        //   message = this._getTitleStep(6);
+        //   return { step: 6, message: message, option: {}, status: true };
+        //   break;
+
+        // case "button_order_cpb":
+        //   itemSession.step = 6;
+        //   itemSession.city = "СПб";
+        //   this._writeToFile(dataSession, itemSession);
+
+        //   message = this._getTitleStep(6);
+        //   return { step: 6, message: message, option: {}, status: true };
+        //   break;
+
+        // case "button_order_lo":
+        //   itemSession.step = 6;
+        //   itemSession.city = "ЛО";
+        //   this._writeToFile(dataSession, itemSession);
+
+        //   message = this._getTitleStep(6);
+        //   return { step: 6, message: message, option: {}, status: true };
+        //   break;
+
+        // case "button_order_nn":
+        //   itemSession.step = 6;
+        //   itemSession.city = "НН";
+        //   this._writeToFile(dataSession, itemSession);
+
+        //   message = this._getTitleStep(6);
+        //   return { step: 6, message: message, option: {}, status: true };
+        //   break;
+
+
+
+
+        default:
+          console.log("Что делать незнаю");
+          // выполнится, если ни один другой случай не сработал
+          break;
+      }
+      return itemSession;
+    } else {
+      return {
+        step: 3,
+        message: "Кнопка больше не активна",
+        option: {},
+        status: false,
+      };
+    }
+  }
 }
 
 module.exports = SessionOrder;
+
+// const Session = require('./session');
+
+// class SessionOrder extends Session {
+//   constructor(msg, bot) {
+//     super(bot);
+//     this.FileName = "order.json";
+//     this.message = [];
+//     this.file = this.getfileJsonFormessage(this.FileName);
+//     this.step = 0;
+//     this.msg = msg;
+//   }
+
+// }
+
+// module.exports = SessionOrder;

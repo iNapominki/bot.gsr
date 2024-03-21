@@ -7,13 +7,25 @@ const RequestInChatAdmin = require("../commands/handle/RequestInChatAdmin");
 class Session {
   constructor(bot) {
     this.bot = bot;
-    
   }
 
-  handle() {
+  clearSession(fileName, tlgId) {
+    let file = this.getfileJsonFormessage(fileName);
+    // получаем нужный объект
+    const itemSession = file.find((item) => item.tlgId == tlgId);
+
+    console.log(itemSession);
+
+    if(!itemSession) {
+      return "Данных для очистки нет, для оформления заказа введите /order"
+    }
+    // фильтруем файд
+    const dataSession = file.filter((item) => item.tlgId != tlgId);
+    // перезаписываем файл
+    this.writeTofilesession(fileName, dataSession);
+    return "Данных по заказу сброшены, для оформления нового заказа введите /order"
 
   }
-
 
   getfileJsonFormessage(fileName) {
     if (!fs.existsSync(fileName)) {
@@ -26,41 +38,107 @@ class Session {
     return session;
   }
 
+  async _postSession(postData, apiUseMethod, requestMethod) {
 
- async _postSession(postData) {
+   
     // удаляем лишний ключ
-    delete postData.step;
+    delete postData.step;   
 
-    console.log(postData);
     const api = new Api(this.bot);
-    const request = await new AipUse(api).updateUser(postData);
+    const request = await new AipUse(api)[apiUseMethod](postData); // updateUser
 
-    await console.log("Ответ о регистрации", request);
-    if(!request) {
-      return
-   }    
+    if (!request) {
+      return;
+    }
 
-   console.log("request", request);
-   console.log("postData", postData);
-       await new RequestInChatAdmin(this.bot, request).requestUSer(postData)
-       return
-
-    //this.bot.sendMessage(931824462, "ntrcn");
-
-
+    await new RequestInChatAdmin(this.bot, request)[requestMethod](postData);
+    return;
   }
 
-  endSession(fileName, tlgId) {
+
+  async _postSessionUser(postData) {   
+    // удаляем лишний ключ
+    delete postData.step;   
+
+    const api = new Api(this.bot);
+    const request = await new AipUse(api).updateUser(postData); // updateUser
+
+    if (!request) {
+      return;
+    }
+    
+    await new RequestInChatAdmin(this.bot, request).requestUSer(postData);
+    return;
+  }
+
+  async _postSessionOrder(postData) {    
+    // удаляем лишний ключ
+    delete postData.step;
+    
+    let checkPost = {
+      action: "check",
+      tlgId: postData.tlgId,
+    };
+
+     const api = new Api(this.bot);
+    const user = await new AipUse(api).checkUser(checkPost);
+
+    if (!user) {
+      return;
+    }
+    
+    const request = await new AipUse(api).postOrder(postData); // updateUser
+    if (!request) {
+      return;
+    }
+    // const api = new Api(this.bot);
+    // const { tlgId } = post;
+    // let checkPost = {
+    //   action: "check",
+    //   tlgId: tlgId,
+    // };
+    // let user = await api.checkUser(checkPost);
+    // if (user) {
+    //   const request = await api.postOrder(post);     
+    //   await new RequestInChatAdmin(this.bot, request).requestOrder(post, user)
+    //   return;
+    // }  
+    
+    await new RequestInChatAdmin(this.bot, request).requestOrder(postData, user);
+    return;
+  }
+
+
+  _cheskParam(message) {
+    console.log(`В функции endSession Отсутствует параметр ${message}`);
+    throw new Error(`В функции endSession Отсутствует параметр ${message}`);    
+  }
+
+  endSession(fileName, tlgId, type = this._cheskParam("type") ) {
+
+    console.log("endSession");
     // получаем файл
     let file = this.getfileJsonFormessage(fileName);
     // получаем нужный объект
-    const itemSession = this.file.find((item) => item.tlgId == tlgId);    
+    const itemSession = this.file.find((item) => item.tlgId == tlgId);
     // фильтруем файд
     const dataSession = this.file.filter((item) => item.tlgId != tlgId);
     // перезаписываем файл
     this.writeTofilesession(fileName, dataSession);
     // отправляем API для записи в google sheets
-    this._postSession(itemSession);   
+    // выбираем что постим пользователя или заказ
+
+    if(type == "order") {
+      this._postSessionOrder(itemSession);
+
+    } else if (type == "user") {
+      this._postSessionUser(itemSession);
+    } else {
+
+      console.error("Не определен тим заказ или пользователь в функции endSession")
+
+    }
+    
   }
 
   writeTofilesession(fileName, session) {

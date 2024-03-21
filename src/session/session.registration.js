@@ -1,4 +1,5 @@
-//const fs = require('fs');
+const Api = require("../utils/api/api");
+const AipUse = require("../utils/api/apiUse");
 const Session = require("./session");
 const SESSION_RESPONSE = require("./session.respons");
 
@@ -12,24 +13,29 @@ class SessionRegistration extends Session {
     this.msg = msg;
     this.tlgId = `${this.msg.from.id}`;
     this.tlgName = this.msg.from.username;
+    this.apiUseMethod = "updateUser";
+    this.requestMethod = "requestUSer";
   }
 
   _writeToFile(data, session) {
     // собираем данные другие сесии + новая и записываем обновленный файл
     data.push(session);
-
     return this.writeTofilesession(this.FileName, data);
   }
 
-  _validationValueMessage(value, step) {
-    console.log("validationMessage", value, step);
-    console.log(SESSION_RESPONSE.REG[step].validation(value));
+  _validationValueMessage(value, step) {    
     return SESSION_RESPONSE.REG[step].validation(value);
   }
 
   _getTitleStep(step) {
     return SESSION_RESPONSE.REG[step].title;
   }
+
+  _getOptionStep(step) {
+    return SESSION_RESPONSE.REG[step].option;
+  }
+
+
 
   createSession() {
     if (this.file.length < 1) {
@@ -43,17 +49,17 @@ class SessionRegistration extends Session {
       };
       this._writeToFile([], session);
       let message = this._getTitleStep(this.step);
-      return { step: this.step, message: message, option: {} };
+      return { step: this.step, message: message, option: {}, status: true  };
     }
-
+    
+    // если сесии какие то есть то ищем у текущего пользователя
     const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
-
-    if (itemSession) {
-      console.log(itemSession.step);
+    // сессию нашли для текущего tlgId получаем  ее и начинаем работать с ней
+    if (itemSession) {      
       let message = this._getTitleStep(itemSession.step);
-      return { step: itemSession.step, message: message, option: {} };
+      return { step: itemSession.step, message: message, option: {}, status: true  };
     } else {
-      // собираем сессию
+      // собираем новую сессию для пользователя если ранее у нт сесии
       const session = {
         action: "update",
         tlgId: this.tlgId,
@@ -62,8 +68,12 @@ class SessionRegistration extends Session {
       };
       this._writeToFile(this.file, session);
       let message = this._getTitleStep(this.step);
-      return { step: this.step, message: message, option: {} };
+      return { step: this.step, message: message, option: {}, status: true  };
     }
+  }
+
+  _handleTextStep(){
+
   }
 
   // обновление сессии
@@ -81,7 +91,7 @@ class SessionRegistration extends Session {
           validationMessage = this._validationValueMessage(text, step);
           if (validationMessage) {
             message = this._getTitleStep(itemSession.step);
-            return { step: 1, message: validationMessage, option: {} };
+            return { step: 1, message: validationMessage, option: {}, status: true  };
           }
 
           itemSession.step = 1;
@@ -89,7 +99,7 @@ class SessionRegistration extends Session {
           this._writeToFile(dataSession, itemSession);
 
           message = this._getTitleStep(itemSession.step);
-          return { step: 1, message: message, option: {} };
+          return { step: 1, message: message, option: {}, status: true  };
 
           break;
         case 1:
@@ -97,16 +107,14 @@ class SessionRegistration extends Session {
 
           if (validationMessage) {
             message = this._getTitleStep(itemSession.step);
-            return { step: 1, message: validationMessage, option: {} };
+            return { step: 1, message: validationMessage, option: {}, status: true  };
           }
           itemSession.step = 2;
           itemSession.number = text;
           this._writeToFile(dataSession, itemSession);
-
-          message = this._getTitleStep(itemSession.step);
-          let option = SESSION_RESPONSE.REG[itemSession.step].option;
-
-          return { step: 2, message: message, option: option };
+          message = this._getTitleStep(itemSession.step);          
+          let option = this._getOptionStep(itemSession.step);
+          return { step: 2, message: message, option: option, status: true };
 
           break;
 
@@ -120,34 +128,41 @@ class SessionRegistration extends Session {
     } else {
       return {
         step: 3,
-        message: "Команда не распознана (сессия регистрации)",
+        message: "Для оформления заявки вначале введике команду /order",
         option: {},
+        status: false
       };
     }
   }
 
   handleButton(command, chatId) {
+    // получаем данные о текущей сесии
     const itemSession = this.file.find((item) => item.tlgId == chatId);
+    // получаем остальные сесии 
     const dataSession = this.file.filter((item) => item.tlgId != chatId);
 
     if (itemSession) {
+
+      let message;
       switch (command) {
-        case "button_employee":
+        case "button_reg_employee":
           itemSession.step = 3;
           itemSession.role = "employee";
           this._writeToFile(dataSession, itemSession);
-          this.endSession(this.FileName, chatId);
-
-          return { step: 3, message: this._getTitleStep(3), option: {} };
+          this.endSession(this.FileName, chatId, "user");
+          message = this._getTitleStep(3);
+          return { step: 3, message: message, option: {}, status: true  };
           break;
-        case "button_agent":
+        case "button_reg_agent":
           itemSession.step = 3;
           itemSession.role = "agent";
           this._writeToFile(dataSession, itemSession);
-          // завершение сесии
-          this.endSession(this.FileName, chatId);
 
-          return { step: 3, message: this._getTitleStep(3), option: {} };
+          
+          // завершение сесии
+          this.endSession(this.FileName, chatId, "user");
+          message = this._getTitleStep(3);
+          return { step: 3, message: message, option: {}, status: true  };
           break;
         default:
           console.log("Что делать незнаю");
@@ -158,8 +173,9 @@ class SessionRegistration extends Session {
     } else {
       return {
         step: 3,
-        message: "Команда не распознана (сессия регистрации)",
+        message: "Кнопка больше не активна",
         option: {},
+        status: false
       };
     }
   }

@@ -1,14 +1,15 @@
+const copirite_text = require("../../utils/const/copirite_admin");
+
 const responseTemplate = {
     start:
-      "Добро пожаловать в бот Сети поминальных залов, меня зовут Аркадий, я могу отправить заявку в сеть поминальных залов.\
-          \n \nПо вопросам обработки заказов обращаться по телефону 8 916 569 26 73 (Андрей)  \
-          \n  6. Доп. информация:  кладбище/крематорий. Локация. И т.д.",
+      `Добро пожаловать в бот Сети поминальных залов, меня зовут Аркадий, я могу отправить заявку в сеть поминальных залов.\
+          \n \nПо вопросам обработки заказов обращаться ${copirite_text.admin}`, 
   
-    help: "Первое что нужно сделать это <b>ЗАРЕГИСТРИРОВАТЬСЯ</b>\
-          \n \nПо вопросам обработки заказов обращаться по телефону 8 916 569 26 73 (Андрей)  \
-          \n  6. Доп. информация:  кладбище/крематорий. Локация. И т.д.",
+    help: `Первое что нужно сделать это ЗАРЕГИСТРИРОВАТЬСЯ, для этого нажмите /registration\
+          \n \nПо вопросам обработки заказов обращаться ${copirite_text.admin}`, 
 
     responseToAdminChat: function(numberOrder, message, user) {
+        console.log(numberOrder, message, user);
            // определение номера
            let order = numberOrder ? numberOrder: "!Внимание данные не записались в таблицу!";
            // определение текста сообщения
@@ -37,10 +38,10 @@ const responseTemplate = {
            let comment = message.comment  ? message.comment : "комментариев нет" ;
 
            // определение информации о пользователе (агент или менеджер)
-           let spzId = user.spzId ? user.spzId : "не определено";
-           let name = user.name ? user.name : "не определено";
-           let tlgName = user.tlgName ? user.tlgName : "не определено";
-           let sponsor = user.sponsor ? user.sponsor : "не определено";
+           let spzId = user?.spzId ? user?.spzId : "не определено";
+           let name = user?.name ? user?.name : "не определено";
+           let tlgName = user?.tlgName ? user?.tlgName : "не определено";
+           let sponsor = user?.sponsor ? user?.sponsor : "не определено";
 
             return `Информация по заявке №${order}: \
             \n \n Сообщение в чате под номером ${tlgMessageId} \
@@ -89,10 +90,10 @@ const responseTemplate = {
            let comment = message.comment  ? message.comment : "комментариев нет" ;
 
            // определение информации о пользователе (агент или менеджер)
-           let spzId = user.spzId ? user.spzId : "не определено";
-           let name = user.name ? user.name : "не определено";
-           let tlgName = user.tlgName ? user.tlgName : "не определено";
-           let sponsor = user.sponsor ? user.sponsor : "не определено";
+           let spzId = user?.spzId ? user?.spzId : "не определено";
+           let name = user?.name ? user?.name : "не определено";
+           let tlgName = user?.tlgName ? user?.tlgName : "не определено";
+           let sponsor = user?.sponsor ? user?.sponsor : "не определено";
 
             return `Ваша заявка принята под №${order}: \            
              \n \n Тип заявки ${typeOrder} \

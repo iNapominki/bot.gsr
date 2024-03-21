@@ -1,15 +1,10 @@
 const SessionRegistration = require("../session/session.registration");
-const SESSION_RESPONSE = require("../session/session.respons");
-//const Api = require("../utils/api/api");
-//const AipUse = require("../utils/api/apiUse");
-//const option_registration = require("../utils/option/options-reg");
 const Command = require("./command.class");
 
 class RegisrtationCommand extends Command {
   constructor(bot) {
     super(bot);
   }
-
 
   handle() {
     // this.bot.onText(/\/form/, (msg) => {
@@ -22,11 +17,8 @@ class RegisrtationCommand extends Command {
         return;
       }
 
-    
       let {step, message, option} = new SessionRegistration(msg, this.bot).createSession();
-      this.requestMessage(chatId, message, option);
-      //let stepRegistration = new SessionRegistration(msg, this.bot).createSession();
-      //this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, SESSION_RESPONSE.REG[stepRegistration].option);
+      this.requestMessage(chatId, message, option);      
       return;
     });
   }

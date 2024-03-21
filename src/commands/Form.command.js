@@ -6,6 +6,7 @@ const Command = require("./command.class");
 const HandleForm = require("./handle/HandleForm");
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const SESSION_RESPONSE = require("../session/session.respons");
+const SessionOrder = require("../session/session.order");
 
 class FormCommand extends Command {
   constructor(bot) {
@@ -34,6 +35,14 @@ class FormCommand extends Command {
       if (msg.text === "/registration") {
         return;
       }
+
+      if (msg.text === "/order") {
+        return;
+      }
+
+      if(msg.text === "/clear") {
+        return;
+      }
       if (msg.chat.id == TELEGRAMM_ADMIN_CHAT) {
         this.requestMessage(
           chatId,
@@ -58,11 +67,22 @@ class FormCommand extends Command {
       // let option = SESSION_RESPONSE.REG[stepRegistration]?.option; 
       // this.requestMessage(chatId, SESSION_RESPONSE.REG[stepRegistration].title, option);
 
-      let {step, message, option} = new SessionRegistration(msg, this.bot).handleSession();
-      this.requestMessage(chatId, message, option);
+      let {step, message, option, status} = new SessionRegistration(msg, this.bot).handleSession();      
+      if(status == true) {
+         this.requestMessage(chatId, message, option);
+         console.log("сессия по регистрации");
+        return;
+      } else {
 
-      return;
+        console.log("сессия по заявке");
+        let {step, message, option} = new SessionOrder(msg, this.bot).handleSession();
+        this.requestMessage(chatId, message, option);
+        return;
+      }
+      
 
+      
+      
 
 
       this.requestMessage(

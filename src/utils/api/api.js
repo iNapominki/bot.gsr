@@ -10,9 +10,9 @@ class Api {
   }
 
   //простой текстовый ответ вынести в apiUse
-  requestMessageOnApi(chatId, message) {
+  requestMessageOnApi(chatId, message, option = {}) {
     setTimeout(async () => {
-      await this.bot.sendMessage(chatId, message);
+      await this.bot.sendMessage(chatId, message, option);
     }, 2000);
   }
 
@@ -56,8 +56,6 @@ class Api {
   }
 
   async postOrder(postData) {
-    console.log(postData);
-
     try {
       const response = await fetch(`${GOOGLE_SHEETS_KEY_ORDERS}`, {
         method: "POST",
@@ -67,30 +65,9 @@ class Api {
         body: JSON.stringify(postData),
       });
 
-      let order = await response.json();
-      console.log(order, "ответ postOrder");
-
-      if (order.result.code === 200) {
-        return order.result.message;
-      } else {
-        console.log(" postOrder до конца не отработал");
-      }
-      this.requestMessageOnApi(
-        TELEGRAMM_ADMIN_CHAT,
-        `Записать в Google Sheets не удалось, возможно гугл таблицы не отвечают, вот информация ${JSON.stringify(
-          postData
-        )} `
-      );
-      return;
-      //     if (response.status === 200) {
-
-      // console.log(manager, 200)
-      //       return;
-      //     } else {
-
-      //       console.log(manager, "не 200")
-      //       return;
-      //     }
+      let res = await response.json();
+      console.log(res);
+      return res;
     } catch (error) {
       console.error("Ошибка при выполнении запроса:", error);
     }
