@@ -15,6 +15,7 @@ class Buttoncommand extends Command {
         let chatId = query.from.id;
         let message = query?.message?.text;
         let command = query?.data;
+        const messageId = query.message.message_id;
 
         new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
 
@@ -36,7 +37,8 @@ class Buttoncommand extends Command {
           case "button_reg_agent":
             let reg = new SessionRegistration(query, this.bot).handleButton(
               command,
-              chatId
+              chatId,
+              messageId
             );
             this.requestMessage(chatId, reg.message, reg.option);
             return;
@@ -78,7 +80,8 @@ class Buttoncommand extends Command {
           case "21:30-22:00":
             let order = new SessionOrder(query, this.bot).handleButton(
               command,
-              chatId
+              chatId,
+              messageId
             );
             console.log(order);
             this.requestMessage(chatId, order.message, order.option);

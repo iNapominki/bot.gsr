@@ -65,6 +65,16 @@ const SESSION_RESPONSE = {
       },
     },
     2: {
+      title: "ФИО усопшего, не менее 4 букв",
+      validation: function (value) {
+        if (value.length < 4) {
+          return "Введено значение короче 4 букв";
+        } else {
+          return false;
+        }
+      },
+    },
+    3: {
       title: "Дата смерти в формате 21.12.2014",
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
@@ -74,7 +84,7 @@ const SESSION_RESPONSE = {
         }
       },
     },
-    3: {
+    4: {
       title: "Дата поминок в формате 21.12.2014",
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
@@ -84,7 +94,7 @@ const SESSION_RESPONSE = {
         }
       },
     },
-    4: {
+    5: {
       title: "Время поминок",
       option: option_order.timeWake,
       validation: function (value) {
@@ -95,7 +105,7 @@ const SESSION_RESPONSE = {
         }
       },
     },
-    5: {
+    6: {
       title: "Город",
       option: option_order.city,
       validation: function (value) {
@@ -106,13 +116,13 @@ const SESSION_RESPONSE = {
         }
       },
     },
-    6: {
+    7: {
       title: "Комментарий",
       validation: function (value) {
         return false;
       },
     },
-    7: {
+    8: {
       title:
         `Заявка оформлена, дождитесь ответа, с информацией по заявке, если ответа нет обратитесь к администратору ${copirite_text.admin}`,
       validation: function (value) {

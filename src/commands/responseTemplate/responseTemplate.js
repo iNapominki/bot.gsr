@@ -51,7 +51,7 @@ const responseTemplate = {
              \n Время прощания  ${timeWake}\
              \n Контактное лицо (Лид) ${nameContact}\
              \n Номер телефона ${number}\
-             \n ФОИ ${fio}\
+             \n ФИО ${fio}\
              \n Дата смерти ${dateLeft}\
              \n Дата прощания ${dateWake}\            
              \n  Комментарии: ${comment}\
@@ -101,7 +101,7 @@ const responseTemplate = {
              \n Время прощания  ${timeWake}\
              \n Контактное лицо (Лид) ${nameContact}\
              \n Номер телефона ${number}\
-             \n ФОИ ${fio}\
+             \n ФИО ${fio}\
              \n Дата смерти ${dateLeft}\
              \n Дата прощания ${dateWake}\            
              \n  Комментарии: ${comment}\             
