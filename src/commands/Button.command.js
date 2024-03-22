@@ -11,6 +11,7 @@ class Buttoncommand extends Command {
 
   handle() {
     this.bot.on("callback_query", (query) => {
+
       try {
         let chatId = query.from.id;
         let message = query?.message?.text;

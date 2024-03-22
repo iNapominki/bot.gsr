@@ -130,6 +130,21 @@ const SESSION_RESPONSE = {
       },
     },
   },
+
+  CHAT_AGENT_MANAGER: {
+    0: {
+      title: "Ниже напишите сообщение менеждеру",
+      validation: function (value) {        
+          return false;        
+      },
+    },   
+    1: {
+      title: "Сообщение менеджеру отправлено",
+      validation: function (value) {
+        return false;
+      },
+    },
+  },
 };
 
 module.exports = SESSION_RESPONSE;

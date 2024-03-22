@@ -3,7 +3,8 @@ const responseTemplate = require("../commands/responseTemplate/responseTemplate"
 //const startMiddelware = require("../middleware/startMiddelware");
 const AipUse = require("../utils/api/apiUse");
 const Api = require("../utils/api/api");
-const option_registration = require("../utils/option/options-reg");
+//const option_registration = require("../utils/option/options-reg");
+const option_test = require("../utils/option/option_test");
 //const use = require("node-telegram-bot-api-middleware").use;
 class Bot {
   constructor(token) {
@@ -35,6 +36,16 @@ class Bot {
       ]);
 
       const chatId = msg.chat.id;
+/////////////// тестовый функционал
+
+
+
+
+
+
+
+
+      //////////
       this.bot.sendMessage(chatId, responseTemplate.start);
       await this._useCheskUser(chatId).then((user) => {
         if (user) {

@@ -15,6 +15,25 @@ class FormCommand extends Command {
   handle() {
     this.bot.on("message", async (msg) => {
 
+////////
+// const chatId = msg.chat.id;
+// const messageId = msg.message_id;
+
+// this.bot.sendMessage( chatId, 'please click below button and give it a number: 1 to 365' ,         {
+//             parse_mode: 'HTML',             reply_markup: {
+//                 inline_keyboard: [
+//                     [
+//                         {  text: 'Let me help you ...' , switch_inline_query_current_chat: '/audio 1'  }
+//                     ]
+//                 ]
+//             }
+
+//         }
+        
+//         );
+///////
+
+     // return
       try {
      
       new LoggerManager().logMessage("log", "bot.on(message)", msg);

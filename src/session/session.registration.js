@@ -13,8 +13,8 @@ class SessionRegistration extends Session {
     this.msg = msg;
     this.tlgId = `${this.msg.from.id}`;
     this.tlgName = this.msg.from.username;
-    this.apiUseMethod = "updateUser";
-    this.requestMethod = "requestUSer";
+    //this.apiUseMethod = "updateUser";
+    //this.requestMethod = "requestUSer";
   }
 
   _writeToFile(data, session) {
@@ -135,7 +135,7 @@ class SessionRegistration extends Session {
     }
   }
 
-  handleButton(command, chatId) {
+  handleButton(command, chatId, messageId) {
     // получаем данные о текущей сесии
     const itemSession = this.file.find((item) => item.tlgId == chatId);
     // получаем остальные сесии 
@@ -151,6 +151,8 @@ class SessionRegistration extends Session {
           this._writeToFile(dataSession, itemSession);
           this.endSession(this.FileName, chatId, "user");
           message = this._getTitleStep(3);
+          this.bot.editMessageText(`Вы выбрали Сотрудник СПЗ`, { chat_id: itemSession.tlgId, message_id: messageId });
+         
           return { step: 3, message: message, option: {}, status: true  };
           break;
         case "button_reg_agent":
@@ -162,6 +164,8 @@ class SessionRegistration extends Session {
           // завершение сесии
           this.endSession(this.FileName, chatId, "user");
           message = this._getTitleStep(3);
+          this.bot.editMessageText(`Вы выбрали Агент`, { chat_id: itemSession.tlgId, message_id: messageId });
+         
           return { step: 3, message: message, option: {}, status: true  };
           break;
         default:

@@ -47,7 +47,7 @@ const responseTemplate = {
             \n \n Сообщение в чате под номером ${tlgMessageId} \
              \n ID агента ${spzId} \
              \n Тип заявки ${typeOrder} \
-             \n Горд ${city} \
+             \n Город ${city} \
              \n Время прощания  ${timeWake}\
              \n Контактное лицо (Лид) ${nameContact}\
              \n Номер телефона ${number}\
@@ -97,7 +97,7 @@ const responseTemplate = {
 
             return `Ваша заявка принята под №${order}: \            
              \n \n Тип заявки ${typeOrder} \
-             \n Горд ${city} \
+             \n Город ${city} \
              \n Время прощания  ${timeWake}\
              \n Контактное лицо (Лид) ${nameContact}\
              \n Номер телефона ${number}\

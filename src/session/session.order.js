@@ -10,8 +10,8 @@ class SessionOrder extends Session {
     this.msg = msg;
     this.tlgId = `${this.msg.from.id}`;
     this.tlgName = this.msg.from.username;
-    this.apiUseMethod = "postOrder";
-    this.requestMethod = "requestOrder";
+    //this.apiUseMethod = "postOrder";
+    //this.requestMethod = "requestOrder";
   }
 
   clear(tlgId) {
@@ -101,9 +101,7 @@ class SessionOrder extends Session {
       let { text } = this.msg;
       let message;
       let option;
-      let chatId = itemSession.tlgId;
-
-      console.log(itemSession);
+      let chatId = itemSession.tlgId;      
 
       // валидация сообщений
       let validationMessage = this._validationValueMessage(text, step);
