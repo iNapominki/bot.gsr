@@ -19,7 +19,7 @@ const responseTemplate = {
            let typeOrder;//":"wake",
                 switch(message.typeOrder) {
                     case "wake":
-                        typeOrder = "похороны";
+                        typeOrder = "поминальные обеды";
                         break;
                     case "feast":
                         typeOrder = "банкет";
@@ -71,7 +71,7 @@ const responseTemplate = {
            let typeOrder;//":"wake",
                 switch(message.typeOrder) {
                     case "wake":
-                        typeOrder = "похороны";
+                        typeOrder = "поминальные обеды";
                         break;
                     case "feast":
                         typeOrder = "банкет";

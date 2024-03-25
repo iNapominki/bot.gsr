@@ -8,12 +8,20 @@ const FormCommand = require("./src/commands/Form.command");
 const Command = require("./src/commands/command.class");
 const Buttoncommand = require("./src/commands/Button.command");
 const ClearOrderCommand = require("./src/commands/ClearOrder.command");
+const SessionServisPostOrder = require("./src/session/session.servisPostOrder");
+//const sessionServisPostOrder = require("./src/session/session.servisPostOrder");
+
 
 
 const token = process.env.TELEGRAMM_TOKEN;
 
 const bot = new Bot(token);
 try {
+  
+  // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets
+  //sessionServisPostOrder();
+
+
   bot.start();
   const loggerManager = new LoggerManager();
 
@@ -23,7 +31,7 @@ try {
   const form = new FormCommand(bot.bot);
   const button = new  Buttoncommand(bot.bot);
   const clear = new ClearOrderCommand(bot.bot);
-  
+  const sessionServisPostOrder = new SessionServisPostOrder(bot.bot);
 
   help.handle();
   registration.handle();
@@ -31,6 +39,8 @@ try {
   form.handle();
   button.handle();
   clear.handle();
+  // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets
+  sessionServisPostOrder.start();
   
   loggerManager.logMessage("log", "старт", "Произошел старт бота");
   // Пример обработки ошибки

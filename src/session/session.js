@@ -75,37 +75,32 @@ class Session {
     // удаляем лишний ключ
     delete postData.step;
     
-    let checkPost = {
-      action: "check",
-      tlgId: postData.tlgId,
-    };
-
-     const api = new Api(this.bot);
-    const user = await new AipUse(api).checkUser(checkPost);
-
-    if (!user) {
-      return;
-    }
-    
-    const request = await new AipUse(api).postOrder(postData); // updateUser
-    if (!request) {
-      return;
-    }
-    // const api = new Api(this.bot);
-    // const { tlgId } = post;
     // let checkPost = {
     //   action: "check",
-    //   tlgId: tlgId,
+    //   tlgId: postData.tlgId,
     // };
-    // let user = await api.checkUser(checkPost);
-    // if (user) {
-    //   const request = await api.postOrder(post);     
-    //   await new RequestInChatAdmin(this.bot, request).requestOrder(post, user)
+
+    //  const api = new Api(this.bot);
+    // const user = await new AipUse(api).checkUser(checkPost);
+    // if (!user) {
     //   return;
-    // }  
+    // }
+
+    // записываем в буфер, а буфер сам отправляет по очереди
+
+    let buffer =  this.getfileJsonFormessage("heaporders.json");
+
+    buffer.push(postData);
+
+    this.writeTofilesession("heaporders.json", buffer);
     
-    await new RequestInChatAdmin(this.bot, request).requestOrder(postData, user);
-    return;
+    // const request = await new AipUse(api).postOrder(postData); // updateUser
+    // if (!request) {
+    //   return;
+    // }
+   
+   // await new RequestInChatAdmin(this.bot, request).requestOrder(postData, user);
+   // return;
   }
 
 
