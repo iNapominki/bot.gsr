@@ -1,4 +1,6 @@
 const copirite_text = require("../utils/const/copirite_admin");
+const option_data_dateLeft = require("../utils/option/option_data_dateLeft");
+const option_data_dateWake = require("../utils/option/option_data_dateWake");
 const option_order = require("../utils/option/option_order");
 const options_role = require("../utils/option/options_role");
 const regularRegex = require("../utils/regularRegex/regularRegex");
@@ -6,10 +8,10 @@ const regularRegex = require("../utils/regularRegex/regularRegex");
 const SESSION_RESPONSE = {
   REG: {
     0: {
-      title: "Введите ваше имя, не менее 4 букв",
+      title: "Введите ваше имя",
       validation: function (value) {
-        if (value.length < 4) {
-          return "Введено значение короче 4 букв";
+        if (value.length < 2) {
+          return "Введено значение короче 2 букв";
         } else {
           return false;
         }
@@ -44,10 +46,10 @@ const SESSION_RESPONSE = {
 
   ORDER: {
     0: {
-      title: "Контактное лицо, не менее 4 букв",
+      title: "Контактное лицо",
       validation: function (value) {
-        if (value.length < 4) {
-          return "Введено значение короче 4 букв";
+        if (value.length < 2) {
+          return "Введено значение короче 2 букв";
         } else {
           return false;
         }
@@ -65,7 +67,7 @@ const SESSION_RESPONSE = {
       },
     },
     2: {
-      title: "ФИО усопшего, не менее 4 букв",
+      title: "ФИО усопшего",
       validation: function (value) {
         if (value.length < 4) {
           return "Введено значение короче 4 букв";
@@ -76,6 +78,7 @@ const SESSION_RESPONSE = {
     },
     3: {
       title: "Дата смерти в формате 21.12.2014",
+      option: option_data_dateLeft,
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
           return "Формат даты быбран неправильно";
@@ -86,6 +89,7 @@ const SESSION_RESPONSE = {
     },
     4: {
       title: "Дата поминок в формате 21.12.2014",
+      option: option_data_dateWake,
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
           return "Формат даты быбран неправильно";
@@ -117,12 +121,20 @@ const SESSION_RESPONSE = {
       },
     },
     7: {
-      title: "Комментарий",
+      title: "Мето прощания (Адрес в произвольной форме)",
+      option: option_order.placeWake,
       validation: function (value) {
         return false;
       },
     },
     8: {
+      title: "Комментарий",
+      option: option_order.comment,
+      validation: function (value) {
+        return false;
+      },
+    },
+    9: {
       title:
         `Заявка оформлена, дождитесь ответа, с информацией по заявке, если ответа нет обратитесь к администратору ${copirite_text.admin}`,
       validation: function (value) {

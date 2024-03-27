@@ -14,8 +14,8 @@ class LoggerManager {
     const fileContent = fs.readFileSync(this.logFileName, 'utf8');
     this.log = JSON.parse(fileContent);
 
-    if (this.log.length >= 2000) {  // пример 200
-      this.log = this.log.slice(this.log.length - 1999); // то срезать до 199
+    if (this.log.length >= 200) {  // пример 200
+      this.log = this.log.slice(this.log.length - 199); // то срезать до 199
     }
 
     this.log.push({

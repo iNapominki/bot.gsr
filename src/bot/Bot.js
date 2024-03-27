@@ -36,14 +36,7 @@ class Bot {
       ]);
 
       const chatId = msg.chat.id;
-/////////////// тестовый функционал
-
-
-
-
-
-
-
+      /////////////// тестовый функционал
 
       //////////
       this.bot.sendMessage(chatId, responseTemplate.start);

@@ -53,7 +53,7 @@ class SessionServisPostOrder extends Session {
       this._post(postData).then(() => this.start());
 
       console.log("Проверка тайм");
-    }, 2000);
+    }, 20000);
   }
 }
 

@@ -101,7 +101,7 @@ class SessionOrder extends Session {
       let { text } = this.msg;
       let message;
       let option;
-      let chatId = itemSession.tlgId;      
+      let chatId = itemSession.tlgId;
 
       // валидация сообщений
       let validationMessage = this._validationValueMessage(text, step);
@@ -137,13 +137,14 @@ class SessionOrder extends Session {
           };
           break;
 
-          case 2:
-            itemSession.step++;
-            itemSession.fio = text;
-            this._writeToFile(dataSession, itemSession);
-            message = this._getTitleStep(itemSession.step);
-            return { step: 0, message: message, option: {}, status: true };
-            break;
+        case 2:
+          itemSession.step++;
+          itemSession.fio = text;
+          this._writeToFile(dataSession, itemSession);
+          message = this._getTitleStep(itemSession.step);
+          option = this._getOptionStep(itemSession.step);
+          return { step: 0, message: message, option: option, status: true };
+          break;
 
         case 3:
           itemSession.step++;
@@ -169,17 +170,28 @@ class SessionOrder extends Session {
           this._writeToFile(dataSession, itemSession);
           message = this._getTitleStep(itemSession.step);
           //option = this._getOptionStep(itemSession.step);
-          return { step: 0, message: message, option: option, status: true };
+          return { step: 0, message: message, option: {}, status: true };
           break;
 
-        case 7:
+          case 7:
+            itemSession.step++;
+            itemSession.comment = text;
+            this._writeToFile(dataSession, itemSession);
+            message = this._getTitleStep(itemSession.step);
+            // завершение сесии  
+            option = this._getOptionStep(itemSession.step);          
+            return { step: 0, message: message, option: option, status: true };
+            break;
+
+        case 8:
           itemSession.step++;
-          itemSession.comment = text;
+          itemSession.comment = itemSession.comment + " " + text;
           this._writeToFile(dataSession, itemSession);
           message = this._getTitleStep(itemSession.step);
-          // завершение сесии          
+          // завершение сесии
+          option = this._getOptionStep(itemSession.step);
           this.endSession(this.FileName, chatId, "order");
-          return { step: 0, message: message, option: {}, status: true };
+          return { step: 0, message: message, option: option, status: true };
           break;
         ///
 
@@ -205,7 +217,7 @@ class SessionOrder extends Session {
     const itemSession = this.file.find((item) => item.tlgId == chatId);
     // получаем остальные сесии
     const dataSession = this.file.filter((item) => item.tlgId != chatId);
-
+    console.log(itemSession, command, chatId, messageId);
     if (itemSession) {
       let message;
       let option;
@@ -228,11 +240,15 @@ class SessionOrder extends Session {
           itemSession.city = cityMap[command];
           // при выборе по кнопке написать в чат что выбрано
 
-          this.bot.editMessageText(`Вы выбрали ${itemSession.city}`, { chat_id: itemSession.tlgId, message_id: messageId });
-          
+          this.bot.editMessageText(`Вы выбрали ${itemSession.city}`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+
           this._writeToFile(dataSession, itemSession);
           message = this._getTitleStep(itemSession.step);
-          return { step: 6, message: message, option: {}, status: true };
+          option = this._getOptionStep(itemSession.step);
+          return { step: 6, message: message, option: option, status: true };
           break;
         // кнопки времени поминок
 
@@ -296,10 +312,82 @@ class SessionOrder extends Session {
           this._writeToFile(dataSession, itemSession);
           option = this._getOptionStep(itemSession.step);
           message = this._getTitleStep(itemSession.step);
-          this.bot.editMessageText(`Вы выбрали ${itemSession.timeWake}`, { chat_id: itemSession.tlgId, message_id: messageId });
+          this.bot.editMessageText(`Вы выбрали ${itemSession.timeWake}`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
           return { step: 0, message: message, option: option, status: true };
           break;
 
+        case "option_data_dateLeft_empty":
+          // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
+          if (itemSession.step != 3) {
+            return;
+          }
+          itemSession.step++;
+          itemSession.dateLeft = "неизвестна";
+          this._writeToFile(dataSession, itemSession);
+          option = this._getOptionStep(itemSession.step);
+          message = this._getTitleStep(itemSession.step);
+          this.bot.editMessageText(`Дата смерти неизвестна`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+          return { step: 0, message: message, option: option, status: true };
+          break;
+
+        case "option_data_dateWake_empty":
+          // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
+          if (itemSession.step != 4) {
+            return;
+          }
+          itemSession.step++;
+          itemSession.dateWake = " неизвестна";
+          this._writeToFile(dataSession, itemSession);
+          option = this._getOptionStep(itemSession.step);
+          message = this._getTitleStep(itemSession.step);
+          this.bot.editMessageText(`Дата поминок неизвестна`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+          return { step: 0, message: message, option: option, status: true };
+          break;
+
+ // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
+        case "button_order_place_wake_empty":
+          if (itemSession.step != 7) {
+            return;
+          }
+          itemSession.step++;
+          itemSession.comment = " место прощания неизвестно";
+          this._writeToFile(dataSession, itemSession);
+          option = this._getOptionStep(itemSession.step);
+          message = this._getTitleStep(itemSession.step);
+          this.bot.editMessageText(` место прощания пропущено`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+          return { step: 0, message: message, option: option, status: true };
+          break;
+        
+
+        case "button_order_comment_empty":
+          itemSession.step++;
+          itemSession.comment = itemSession.comment + " комментарий пропущен";
+          this._writeToFile(dataSession, itemSession);
+          option = this._getOptionStep(itemSession.step);
+          message = this._getTitleStep(itemSession.step);
+
+          this.bot.editMessageText(`Комментариев нет`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+
+          // завершение сесии
+          this.endSession(this.FileName, chatId, "order");
+          return { step: 0, message: message, option: option, status: true };
+
+          break;
         default:
           console.log("Что делать незнаю");
           // выполнится, если ни один другой случай не сработал

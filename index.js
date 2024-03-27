@@ -9,9 +9,8 @@ const Command = require("./src/commands/command.class");
 const Buttoncommand = require("./src/commands/Button.command");
 const ClearOrderCommand = require("./src/commands/ClearOrder.command");
 const SessionServisPostOrder = require("./src/session/session.servisPostOrder");
-//const sessionServisPostOrder = require("./src/session/session.servisPostOrder");
-
-
+const DataBase = require("./src/core/dataBase/dataBase");
+const { createChat } = require("./src/core/chats/chat-controller");
 
 const token = process.env.TELEGRAMM_TOKEN;
 
@@ -19,9 +18,7 @@ const bot = new Bot(token);
 try {
   
   // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets
-  //sessionServisPostOrder();
-
-
+  
   bot.start();
   const loggerManager = new LoggerManager();
 
@@ -32,6 +29,8 @@ try {
   const button = new  Buttoncommand(bot.bot);
   const clear = new ClearOrderCommand(bot.bot);
   const sessionServisPostOrder = new SessionServisPostOrder(bot.bot);
+  // подключаем базу данных
+  const batabase = new DataBase();
 
   help.handle();
   registration.handle();
@@ -41,6 +40,9 @@ try {
   clear.handle();
   // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets
   sessionServisPostOrder.start();
+  batabase.initial();
+
+  createChat();
   
   loggerManager.logMessage("log", "старт", "Произошел старт бота");
   // Пример обработки ошибки

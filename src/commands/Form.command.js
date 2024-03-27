@@ -1,3 +1,6 @@
+// errorLog.json
+
+
 const LoggerManager = require("../log/LoggerManager");
 const SessionRegistration = require("../session/session.registration");
 const Api = require("../utils/api/api");
@@ -13,7 +16,20 @@ class FormCommand extends Command {
     super(bot);
   }
   handle() {
+
+
+    this.bot.on('channel_post', msg => {
+      console.log(msg);
+    })
+
+
+
+
+
+
     this.bot.on("message", async (msg) => {
+
+      console.log("Проверка");
 
 ////////
 // const chatId = msg.chat.id;

@@ -5,13 +5,36 @@ const option_order = {
             [
             { text: "Москва", callback_data: "button_order_moscow" }, 
             { text: "МО", callback_data: "button_order_mo" },
-            { text: "СПб", callback_data: "button_order_cpb" }, 
-            { text: "ЛО", callback_data: "button_order_lo" },
-            { text: "НН", callback_data: "button_order_nn" }
+            // { text: "СПб", callback_data: "button_order_cpb" }, 
+            // { text: "ЛО", callback_data: "button_order_lo" },
+            // { text: "НН", callback_data: "button_order_nn" }
             ],
           ],
         },
       },
+
+      comment: {
+        reply_markup: {
+          inline_keyboard: [          
+            [
+            { text: "пропустить, если нету", callback_data: "button_order_comment_empty" }, 
+           
+            ],
+          ],
+        },
+      },
+
+      placeWake: {
+        reply_markup: {
+          inline_keyboard: [          
+            [
+            { text: "пропустить, если неизвестно", callback_data: "button_order_place_wake_empty" }, 
+           
+            ],
+          ],
+        },
+      },
+
 
       timeWake: {
         reply_markup: {
@@ -139,30 +162,3 @@ const option_order = {
 
 module.exports = option_order;
 
-
-// case "9:00-9:30": "9:00-9:30",
-// case "9:30-10:00": "9:30-10:00",      
-// case"10:00-10:30": "10:00-10:30",       
-// case "10:30-11:00": "10:30-10:00",
-// case "11:00-11:30": "11:00-11:30",        
-// case "11:30-12:00": "11:30-12:00",       
-// case "12:00-12:30": "12:00-12:30",       
-// case "12:30-13:00": "12:30-13:00",      
-// case"13:00-13:30": "13:00-13:30",
-// case "13:30-14:00": "13:30-14:00",
-// case "14:00-14:30": "14:00-14:30",
-// case"14:30-15:00": "14:30-15:00",
-// case "15:00-15:30": "15:00-15:30",
-// case "15:30-16:00": "15:30-16:00",
-// case "16:00-16:30": "16:00-16:30",
-// case"16:30-17:00": "16:30-17:00",
-// case"17:00-17:30": "17:00-17:30",
-// case"17:30-18:00": "17:30-18:00",
-// case"18:00-18:30": "18:00-18:30",
-// case "18:30-19:00": "18:30-19:00",
-// case"19:00-19:30": "19:00-19:30",
-// case "19:30-20:00": "19:30-20:00",
-// case "20:00-20:30": "20:00-20:30",
-// case "20:30-21:00": "20:30-21:00",
-// case"21:00-21:30": "21:00-21:30",
-// case "21:30-22:00": "21:30-22:00",

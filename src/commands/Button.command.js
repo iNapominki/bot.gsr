@@ -79,6 +79,10 @@ class Buttoncommand extends Command {
           case "20:30-21:00":
           case "21:00-21:30":
           case "21:30-22:00":
+          case  "option_data_dateLeft_empty":
+          case "option_data_dateWake_empty":
+          case "button_order_comment_empty":
+          case "button_order_place_wake_empty":
             let order = new SessionOrder(query, this.bot).handleButton(
               command,
               chatId,

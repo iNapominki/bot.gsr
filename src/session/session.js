@@ -1,7 +1,6 @@
 const fs = require("fs");
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");
-const Bot = require("../bot/Bot");
 const RequestInChatAdmin = require("../commands/handle/RequestInChatAdmin");
 
 class Session {
@@ -16,21 +15,19 @@ class Session {
 
     console.log(itemSession);
 
-    if(!itemSession) {
-      return "Данных для очистки нет, для оформления заказа введите /order"
+    if (!itemSession) {
+      return "Данных для очистки нет, для оформления заказа введите /order";
     }
     // фильтруем файд
     const dataSession = file.filter((item) => item.tlgId != tlgId);
     // перезаписываем файл
     this.writeTofilesession(fileName, dataSession);
-    return "Данных по заказу сброшены, для оформления нового заказа введите /order"
-
+    return "Данных по заказу сброшены, для оформления нового заказа введите /order";
   }
 
   getfileJsonFormessage(fileName) {
     if (!fs.existsSync(fileName)) {
       fs.writeFileSync(fileName, "[]", "utf8");
-      //  fs.writeFileSync(fileName, JSON.stringify([{ tlgId: 999999999}], null, 2), "utf8");
     }
 
     const fileContent = fs.readFileSync(fileName, "utf8");
@@ -39,10 +36,8 @@ class Session {
   }
 
   async _postSession(postData, apiUseMethod, requestMethod) {
-
-   
     // удаляем лишний ключ
-    delete postData.step;   
+    delete postData.step;
 
     const api = new Api(this.bot);
     const request = await new AipUse(api)[apiUseMethod](postData); // updateUser
@@ -55,10 +50,9 @@ class Session {
     return;
   }
 
-
-  async _postSessionUser(postData) {   
+  async _postSessionUser(postData) {
     // удаляем лишний ключ
-    delete postData.step;   
+    delete postData.step;
 
     const api = new Api(this.bot);
     const request = await new AipUse(api).updateUser(postData); // updateUser
@@ -66,51 +60,30 @@ class Session {
     if (!request) {
       return;
     }
-    
+
     await new RequestInChatAdmin(this.bot, request).requestUSer(postData);
     return;
   }
 
-  async _postSessionOrder(postData) {    
+  async _postSessionOrder(postData) {
     // удаляем лишний ключ
     delete postData.step;
-    
-    // let checkPost = {
-    //   action: "check",
-    //   tlgId: postData.tlgId,
-    // };
-
-    //  const api = new Api(this.bot);
-    // const user = await new AipUse(api).checkUser(checkPost);
-    // if (!user) {
-    //   return;
-    // }
 
     // записываем в буфер, а буфер сам отправляет по очереди
 
-    let buffer =  this.getfileJsonFormessage("heaporders.json");
+    let buffer = this.getfileJsonFormessage("heaporders.json");
 
     buffer.push(postData);
 
     this.writeTofilesession("heaporders.json", buffer);
-    
-    // const request = await new AipUse(api).postOrder(postData); // updateUser
-    // if (!request) {
-    //   return;
-    // }
-   
-   // await new RequestInChatAdmin(this.bot, request).requestOrder(postData, user);
-   // return;
   }
-
 
   _cheskParam(message) {
     console.log(`В функции endSession Отсутствует параметр ${message}`);
-    throw new Error(`В функции endSession Отсутствует параметр ${message}`);    
+    throw new Error(`В функции endSession Отсутствует параметр ${message}`);
   }
 
-  endSession(fileName, tlgId, type = this._cheskParam("type") ) {
-
+  endSession(fileName, tlgId, type = this._cheskParam("type")) {
     console.log("endSession");
     // получаем файл
     let file = this.getfileJsonFormessage(fileName);
@@ -123,17 +96,15 @@ class Session {
     // отправляем API для записи в google sheets
     // выбираем что постим пользователя или заказ
 
-    if(type == "order") {
+    if (type == "order") {
       this._postSessionOrder(itemSession);
-
     } else if (type == "user") {
       this._postSessionUser(itemSession);
     } else {
-
-      console.error("Не определен тим заказ или пользователь в функции endSession")
-
+      console.error(
+        "Не определен тим заказ или пользователь в функции endSession"
+      );
     }
-    
   }
 
   writeTofilesession(fileName, session) {
