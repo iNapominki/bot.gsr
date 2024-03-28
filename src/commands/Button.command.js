@@ -4,19 +4,44 @@ const SessionRegistration = require("../session/session.registration");
 const Command = require("./command.class");
 const SESSION_RESPONSE = require("../session/session.respons");
 const SessionOrder = require("../session/session.order");
+const { getAllChats } = require("../core/chats/chat-controller");
+const ChatHandle = require("../core/chats/chat-handle");
 class Buttoncommand extends Command {
   constructor(bot) {
     super(bot);
   }
 
+  async _checkChat(command, chatId) {
+   const order = await getAllChats();
+   const findOrder = await order[0].find(item => item.order_number === command);
+   //console.log(findOrder);
+   if(!findOrder) {
+      return false;
+   } else {
+    const res = await new ChatHandle().toChat(findOrder.order_number, chatId);
+    //console.log(findOrder);
+    return true;
+   }
+      
+    
+  }
+
   handle() {
-    this.bot.on("callback_query", (query) => {
+    this.bot.on("callback_query", async (query) => {
 
       try {
         let chatId = query.from.id;
         let message = query?.message?.text;
         let command = query?.data;
         const messageId = query.message.message_id;
+
+        // проверяем начилие нажатия в чате, кнопки динамические поэтому вынес, вид кнопок набор цифр например 13003
+       const isPressChat = await this._checkChat(command, chatId);
+
+       if(isPressChat) {
+        console.log("Нажата кнопка чат, далее не выполнять")
+        return
+       }
 
         new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
 

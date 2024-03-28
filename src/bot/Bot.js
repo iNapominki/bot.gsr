@@ -33,6 +33,7 @@ class Bot {
         { command: "/help", description: "Получить справку" },
         { command: "/order", description: "Оформить заявку" },
         { command: "/clear", description: "Отменить заполнение заявки" },
+        { command: "/mychats", description: "Мои чаты" },
       ]);
 
       const chatId = msg.chat.id;
