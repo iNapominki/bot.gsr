@@ -6,6 +6,7 @@ const Command = require("./command.class");
 const HandleForm = require("./handle/HandleForm");
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const SessionOrder = require("../session/session.order");
+const ChatHandle = require("../core/chats/chat-handle");
 
 class FormCommand extends Command {
   constructor(bot) {
@@ -40,9 +41,14 @@ class FormCommand extends Command {
         if (msg.text === "/clear") {
           return;
         }
-        if (msg.text === "/mychats") {
+        if (msg.text === "/chats") {
           return;
         }
+
+        if(msg.text === "/logoutchat") {
+          return;
+        }
+
         
         if (msg.chat.id == TELEGRAMM_ADMIN_CHAT) {
           this.requestMessage(chatId, "В этот чат может писать только бот");
@@ -53,6 +59,26 @@ class FormCommand extends Command {
         if (!isCheckUserName) {
           return;
         }
+
+
+        /** Проверка сесии чатов  
+         * 
+         */
+
+        const inChatData = await  new ChatHandle(this.bot).checkInChat(chatId);       
+        if(inChatData.status) {
+          const activChats = inChatData.activChats;
+          const writeToChat = await new ChatHandle(this.bot).writeToChat(activChats, msg);
+          return;
+        } else {
+          console.log("Активных чатов нет");
+        }
+
+       
+      //  return;
+
+
+
 
         /** начинаем проверять сессии, если есть то
          * ловим данные, приоритет у регистрации,

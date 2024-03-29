@@ -11,15 +11,23 @@ class Buttoncommand extends Command {
     super(bot);
   }
 
-  async _checkChat(command, chatId) {
+  async _checkChat(command, chatId, messageId) {
    const order = await getAllChats();
-   const findOrder = await order[0].find(item => item.order_number === command);
-   //console.log(findOrder);
+   // проверяем есть ли чаты
+   const findOrder = await order[0].find(item => item.order_number === command);   
    if(!findOrder) {
       return false;
    } else {
-    const res = await new ChatHandle().toChat(findOrder.order_number, chatId);
-    //console.log(findOrder);
+    // устанавливаем чат
+    // внутренним методом отправляем сообщение полователю который подключился к чату
+    const res = await new ChatHandle(this.bot).toChat(findOrder.order_number, chatId); 
+    
+    this.bot.editMessageText(`Вы выбрали чат ${findOrder.order_number}`, {
+      chat_id: chatId,
+      message_id: messageId,
+    });
+
+    
     return true;
    }
       
@@ -36,9 +44,9 @@ class Buttoncommand extends Command {
         const messageId = query.message.message_id;
 
         // проверяем начилие нажатия в чате, кнопки динамические поэтому вынес, вид кнопок набор цифр например 13003
-       const isPressChat = await this._checkChat(command, chatId);
+       const isPressChat = await this._checkChat(command, chatId, messageId);
 
-       if(isPressChat) {
+       if(isPressChat) {        
         console.log("Нажата кнопка чат, далее не выполнять")
         return
        }

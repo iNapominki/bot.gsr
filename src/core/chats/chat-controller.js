@@ -72,23 +72,12 @@ async function getAllChats() {
 
 
 // вход в чат по КНОПКЕ под сообщением
-async function toChat(order = "ошибка", chatId = "ошибка") {
-  try {
+async function toChat(order = "ошибка", role="ошибка") {
+   try {    
+    const sql = `UPDATE chats SET ${role}_in_chat = true WHERE order_number = ?;`;
+     const res = await new DataBase().query(sql, [order]);
 
-    
-
-
-    const sql = "UPDATE `chats` SET manager_in_chat = IF(manager_id = ? AND agent_id != ?, NOT manager_in_chat, manager_in_chat), agent_in_chat = IF(agent_id = ? AND manager_id != ?, NOT agent_in_chat, agent_in_chat) WHERE order_number = ?";
- 
-     const res = await new DataBase().query(sql, [chatId, chatId, chatId, chatId, order]);
-
-     console.log("res", res)
-     console.log("toChat", order, chatId)
-  return res;  
-
-
-
-    
+     return res;    
     // принимает номер чата и номер ид пользователя и меняет на true
     // возвращает сообшения из чата, думаю все
   } catch (e) {
@@ -97,8 +86,11 @@ async function toChat(order = "ошибка", chatId = "ошибка") {
 }
 
 // проверка в чате ли агент или менеджер (любой пользователь)
-async function checkInChat() {
+async function checkInChat(role, tlgChatId) {
     try {
+      const sql = `SELECT order_number FROM chats WHERE ${role} = ? AND ${role}_in_chat = ?;`;
+        const res = await new DataBase().query(sql, [tlgChatId, true]);      
+      return res; 
       // ищет по id в колонках у менеджера и агента или куратора находится ли он в чате
       // возвращает: id чата или false
     } catch (e) {
@@ -106,9 +98,32 @@ async function checkInChat() {
     }
   }
 
-// выход из чата по кнопке + при любой команде?
-async function leaveChat() {
+// положить сообщение, думаю просто в массив добавить json не важно от кого не привязывая к id, все равно я имя не смогу подгружить из google sheets
+async function writeToChat(chatNumber, msg) {
   try {
+    console.log("Запись в чат", chatNumber);
+    // преобразовываем "" в '' иначе не записывается значение
+    const changeQuote = JSON.stringify(msg).replace(/"/g, "'" );
+    const sql = `UPDATE chats SET msg_text = JSON_ARRAY_APPEND(msg_text, '$', "${changeQuote}") WHERE order_number = ?;`;
+    const res = await new DataBase().query(sql, [chatNumber]);      
+    return res;    
+    
+    //Возвращает: скорее всего ничего, так как и так вижно в самой переписке
+  } catch (e) {
+    console.error("Ошибка при редактировании чата", e);
+  }
+}
+
+
+
+// выход из чата по кнопке + при любой команде?
+async function logoutChat(idUSer = "ошибка", role="ошибка") {
+  try {
+
+    const sql = `UPDATE chats SET ${role}_in_chat = false WHERE ${role} = ?;`;
+     const res = await new DataBase().query(sql, [idUSer]);
+
+     return res;  
     // принимает ид польтзователя ищет во всех полях - куратор - менеджер - агент
     // возвращает сообшения из чата, думаю все
   } catch (e) {
@@ -116,24 +131,19 @@ async function leaveChat() {
   }
 }
 
-// положить сообщение, думаю просто в массив добавить json не важно от кого не привязывая к id, все равно я имя не смогу подгружить из google sheets
-async function putChat() {
-  try {
-    // принимает json строку и push в текущий массив
-    //Возвращает: скорее всего ничего, так как и так вижно в самой переписке
-  } catch (e) {
-    console.error("Ошибка при редактировании чата", e);
-  }
-}
+
 
 // для механизма согласования
-async function getDataChat() {
-  try {
-    // принимает id заказа
-    // возвращает весь заказ как есть
-  } catch (e) {
-    console.error("Ошибка при получении списка моих чатов", e);
-  }
-}
+// async function getdAllMessages(order) {
+//   try {
 
-module.exports = { createChat, getOrderForNumber, getMyChats, getAllChats, toChat };
+//     const sql = `SELECT msg_text from chats WHERE order_number = ?`;
+//     const res = await new DataBase().query(sql, [order]);
+//     // принимает id заказа
+//     // возвращает весь заказ как есть
+//   } catch (e) {
+//     console.error("Ошибка при получении списка моих чатов", e);
+//   }
+// }
+
+module.exports = { createChat, getOrderForNumber, getMyChats, getAllChats, toChat, checkInChat, writeToChat , logoutChat};

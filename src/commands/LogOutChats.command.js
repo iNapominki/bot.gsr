@@ -1,15 +1,15 @@
 
 const ChatHandle = require("../core/chats/chat-handle");
-const optionButtonChats = require("../utils/option/option_button_chats");
+//const optionButtonChats = require("../utils/option/option_button_chats");
 const Command = require("./command.class");
 
-class GetMyChatsCommand extends Command {
+class LogOutChatsCommand extends Command {
   constructor(bot) {
     super(bot);
   }
 
   handle() {
-    this.bot.onText(/\/chats/, async (msg) => {
+    this.bot.onText(/\/logoutchat/, async (msg) => {
       try {
         const chatId = msg.chat.id;
         const chatUsername = msg.chat.username;
@@ -18,16 +18,12 @@ class GetMyChatsCommand extends Command {
         if (!isCheckUserName) {
           return;
         }
-        const chat = await new ChatHandle(this.bot).getMyChats(chatId);        
 
-        if(!chat.status) {
-          this.requestMessage(chatId, chat.message, {});
-          return;
-        }
+        const logout = await new ChatHandle(this.bot).logoutChat(chatId);
 
-        const option = optionButtonChats(chat.button);
-        this.requestMessage(chatId, chat.message, option);
+        const {status, message } = logout;
 
+        this.requestMessage(chatId, message, {});
         return;
       } catch (e) {
         console.error(e);
@@ -36,4 +32,4 @@ class GetMyChatsCommand extends Command {
   }
 }
 
-module.exports = GetMyChatsCommand;
+module.exports = LogOutChatsCommand;

@@ -46,12 +46,12 @@ module.exports = DataBase;
 //   `id` int(11) NOT NULL,
 //   `order_number` varchar(255) NOT NULL,
 //   `manager_id` varchar(255) NOT NULL,
-//   `manager_in_chat` tinyint(1) NOT NULL,
+//   `manager_id_in_chat` tinyint(1) NOT NULL,
 //   `agent_id` varchar(255) NOT NULL,
-//   `agent_in_chat` tinyint(1) NOT NULL,
+//   `agent_id_in_chat` tinyint(1) NOT NULL,
 //   `curator_id` varchar(255) NOT NULL,
 //   `curator_in_chat` tinyint(1) NOT NULL,
+//   `msg_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '[]',
 //   `msg_id` int(11) NOT NULL,
-//   `msg_text` varchar(2500) NOT NULL,
 //   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 // ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
