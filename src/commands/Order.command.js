@@ -23,25 +23,31 @@ class OrderCommand extends Command {
     return request;
   }
 
-
-
-
   handle() {
     this.bot.onText(/\/order/, async (msg) => {
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;
-   // проверка не нахожусь ли я в режиме чата 
-   const inChat = await this.checkinChat(chatId);
+      // проверка не нахожусь ли я в режиме чата
+      const inChat = await this.checkinChat(chatId);
 
-   if(inChat.status) {
-    this.requestMessage(chatId, inChat.message, {});
-    return;
-   }
-
+      if (inChat.status) {
+        this.requestMessage(chatId, inChat.message, {});
+        return;
+      }
 
       // первичная проверка при создании заявки, заявку может создать только зарегистрированный пользователь
       this._useCheskUser(chatId).then((user) => {
         if (user) {
+          // оформлять заявки только менеджер
+          if (user?.role != "agent") {
+            this.requestMessage(
+              chatId,
+              "Оформлять заявки может только агент, обратитесь к администратору /help",
+              {}
+            );
+            return;
+          }
+
           let isCheckUserName = this.checkUserName(chatId, chatUsername);
           // проверка заполнено ли имя
           if (!isCheckUserName) {

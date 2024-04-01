@@ -40,7 +40,10 @@ class Buttoncommand extends Command {
       try {
         let chatId = query.from.id;
         let message = query?.message?.text;
-        let command = query?.data;
+        // так как кнопки динамические, записываю параметры фильтрации как в url после занка ?, далее json объект
+        let command = query?.data.split("?")[0];
+
+       // return;
         const messageId = query.message.message_id;
 
         // проверяем начилие нажатия в чате, кнопки динамические поэтому вынес, вид кнопок набор цифр например 13003
@@ -54,7 +57,14 @@ class Buttoncommand extends Command {
         new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
 
         //let stepRegistration;
-        switch (command) {          
+        switch (command) {
+          // механизм согласования сообщения от менеджера агенту  
+          case "option_btn_approve":
+
+          const res = await new ChatHandle(this.bot).handleApprove(query , messageId); 
+            
+            return;
+            break;
           case "button_status":
             this.requestMessage(
               chatId,

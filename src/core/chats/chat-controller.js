@@ -101,6 +101,17 @@ async function checkInChat(role, tlgChatId) {
 // положить сообщение, думаю просто в массив добавить json не важно от кого не привязывая к id, все равно я имя не смогу подгружить из google sheets
 async function writeToChat(chatNumber, msg) {
   try {
+
+    // проверяем есть ли вообще ключ согласования (показа сообщения, для сообщение от агента по умолчанию true) в msg
+    if (!('approve' in msg)) {
+      console.log('Ключ "approve" присутствует в объекте.');
+      return;
+    }
+
+    
+
+    // очищаем сам текст от ковычек что бы json не ломать
+    msg.text = msg.text.replace(/["']/g, '');
     console.log("Запись в чат", chatNumber);
     // преобразовываем "" в '' иначе не записывается значение
     const changeQuote = JSON.stringify(msg).replace(/"/g, "'" );
@@ -134,11 +145,13 @@ async function logoutChat(idUSer = "ошибка", role="ошибка") {
 
 
 // для механизма согласования
-// async function getdAllMessages(order) {
+// async function approveMessage(message) {
 //   try {
 
-//     const sql = `SELECT msg_text from chats WHERE order_number = ?`;
-//     const res = await new DataBase().query(sql, [order]);
+//     const sql = `UPDATE chats SET msg_text = JSON_SET(msg_text,'$[0].approve', true) WHERE JSON_EXTRACT(msg_text, '$[0].message_id') = ?;`;
+//     const res = await new DataBase().query(sql, [message]);
+
+//     console.log(res);
 //     // принимает id заказа
 //     // возвращает весь заказ как есть
 //   } catch (e) {
@@ -147,3 +160,4 @@ async function logoutChat(idUSer = "ошибка", role="ошибка") {
 // }
 
 module.exports = { createChat, getOrderForNumber, getMyChats, getAllChats, toChat, checkInChat, writeToChat , logoutChat};
+
