@@ -1,4 +1,6 @@
 //const option_btn_approve = require("../../utils/option/option_btn_approve");
+const Api = require("../../utils/api/api");
+const AipUse = require("../../utils/api/apiUse");
 const optionBtnApprove = require("../../utils/option/option_btn_approve");
 const optionToChat = require("../../utils/option/option_to_chat");
 const parsQueryButton = require("../../utils/shared/parsQueryButton");
@@ -132,19 +134,57 @@ class ChatHandle {
     };
   }
 
+
+  async _useCheskUser(tlgId) {
+    let checkPost = {
+      action: "check",
+      tlgId: `${tlgId}`,
+    };
+    const api = new Api(this.bot);
+    const request = await new AipUse(api).checkUser(checkPost);
+
+    if (!request) {
+      return;
+    }
+
+    return request;
+  }
+
+  async _getInfoAboutUsers(manager_id, agent_id) {    
+    const manager = await this._useCheskUser(manager_id);
+    const agent = await this._useCheskUser(agent_id);
+    return {manager, agent};
+  }
+
   async _sendAllMessages(order, chatId) {
     try {
       //получаем заказ
       const dataOrder = await getOrderForNumber(order);
-      const { msg_text } = dataOrder[0][0];
+      const { msg_text, manager_id, agent_id } = dataOrder[0][0];
       const parsData = JSON.parse(msg_text);
-      // преобразование несколько раз из за формата хранения в базе данных
-      parsData.forEach((element) => {
-        // обязательно условия для распарсивания
-        const msgSrting = element.replace(/'/g, '"');       
 
+
+
+      const {manager, agent} = await this._getInfoAboutUsers(manager_id, agent_id);
+      
+      //console.log("manager, agent", manager, agent);
+      // преобразование несколько раз из за формата хранения в базе данных
+      
+      parsData.forEach((element) => {
         try {
+          // обязательно условия для распарсивания
+        const msgSrting = element.replace(/'/g, '"');  
           const dataMessage = JSON.parse(msgSrting);
+
+          
+
+          const unixTime = dataMessage.date * 1000; // Умножаем на 1000, так как Unix-время измеряется в секундах, а объект Date ожидает миллисекунды
+          const date = new Date(unixTime);
+          // Получаем удобочитаемую строку с датой и временем для России
+          const options = { timeZone: 'Europe/Moscow', hour12: false }; // Устанавливаем часовой пояс и формат времени
+          // Получаем удобочитаемую строку с датой
+          const readableDate = date.toLocaleString('ru-RU', options);         
+          console.log(readableDate);
           // отправляем все сообщения по очереди          
 
           // проверка одобрен ли чат админом, (от менеджера сообщения должны быть одобрены, от агента нет)
@@ -152,7 +192,12 @@ class ChatHandle {
             return;
           }
 
-          this.requestMessage(chatId, dataMessage.text, {});
+          // формируем от
+          console.log(dataMessage.from.id);
+          //manager, agent
+          const fromNmae = dataMessage.from.id == manager.tlgId ? manager.spzId : dataMessage.from.id == agent.tlgId ? agent.spzId : "Пользователь не определен";
+
+          this.requestMessage(chatId, `${readableDate} от ${fromNmae} : ${dataMessage.text}`, {});
         } catch (e) {
           this.requestMessage(
             chatId,

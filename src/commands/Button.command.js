@@ -22,7 +22,7 @@ class Buttoncommand extends Command {
     // внутренним методом отправляем сообщение полователю который подключился к чату
     const res = await new ChatHandle(this.bot).toChat(findOrder.order_number, chatId); 
     
-    this.bot.editMessageText(`Вы выбрали чат ${findOrder.order_number}`, {
+    this.bot.editMessageText(`Вы выбрали чат ${findOrder.order_number}, пожалуйста дождитесь загрузки`, {
       chat_id: chatId,
       message_id: messageId,
     });

@@ -1,593 +1,5 @@
 [
   {
-    "timestamp": "2024-04-01T09:59:52.469Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T09:59:54.370Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590450895477\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9844,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965076,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: sss\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9843,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9843,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9843,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:00:21.351Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:00:23.380Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593118717979\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:00:30.013Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:00:30.442Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591046174805\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:00:40.609Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:00:41.417Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593622886362\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:01:31.657Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:01:32.140Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590030255219\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:01:32.155Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:01:33.550Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592258831663\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:01:33.563Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:01:41.003Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:01:41.719Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590619495151\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9846,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965468,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: dddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:01:41.736Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:01:44.137Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590573398030\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9846,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965468,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: dddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:01:44.148Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:02:14.361Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:02:15.322Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593558410520\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:02:17.573Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590780231322\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:02:29.380Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:02:30.031Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593611998717\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9846,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965468,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: dddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:03:03.999Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:03:04.516Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590043732587\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:03:04.535Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:03:14.845Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:03:15.953Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591555142582\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9846,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965468,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: dddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:03:15.971Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:03:17.183Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591313546328\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9846,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965468,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: dddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:03:17.193Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:03:43.886Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:03:44.485Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593594560507\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9846,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965468,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: dddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9845,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9845,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:04:02.655Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:04:02.956Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593171493429\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:05:56.829Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:07:47.052Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:07:51.296Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155594034980146\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:07:51.313Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:08:47.940Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:08:48.365Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592302771286\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:08:48.382Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:08:49.747Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593623367959\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:08:49.757Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:09:35.371Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:09:36.144Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592294983919\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:09:36.179Z",
-    "type": "error",
-    "message": "error",
-    "stack": "\"Unexpected token ' in JSON at position 1\""
-  },
-  {
-    "timestamp": "2024-04-01T10:10:43.309Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:10:45.441Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590211117733\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:11:20.448Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:11:21.512Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593918765318\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:11:56.471Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:13:21.620Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:13:23.422Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592024123334\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:13:32.349Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592587863366\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9848,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965567,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9847,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9847,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:13:38.641Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591275391377\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9844,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711965076,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: sss\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9843,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9843,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9843,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:14:45.740Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:15:21.618Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:21:35.140Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:23:45.002Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:24:05.570Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:24:14.380Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:24:43.269Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9850,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711967082,\n  \"text\": \"jj\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:24:59.510Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591710769325\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9851,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967083,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: jj\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9850,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:25:24.026Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593737437791\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9851,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967083,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: jj\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9850,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:26:06.949Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:26:07.848Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592005195363\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9851,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967083,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: jj\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9850,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:26:26.614Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590522827162\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9851,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967083,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: jj\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9850,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9850,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9850,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:26:45.747Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9852,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711967205,\n  \"text\": \"ddd\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:26:50.307Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592003713351\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9853,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967206,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9852,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9852,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9852,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:29:21.324Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:29:34.669Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:31:11.634Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:31:31.721Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:31:39.899Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593999827841\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9853,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967206,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: ddd\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9852,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9852,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9852,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:32:20.162Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9854,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711967539,\n  \"text\": \"kk\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:32:32.897Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591414626373\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9855,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967540,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: kk\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9854,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9854,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9854,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:34:24.344Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:34:47.011Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9856,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711967686,\n  \"text\": \"Тест согласования\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:35:00.101Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593436224322\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9857,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967687,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: Тест согласования\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9856,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:35:47.856Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:36:01.290Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9859,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711967760,\n  \"text\": \"вввв\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:36:12.259Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593346941401\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9860,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967761,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: вввв\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:36:33.813Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591236945795\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9860,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967761,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: вввв\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:38:08.253Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:38:10.860Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593037196905\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9860,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967761,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: вввв\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:38:12.595Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592787594536\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9860,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967761,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: вввв\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:44:10.987Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:44:32.053Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:44:33.384Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155591811489515\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9860,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967761,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: вввв\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9859,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9859,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:44:36.442Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155594170318488\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9857,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967687,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: Тест согласования\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9856,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:44:42.747Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155593757745471\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9857,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967687,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: Тест согласования\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9856,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:44:48.609Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155592259358635\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9857,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711967687,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: Тест согласования\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9856,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9856,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:45:14.399Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-01T10:45:39.450Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9861,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711968339,\n  \"text\": \"тест\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:45:45.391Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590816891889\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9862,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711968339,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: тест\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9861,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9861,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=9861,opa3=31044 \"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:46:06.780Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 9863,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711968366,\n  \"text\": \"не согласовано\"\n}"
-  },
-  {
-    "timestamp": "2024-04-01T10:46:10.096Z",
-    "type": "log",
-    "message": "bot.on(callback_query)",
-    "stack": "{\n  \"id\": \"4002155590933614655\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 9864,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711968367,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31044: не согласовано\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=9863,opa3=31044 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=9863,opa3=31044 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=9863,opa3=31044 \"\n}"
-  },
-  {
     "timestamp": "2024-04-01T10:48:27.241Z",
     "type": "log",
     "message": "старт",
@@ -1198,5 +610,593 @@
     "type": "log",
     "message": "bot.on(message)",
     "stack": "{\n  \"message_id\": 10048,\n  \"from\": {\n    \"id\": 209717148,\n    \"is_bot\": false,\n    \"first_name\": \"Лион\",\n    \"last_name\": \"Макс\",\n    \"username\": \"Nezatykaev\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 209717148,\n    \"first_name\": \"Лион\",\n    \"last_name\": \"Макс\",\n    \"username\": \"Nezatykaev\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711971802,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T11:51:14.197Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T11:51:14.499Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10054,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711972264,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T11:52:30.648Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T11:55:41.243Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T11:56:00.365Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10058,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711972559,\n  \"text\": \"/order\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T11:56:08.717Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10060,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711972568,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T11:59:31.248Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:03:00.488Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:03:45.730Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:03:49.406Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10064,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973028,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:07:19.286Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:09:16.729Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:09:22.166Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10069,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973361,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:12:17.817Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:12:23.993Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10073,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973543,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:14:55.676Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:15:00.300Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10077,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973699,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:17:53.777Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:17:56.458Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10081,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973875,\n  \"text\": \"/logoutchat\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:18:00.262Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10083,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973879,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:18:46.298Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:18:48.976Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10087,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711973928,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:20:35.583Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:20:40.632Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10091,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974040,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:21:05.391Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10095,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974064,\n  \"text\": \"ccc\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:21:10.635Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10097,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974070,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:21:28.864Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155594127773320\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10096,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711974065,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31055: ccc\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=10095,opa3=31055 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=10095,opa3=31055 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=10095,opa3=31055 \"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:21:34.167Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10102,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974093,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:23:44.487Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:23:47.514Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10110,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974226,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:24:09.071Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:25:13.481Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:25:16.068Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10118,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974315,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:26:09.546Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:26:10.646Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10123,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974370,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:27:30.126Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:27:34.955Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10128,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974454,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:32:08.645Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:32:10.958Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10133,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974730,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:35:38.640Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:35:40.954Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10138,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974940,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:36:09.030Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:36:17.007Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:36:18.125Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10144,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711974977,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:37:36.553Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:49:46.987Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-01T12:49:59.548Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10149,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711975798,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T12:51:23.822Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10154,\n  \"from\": {\n    \"id\": 209717148,\n    \"is_bot\": false,\n    \"first_name\": \"Лион\",\n    \"last_name\": \"Макс\",\n    \"username\": \"Nezatykaev\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 209717148,\n    \"first_name\": \"Лион\",\n    \"last_name\": \"Макс\",\n    \"username\": \"Nezatykaev\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711975883,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:03:20.861Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10162,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976600,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:03:45.889Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10165,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976625,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:03:48.050Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10167,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976627,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:04:04.174Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10171,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976643,\n  \"text\": \"/registration\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 13,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:04:06.209Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10172,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976645,\n  \"text\": \"/registration\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 13,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:04:15.938Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10175,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976655,\n  \"text\": \"Денис\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:04:25.986Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10177,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976665,\n  \"text\": \"Андрей\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:04:35.022Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10179,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976674,\n  \"text\": \"89165692673\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:04:49.579Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"3739631929776675980\",\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10180,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 870700909,\n      \"first_name\": \"andrey\",\n      \"username\": \"Andre_roz\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711976676,\n    \"text\": \"Выберите роль\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Сотрудник СПЗ\",\n            \"callback_data\": \"button_reg_employee\"\n          },\n          {\n            \"text\": \"Агент\",\n            \"callback_data\": \"button_reg_agent\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"9029639406336322239\",\n  \"data\": \"button_reg_agent\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:10.818Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10184,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976710,\n  \"text\": \"89995991611\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:15.762Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703730993122145\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10185,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711976712,\n    \"text\": \"Выберите роль\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Сотрудник СПЗ\",\n            \"callback_data\": \"button_reg_employee\"\n          },\n          {\n            \"text\": \"Агент\",\n            \"callback_data\": \"button_reg_agent\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"button_reg_agent\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:27.645Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10189,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976727,\n  \"text\": \"/order\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:29.364Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10190,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976728,\n  \"text\": \"/order\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:39.566Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10193,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976738,\n  \"text\": \"Вася\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:40.874Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10194,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976740,\n  \"text\": \"Ольга\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:56.042Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10198,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976755,\n  \"text\": \"89167777777\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:05:58.145Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10199,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976757,\n  \"text\": \"89996545678\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:06:59.748Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10202,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976819,\n  \"text\": \"Проаар\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:07:01.633Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10203,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976821,\n  \"text\": \"Уколов\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:07:13.667Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"3739631931789925407\",\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10204,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 870700909,\n      \"first_name\": \"andrey\",\n      \"username\": \"Andre_roz\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711976821,\n    \"text\": \"Дата смерти в формате 21.12.2014\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"неизвестна\",\n            \"callback_data\": \"option_data_dateLeft_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"9029639406336322239\",\n  \"data\": \"option_data_dateLeft_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:07:24.945Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10207,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976844,\n  \"text\": \"25.04\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:07:28.293Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10209,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711976847,\n  \"text\": \"01.04.2024\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:16:58.543Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703731829364793\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10210,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711976849,\n    \"text\": \"Дата поминок в формате 21.12.2014\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"неизвестна\",\n            \"callback_data\": \"option_data_dateWake_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"option_data_dateWake_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:17:05.509Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703732542758416\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10211,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977420,\n    \"text\": \"Время поминок\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"9:00-9:30\",\n            \"callback_data\": \"9:00-9:30\"\n          },\n          {\n            \"text\": \"9:30-10:00\",\n            \"callback_data\": \"9:30-10:00\"\n          },\n          {\n            \"text\": \"10:00-10:30\",\n            \"callback_data\": \"10:00-10:30\"\n          },\n          {\n            \"text\": \"10:30-11:00\",\n            \"callback_data\": \"10:30-10:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"11:00-11:30\",\n            \"callback_data\": \"11:00-11:30\"\n          },\n          {\n            \"text\": \"11:30-12:00\",\n            \"callback_data\": \"11:30-12:00\"\n          },\n          {\n            \"text\": \"12:00-12:30\",\n            \"callback_data\": \"12:00-12:30\"\n          },\n          {\n            \"text\": \"12:30-13:00\",\n            \"callback_data\": \"12:30-13:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"13:00-13:30\",\n            \"callback_data\": \"13:00-13:30\"\n          },\n          {\n            \"text\": \"13:30-14:00\",\n            \"callback_data\": \"13:30-14:00\"\n          },\n          {\n            \"text\": \"14:00-14:30\",\n            \"callback_data\": \"14:00-14:30\"\n          },\n          {\n            \"text\": \"14:30-15:00\",\n            \"callback_data\": \"14:30-15:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"15:00-15:30\",\n            \"callback_data\": \"15:00-15:30\"\n          },\n          {\n            \"text\": \"15:30-16:00\",\n            \"callback_data\": \"15:30-16:00\"\n          },\n          {\n            \"text\": \"16:00-16:30\",\n            \"callback_data\": \"16:00-16:30\"\n          },\n          {\n            \"text\": \"16:30-17:00\",\n            \"callback_data\": \"16:30-17:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"17:00-17:30\",\n            \"callback_data\": \"17:00-17:30\"\n          },\n          {\n            \"text\": \"17:30-18:00\",\n            \"callback_data\": \"17:30-18:00\"\n          },\n          {\n            \"text\": \"18:00-18:30\",\n            \"callback_data\": \"18:00-18:30\"\n          },\n          {\n            \"text\": \"18:30-19:00\",\n            \"callback_data\": \"18:30-19:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"19:00-19:30\",\n            \"callback_data\": \"19:00-19:30\"\n          },\n          {\n            \"text\": \"19:30-20:00\",\n            \"callback_data\": \"19:30-20:00\"\n          },\n          {\n            \"text\": \"20:00-20:30\",\n            \"callback_data\": \"20:00-20:30\"\n          },\n          {\n            \"text\": \"20:30-21:00\",\n            \"callback_data\": \"20:30-21:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"21:00-21:30\",\n            \"callback_data\": \"21:00-21:30\"\n          },\n          {\n            \"text\": \"21:30-22:00\",\n            \"callback_data\": \"21:30-22:00\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"14:00-14:30\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:17:09.301Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703730408415613\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10212,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977427,\n    \"text\": \"Город\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Москва\",\n            \"callback_data\": \"button_order_moscow\"\n          },\n          {\n            \"text\": \"МО\",\n            \"callback_data\": \"button_order_mo\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"button_order_moscow\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:17:22.347Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703731917561358\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10213,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977431,\n    \"text\": \"Мето прощания (Адрес в произвольной форме)\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"пропустить, если неизвестно\",\n            \"callback_data\": \"button_order_place_wake_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"button_order_place_wake_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:17:25.694Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10215,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977445,\n  \"text\": \"25.04.2024\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:17:28.168Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703732639056043\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10214,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977443,\n    \"text\": \"Комментарий\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"пропустить, если нету\",\n            \"callback_data\": \"button_order_comment_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"button_order_comment_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:18:10.813Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"3739631930291342451\",\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10216,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 870700909,\n      \"first_name\": \"andrey\",\n      \"username\": \"Andre_roz\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977447,\n    \"text\": \"Время поминок\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"9:00-9:30\",\n            \"callback_data\": \"9:00-9:30\"\n          },\n          {\n            \"text\": \"9:30-10:00\",\n            \"callback_data\": \"9:30-10:00\"\n          },\n          {\n            \"text\": \"10:00-10:30\",\n            \"callback_data\": \"10:00-10:30\"\n          },\n          {\n            \"text\": \"10:30-11:00\",\n            \"callback_data\": \"10:30-10:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"11:00-11:30\",\n            \"callback_data\": \"11:00-11:30\"\n          },\n          {\n            \"text\": \"11:30-12:00\",\n            \"callback_data\": \"11:30-12:00\"\n          },\n          {\n            \"text\": \"12:00-12:30\",\n            \"callback_data\": \"12:00-12:30\"\n          },\n          {\n            \"text\": \"12:30-13:00\",\n            \"callback_data\": \"12:30-13:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"13:00-13:30\",\n            \"callback_data\": \"13:00-13:30\"\n          },\n          {\n            \"text\": \"13:30-14:00\",\n            \"callback_data\": \"13:30-14:00\"\n          },\n          {\n            \"text\": \"14:00-14:30\",\n            \"callback_data\": \"14:00-14:30\"\n          },\n          {\n            \"text\": \"14:30-15:00\",\n            \"callback_data\": \"14:30-15:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"15:00-15:30\",\n            \"callback_data\": \"15:00-15:30\"\n          },\n          {\n            \"text\": \"15:30-16:00\",\n            \"callback_data\": \"15:30-16:00\"\n          },\n          {\n            \"text\": \"16:00-16:30\",\n            \"callback_data\": \"16:00-16:30\"\n          },\n          {\n            \"text\": \"16:30-17:00\",\n            \"callback_data\": \"16:30-17:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"17:00-17:30\",\n            \"callback_data\": \"17:00-17:30\"\n          },\n          {\n            \"text\": \"17:30-18:00\",\n            \"callback_data\": \"17:30-18:00\"\n          },\n          {\n            \"text\": \"18:00-18:30\",\n            \"callback_data\": \"18:00-18:30\"\n          },\n          {\n            \"text\": \"18:30-19:00\",\n            \"callback_data\": \"18:30-19:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"19:00-19:30\",\n            \"callback_data\": \"19:00-19:30\"\n          },\n          {\n            \"text\": \"19:30-20:00\",\n            \"callback_data\": \"19:30-20:00\"\n          },\n          {\n            \"text\": \"20:00-20:30\",\n            \"callback_data\": \"20:00-20:30\"\n          },\n          {\n            \"text\": \"20:30-21:00\",\n            \"callback_data\": \"20:30-21:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"21:00-21:30\",\n            \"callback_data\": \"21:00-21:30\"\n          },\n          {\n            \"text\": \"21:30-22:00\",\n            \"callback_data\": \"21:30-22:00\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"9029639406336322239\",\n  \"data\": \"12:00-12:30\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:18:14.738Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"3739631929380103335\",\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10220,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 870700909,\n      \"first_name\": \"andrey\",\n      \"username\": \"Andre_roz\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977492,\n    \"text\": \"Город\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Москва\",\n            \"callback_data\": \"button_order_moscow\"\n          },\n          {\n            \"text\": \"МО\",\n            \"callback_data\": \"button_order_mo\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"9029639406336322239\",\n  \"data\": \"button_order_moscow\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:18:24.935Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"2020703733605290765\",\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10219,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 470481750,\n      \"first_name\": \"Denis\",\n      \"username\": \"magdalenamos\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977475,\n    \"text\": \"Ваша заявка принята под №31056:             \\n             \\n \\n Тип заявки поминальные обеды              \\n Город Москва              \\n Время прощания  14:00-14:30             \\n Контактное лицо (Лид) Ольга             \\n Номер телефона 89167777777             \\n ФИО Уколов             \\n Дата смерти 01.04.2024             \\n Дата прощания  неизвестна            \\n             \\n  Комментарии:  место прощания неизвестно комментарий пропущен             \\n             \\n Написать куратору @yanchoglov\",\n    \"entities\": [\n      {\n        \"offset\": 482,\n        \"length\": 11,\n        \"type\": \"mention\"\n      }\n    ],\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Запросить статус\",\n            \"callback_data\": \"button_status\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-5006384382760821494\",\n  \"data\": \"button_status\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:18:29.719Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10224,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977509,\n  \"text\": \"Хоааека\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:18:35.889Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"3739631929568168148\",\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10225,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 870700909,\n      \"first_name\": \"andrey\",\n      \"username\": \"Andre_roz\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977511,\n    \"text\": \"Комментарий\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"пропустить, если нету\",\n            \"callback_data\": \"button_order_comment_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"9029639406336322239\",\n  \"data\": \"button_order_comment_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:19:28.771Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"3739631932423762397\",\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10228,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 870700909,\n      \"first_name\": \"andrey\",\n      \"username\": \"Andre_roz\",\n      \"type\": \"private\"\n    },\n    \"date\": 1711977543,\n    \"text\": \"Ваша заявка принята под №31057:             \\n             \\n \\n Тип заявки поминальные обеды              \\n Город Москва              \\n Время прощания  12:00-12:30             \\n Контактное лицо (Лид) Вася             \\n Номер телефона 89996545678             \\n ФИО Проаар             \\n Дата смерти неизвестна             \\n Дата прощания 25.04.2024            \\n             \\n  Комментарии: Хоааека комментарий пропущен             \\n             \\n Написать куратору @yanchoglov\",\n    \"entities\": [\n      {\n        \"offset\": 461,\n        \"length\": 11,\n        \"type\": \"mention\"\n      }\n    ],\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Запросить статус\",\n            \"callback_data\": \"button_status\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"9029639406336322239\",\n  \"data\": \"button_status\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:21:10.043Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10239,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977669,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:21:20.862Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10241,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977680,\n  \"text\": \"/help\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 5,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:21:23.625Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10243,\n  \"from\": {\n    \"id\": 470481750,\n    \"is_bot\": false,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 470481750,\n    \"first_name\": \"Denis\",\n    \"username\": \"magdalenamos\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977683,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:21:24.426Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10244,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977683,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:21:49.877Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10247,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977709,\n  \"text\": \"Что с заявкой\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:22:43.700Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10251,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977763,\n  \"text\": \"Все в порядке\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:23:12.335Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155590802943837\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10252,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711977763,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31055: Все в порядке\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=10251,opa3=31055 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=10251,opa3=31055 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=false,opa2=10251,opa3=31055 \"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:23:55.500Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10254,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977834,\n  \"text\": \"/logoutchat\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:25:22.973Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10260,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977922,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:26:10.286Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10263,\n  \"from\": {\n    \"id\": 870700909,\n    \"is_bot\": false,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 870700909,\n    \"first_name\": \"andrey\",\n    \"username\": \"Andre_roz\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711977969,\n  \"text\": \"Ау\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:26:56.947Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10268,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711978016,\n  \"text\": \"Отработана\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:27:02.143Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155590938803675\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10269,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711978017,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31055: Отработана\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=10268,opa3=31055 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=10268,opa3=31055 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=10268,opa3=31055 \"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:27:30.292Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10271,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711978049,\n  \"text\": \"/logoutchat\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:27:34.882Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10273,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711978054,\n  \"text\": \"/chats\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:27:55.745Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 10277,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1711978075,\n  \"text\": \"Все в порядке\"\n}"
+  },
+  {
+    "timestamp": "2024-04-01T13:27:58.835Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155593495029898\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 10278,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": -4183647609,\n      \"title\": \"GSR_ADMIN_CHAT\",\n      \"type\": \"group\",\n      \"all_members_are_administrators\": true\n    },\n    \"date\": 1711978075,\n    \"text\": \"Менеджер написал агенту по номеру заказа 31057: Все в порядке\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=true,opa2=10277,opa3=31057 \"\n          },\n          {\n            \"text\": \"Не согласовано\",\n            \"callback_data\": \"option_btn_approve?opa1=false,opa2=10277,opa3=31057 \"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"-3315145100222889815\",\n  \"data\": \"option_btn_approve?opa1=true,opa2=10277,opa3=31057 \"\n}"
   }
 ]
