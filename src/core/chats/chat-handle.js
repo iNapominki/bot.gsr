@@ -109,7 +109,7 @@ class ChatHandle {
 
 
 
-  async createChat(orderNumber, managerId, agentId) {
+  async createChat(orderNumber, managerId, agentId, customer) {
     // проверяем уникальный ли ордер
     const order = await getOrderForNumber(orderNumber);
     // если не уникальный то прерываем
@@ -117,7 +117,7 @@ class ChatHandle {
       return { status: false };
     }
     // если уникальный создаем
-    const res = await createChat(orderNumber, managerId, agentId);
+    const res = await createChat(orderNumber, managerId, agentId, customer);
     return { status: true, id: res[0][0].id, order: res[0][0].order_number };
   }
 
@@ -150,33 +150,41 @@ class ChatHandle {
     return request;
   }
 
-  async _getInfoAboutUsers(manager_id, agent_id) {    
+  async _getInfoAboutUsers(manager_id, agent_id, pleaseWait, chatId) {    
     const manager = await this._useCheskUser(manager_id);
     const agent = await this._useCheskUser(agent_id);
+   // await  this.bot.editMessageText(chatId, pleaseWait.message_id);
+
+ await  this.bot.editMessageText(`теперь можете писать.`, {
+    chat_id: chatId,
+    message_id: pleaseWait.message_id,
+  });
     return {manager, agent};
   }
 
+  // подгрузка сообщений в чат 
   async _sendAllMessages(order, chatId) {
     try {
       //получаем заказ
       const dataOrder = await getOrderForNumber(order);
-      const { msg_text, manager_id, agent_id } = dataOrder[0][0];
+      const { msg_text, manager_id, agent_id, customer_phone } = dataOrder[0][0];
       const parsData = JSON.parse(msg_text);
+      // механизм отложенной загрузки
 
+      const pleaseWait = await this.bot.sendMessage(chatId, "Идет загрузка данных. Пожалуйста, подождите...", {});
 
-
-      const {manager, agent} = await this._getInfoAboutUsers(manager_id, agent_id);
+      const {manager, agent} = await this._getInfoAboutUsers(manager_id, agent_id, pleaseWait, chatId);
       
+      // показ номера телефона заказчика по номеру заказа
+
+      this.requestMessage(chatId, `Номер телефона заказчика по данному заказу ${customer_phone}`);
       //console.log("manager, agent", manager, agent);
-      // преобразование несколько раз из за формата хранения в базе данных
-      
+      // преобразование несколько раз из за формата хранения в базе данных      
       parsData.forEach((element) => {
         try {
           // обязательно условия для распарсивания
         const msgSrting = element.replace(/'/g, '"');  
-          const dataMessage = JSON.parse(msgSrting);
-
-          
+          const dataMessage = JSON.parse(msgSrting);          
 
           const unixTime = dataMessage.date * 1000; // Умножаем на 1000, так как Unix-время измеряется в секундах, а объект Date ожидает миллисекунды
           const date = new Date(unixTime);
@@ -184,16 +192,14 @@ class ChatHandle {
           const options = { timeZone: 'Europe/Moscow', hour12: false }; // Устанавливаем часовой пояс и формат времени
           // Получаем удобочитаемую строку с датой
           const readableDate = date.toLocaleString('ru-RU', options);         
-          console.log(readableDate);
-          // отправляем все сообщения по очереди          
-
+          
+          // отправляем все сообщения по очереди
           // проверка одобрен ли чат админом, (от менеджера сообщения должны быть одобрены, от агента нет)
           if(!dataMessage.approve) {
             return;
           }
 
-          // формируем от
-          console.log(dataMessage.from.id);
+          // формируем от          
           //manager, agent
           const fromNmae = dataMessage.from.id == manager.tlgId ? manager.spzId : dataMessage.from.id == agent.tlgId ? agent.spzId : "Пользователь не определен";
 

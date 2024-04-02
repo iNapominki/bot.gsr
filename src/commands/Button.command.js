@@ -18,11 +18,14 @@ class Buttoncommand extends Command {
    if(!findOrder) {
       return false;
    } else {
+
+    // выходим из предыдущего чата
+    await new ChatHandle(this.bot).logoutChat(chatId);
     // устанавливаем чат
     // внутренним методом отправляем сообщение полователю который подключился к чату
     const res = await new ChatHandle(this.bot).toChat(findOrder.order_number, chatId); 
     
-    this.bot.editMessageText(`Вы выбрали чат ${findOrder.order_number}, пожалуйста дождитесь загрузки`, {
+    this.bot.editMessageText(`Вы выбрали чат ${findOrder.order_number}.`, {
       chat_id: chatId,
       message_id: messageId,
     });
@@ -36,8 +39,10 @@ class Buttoncommand extends Command {
 
   handle() {
     this.bot.on("callback_query", async (query) => {
-
+      new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
       try {
+
+       // console.log(query);
         let chatId = query.from.id;
         let message = query?.message?.text;
         // так как кнопки динамические, записываю параметры фильтрации как в url после занка ?, далее json объект
@@ -54,7 +59,7 @@ class Buttoncommand extends Command {
         return
        }
 
-        new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
+        
 
         //let stepRegistration;
         switch (command) {
@@ -126,6 +131,8 @@ class Buttoncommand extends Command {
           case "option_data_dateWake_empty":
           case "button_order_comment_empty":
           case "button_order_place_wake_empty":
+          case "button_order_fio_empty":
+          case  "option_order_timeWake_empty":
             let order = new SessionOrder(query, this.bot).handleButton(
               command,
               chatId,

@@ -35,7 +35,9 @@ class SessionRegistration extends Session {
     return SESSION_RESPONSE.REG[step].option;
   }
 
-
+  clear(tlgId) {
+    return this.clearSession(this.FileName, tlgId);
+  }
 
   createSession() {
     if (this.file.length < 1) {
@@ -118,6 +120,12 @@ class SessionRegistration extends Session {
 
           break;
 
+          case 2:           
+          this.bot.sendMessage(itemSession.tlgId, "Выберите вариант по кнопке", {});
+          return
+          break
+          
+
         default:
           // выполнится, если ни один другой случай не сработал
           console.log("Что делать незнаю");
@@ -128,7 +136,7 @@ class SessionRegistration extends Session {
     } else {
       return {
         step: 3,
-        message: "Для оформления заявки вначале введике команду /order",
+        message: "Для оформления заявки вначале введите команду /order",
         option: {},
         status: false
       };

@@ -23,14 +23,15 @@ async function getOrderForNumber(order = "ошибка") {
 async function createChat(
   orderNumber = "ошибка",
   managerId = "ошибка",
-  agentId = "ошибка"
+  agentId = "ошибка",
+  customer = "ошибка",
 ) {
   try {
     // возвращает : id в базе данных и номер заказа из операционки
     // если такого канала нет создает новый
     const sql =
-      "INSERT INTO `chats`(`order_number`, `manager_id`, `agent_id`) VALUES (?, ?, ?)";
-    const values = [orderNumber, managerId, agentId];
+      "INSERT INTO `chats`(`order_number`, `manager_id`, `agent_id`, `customer_phone`) VALUES (?, ?, ?, ?)";
+    const values = [orderNumber, managerId, agentId, customer];
     const result = await new DataBase().query(sql, values);
     const selectSql = "SELECT * FROM chats WHERE id = ?";
     const res = await new DataBase().query(selectSql, [result[0].insertId]);
@@ -45,7 +46,9 @@ async function getMyChats(chatId) {
   try {
     //1 проверяем нет ли в базе данных номера с такой заявкой
     const sql =
-      "SELECT * FROM `chats` WHERE `manager_id` = ? OR `agent_id` = ?";
+      "SELECT * FROM `chats` WHERE `manager_id` = ? OR `agent_id` = ? ORDER BY id DESC LIMIT 4";
+      // const sql =
+      // "SELECT * FROM `chats` WHERE `manager_id` = ? OR `agent_id` = ?";
     const res = await new DataBase().query(sql, [chatId, chatId]);
     return res;
 

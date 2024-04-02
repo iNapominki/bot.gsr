@@ -26,15 +26,17 @@ class FormCommand extends Command {
         if (msg.text === "/help") {
           return;
         }
-        if (msg.text === "/form") {
-          return;
-        }
+
+        // if (msg.text === "/form") {
+        //   return;
+        // }
 
         if (msg.text === "/registration") {
           return;
         }
 
         if (msg.text === "/order") {
+        //  new ChatHandle(this.bot).logoutChat(chatId);
           return;
         }
 
@@ -46,6 +48,10 @@ class FormCommand extends Command {
         }
 
         if(msg.text === "/logoutchat") {
+          return;
+        }
+
+        if(msg.text === "/myid") {
           return;
         }
 

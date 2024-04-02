@@ -1,3 +1,4 @@
+const ChatHandle = require("../core/chats/chat-handle");
 const SessionRegistration = require("../session/session.registration");
 const Command = require("./command.class");
 
@@ -16,6 +17,8 @@ class RegisrtationCommand extends Command {
       if (!isCheckUserName) {
         return;
       }
+
+      new ChatHandle(this.bot).logoutChat(chatId);
 
       let {step, message, option} = new SessionRegistration(msg, this.bot).createSession();
       this.requestMessage(chatId, message, option);      

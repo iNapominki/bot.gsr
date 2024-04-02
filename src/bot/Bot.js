@@ -5,6 +5,7 @@ const AipUse = require("../utils/api/apiUse");
 const Api = require("../utils/api/api");
 //const option_registration = require("../utils/option/options-reg");
 const option_test = require("../utils/option/option_test");
+const SessionRegistration = require("../session/session.registration");
 //const use = require("node-telegram-bot-api-middleware").use;
 class Bot {
   constructor(token) {
@@ -27,6 +28,8 @@ class Bot {
   }
 
   start() {
+
+try {
     this.bot.onText(/\/start/, async (msg) => {
       this.bot.setMyCommands([
         { command: "/start", description: "Начальное приветствие" },
@@ -35,12 +38,13 @@ class Bot {
         { command: "/clear", description: "Отменить заполнение заявки" },
         { command: "/chats", description: "Мои чаты" },
         { command: "/logoutchat", description: "Выйти из чатов" },
+        { command: "/myid", description: "Запросить мой id" },
       ]);
 
       const chatId = msg.chat.id;
-      /////////////// тестовый функционал
-
-      //////////
+      // очистка сесии регистрации
+    new  SessionRegistration(msg, this.bot).clear(chatId);
+      //
       this.bot.sendMessage(chatId, responseTemplate.start);
       await this._useCheskUser(chatId).then((user) => {
         if (user) {
@@ -55,6 +59,13 @@ class Bot {
         }
       });
     });
+
+  } catch (e) {
+    console.error(e);
+  }
+
+
+
   }
 }
 

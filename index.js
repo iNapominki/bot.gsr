@@ -13,6 +13,7 @@ const DataBase = require("./src/core/dataBase/dataBase");
 const ChatsCommands = require("./src/commands/Chats.commands");
 const GetMyChatsCommand = require("./src/commands/GetMyChats.command");
 const LogOutChatsCommand = require("./src/commands/LogOutChats.command");
+const MyIdCommand = require("./src/commands/MyId.command");
 //const { createChat } = require("./src/core/chats/chat-controller");
 
 const token = process.env.TELEGRAMM_TOKEN;
@@ -40,6 +41,8 @@ try {
   const mychats = new GetMyChatsCommand(bot.bot);
   // выход из чатов
   const logoutChats = new LogOutChatsCommand(bot.bot);
+  // запросить мой id 
+  const myid = new MyIdCommand(bot.bot)
 
   help.handle();
   registration.handle();
@@ -53,6 +56,7 @@ try {
   chat.handle();
   mychats.handle();
   logoutChats.handle();
+  myid.handle();
 
   //createChat();
   

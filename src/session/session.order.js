@@ -121,6 +121,7 @@ class SessionOrder extends Session {
           itemSession.nameContact = text;
           this._writeToFile(dataSession, itemSession);
           message = this._getTitleStep(itemSession.step);
+          option = this._getOptionStep(itemSession.step);
           return { step: 0, message: message, option: {}, status: true };
           break;
 
@@ -129,10 +130,11 @@ class SessionOrder extends Session {
           itemSession.number = text;
           this._writeToFile(dataSession, itemSession);
           message = this._getTitleStep(itemSession.step);
+          option = this._getOptionStep(itemSession.step);
           return {
             step: 2,
             message: message,
-            option: { option },
+            option:  option ,
             status: true,
           };
           break;
@@ -213,6 +215,8 @@ class SessionOrder extends Session {
   }
 
   handleButton(command, chatId, messageId) {
+
+    console.log(command, chatId, messageId);
     // получаем данные о текущей сесии
     const itemSession = this.file.find((item) => item.tlgId == chatId);
     // получаем остальные сесии
@@ -278,6 +282,7 @@ class SessionOrder extends Session {
         case "20:30-21:00":
         case "21:00-21:30":
         case "21:30-22:00":
+        case  "option_order_timeWake_empty":
           const timeWake = {
             "9:00-9:30": "9:00-9:30",
             "9:30-10:00": "9:30-10:00",
@@ -305,6 +310,7 @@ class SessionOrder extends Session {
             "20:30-21:00": "20:30-21:00",
             "21:00-21:30": "21:00-21:30",
             "21:30-22:00": "21:30-22:00",
+            "option_order_timeWake_empty": "пропущено",
           };
 
           itemSession.step++;
@@ -346,14 +352,14 @@ class SessionOrder extends Session {
           this._writeToFile(dataSession, itemSession);
           option = this._getOptionStep(itemSession.step);
           message = this._getTitleStep(itemSession.step);
-          this.bot.editMessageText(`Дата поминок неизвестна`, {
+          this.bot.editMessageText(`Дата прощания неизвестна`, {
             chat_id: itemSession.tlgId,
             message_id: messageId,
           });
           return { step: 0, message: message, option: option, status: true };
           break;
 
- // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
+        // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
         case "button_order_place_wake_empty":
           if (itemSession.step != 7) {
             return;
@@ -364,6 +370,26 @@ class SessionOrder extends Session {
           option = this._getOptionStep(itemSession.step);
           message = this._getTitleStep(itemSession.step);
           this.bot.editMessageText(` место прощания пропущено`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+          return { step: 0, message: message, option: option, status: true };
+          break;
+
+          // пропустить ФИО
+          case "button_order_fio_empty":
+
+          console.log("jj");
+          if(itemSession.step != 2) {
+            return;
+          }
+
+          itemSession.step++;
+          itemSession.fio = " ФИО усопшего пропущено";
+          this._writeToFile(dataSession, itemSession);
+          option = this._getOptionStep(itemSession.step);
+          message = this._getTitleStep(itemSession.step);
+          this.bot.editMessageText(` ФИО усопшего пропущено`, {
             chat_id: itemSession.tlgId,
             message_id: messageId,
           });

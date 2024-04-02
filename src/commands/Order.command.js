@@ -1,3 +1,4 @@
+const ChatHandle = require("../core/chats/chat-handle");
 const SessionOrder = require("../session/session.order");
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");
@@ -28,12 +29,14 @@ class OrderCommand extends Command {
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;
       // проверка не нахожусь ли я в режиме чата
-      const inChat = await this.checkinChat(chatId);
+      // const inChat = await this.checkinChat(chatId);
 
-      if (inChat.status) {
-        this.requestMessage(chatId, inChat.message, {});
-        return;
-      }
+      // if (inChat.status) {
+      //   this.requestMessage(chatId, inChat.message, {});
+      //   return;
+      // }
+
+      await  new ChatHandle(this.bot).logoutChat(chatId);
 
       // первичная проверка при создании заявки, заявку может создать только зарегистрированный пользователь
       this._useCheskUser(chatId).then((user) => {

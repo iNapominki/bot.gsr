@@ -68,16 +68,17 @@ const SESSION_RESPONSE = {
     },
     2: {
       title: "ФИО усопшего",
+      option: option_order.fio,
       validation: function (value) {
-        if (value.length < 4) {
-          return "Введено значение короче 4 букв";
+        if (value.length < 2) {
+          return "Введено значение короче 2 букв";
         } else {
           return false;
         }
       },
     },
     3: {
-      title: "Дата смерти в формате 21.12.2014",
+      title: "Дата смерти в формате 21.01",
       option: option_data_dateLeft,
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
@@ -88,7 +89,7 @@ const SESSION_RESPONSE = {
       },
     },
     4: {
-      title: "Дата поминок в формате 21.12.2014",
+      title: "Дата прощания в формате 21.01",
       option: option_data_dateWake,
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
@@ -99,7 +100,7 @@ const SESSION_RESPONSE = {
       },
     },
     5: {
-      title: "Время поминок",
+      title: "Время прощания",
       option: option_order.timeWake,
       validation: function (value) {
         if (value) {

@@ -1,4 +1,14 @@
 const option_order = {
+
+  fio: {
+    reply_markup: {
+      inline_keyboard: [          
+        [
+        { text: "пропустить", callback_data: "button_order_fio_empty" },           
+        ],
+      ],
+    },
+  },
     city: {
         reply_markup: {
           inline_keyboard: [          
@@ -151,6 +161,12 @@ const option_order = {
                     {
                       text: "21:30-22:00",
                         callback_data: "21:30-22:00",
+                    },
+                  ]
+                  , [
+                    {
+                      text: "неизвестно",
+                        callback_data: "option_order_timeWake_empty",
                     },
                   ]
             ],

@@ -24,7 +24,9 @@ class ChatsCommands extends Command {
           ? chatData?.employee
           : "employee не найден";
         let agent = chatData?.agent ? chatData?.agent : "agent не найден";
-        const chat = await new ChatHandle(this.bot).createChat(order, employee, agent);        
+        let customer = chatData?.customer ? chatData?.customer : "номер заказчика не найден";
+
+        const chat = await new ChatHandle(this.bot).createChat(order, employee, agent, customer);        
         // возвращает
         const { status, id } = chat;
 
