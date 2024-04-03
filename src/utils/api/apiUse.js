@@ -32,9 +32,9 @@ class AipUse {
     }
   }
 
-  async checkUser(postData) {
-    console.log("AipUse checkUser", postData);
-    let res = await this.api.checkUser(postData);
+  async checkUser(postData) {    
+    let res = await this.api.checkUser(postData);     
+
     if (!res) {
       return;
     }

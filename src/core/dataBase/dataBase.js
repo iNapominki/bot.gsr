@@ -31,7 +31,7 @@ class DataBase {
     try {
       const connection = await this._connect(); 
       const result = await connection.execute(sql, values);     
-
+      await connection.end();
       console.log("Запрос к базе данных!");      
       return result;
     } catch (err) {

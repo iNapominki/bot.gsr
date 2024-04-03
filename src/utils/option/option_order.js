@@ -165,8 +165,14 @@ const option_order = {
                   ]
                   , [
                     {
-                      text: "неизвестно",
+                      text: "время неизвестно",
                         callback_data: "option_order_timeWake_empty",
+                    },
+                  ]
+                  , [
+                    {
+                      text: "Пропустить это и остальные поля",
+                        callback_data: "option_order_others_empty",
                     },
                   ]
             ],

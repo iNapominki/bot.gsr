@@ -2,6 +2,7 @@ const ChatHandle = require("../core/chats/chat-handle");
 const SessionOrder = require("../session/session.order");
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");
+const copirite_text = require("../utils/const/copirite_admin");
 const Command = require("./command.class");
 
 class OrderCommand extends Command {
@@ -40,10 +41,12 @@ class OrderCommand extends Command {
 
       // первичная проверка при создании заявки, заявку может создать только зарегистрированный пользователь
       this._useCheskUser(chatId).then((user) => {
+
+        console.log("user", user);
         if (user) {
           // оформлять заявки только менеджер
           if (user?.role != "agent") {
-            this.requestMessage(
+            this.bot.sendMessage(
               chatId,
               "Оформлять заявки может только агент, обратитесь к администратору /help",
               {}
@@ -63,6 +66,9 @@ class OrderCommand extends Command {
           ).createSession();
           this.requestMessage(chatId, message, option);
           return;
+        } else {
+          // если что то с таблицами не так, то пользователь получит это сообщение
+          this.requestMessage(chatId, `Произошла ошибка, обратитесь к администратору ${copirite_text.admin}` , {});
         }
       });
     });

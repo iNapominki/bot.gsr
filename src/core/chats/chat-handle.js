@@ -201,7 +201,7 @@ class ChatHandle {
 
           // формируем от          
           //manager, agent
-          const fromNmae = dataMessage.from.id == manager.tlgId ? manager.spzId : dataMessage.from.id == agent.tlgId ? agent.spzId : "Пользователь не определен";
+          const fromNmae = dataMessage?.from?.id == manager?.tlgId ? manager?.spzId : dataMessage?.from?.id == agent?.tlgId ? agent?.spzId : "Пользователь не определен";
 
           this.requestMessage(chatId, `${readableDate} от ${fromNmae} : ${dataMessage.text}`, {});
         } catch (e) {

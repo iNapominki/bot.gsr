@@ -133,6 +133,7 @@ class Buttoncommand extends Command {
           case "button_order_place_wake_empty":
           case "button_order_fio_empty":
           case  "option_order_timeWake_empty":
+          case "option_order_others_empty":
             let order = new SessionOrder(query, this.bot).handleButton(
               command,
               chatId,

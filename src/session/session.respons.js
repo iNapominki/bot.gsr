@@ -46,7 +46,7 @@ const SESSION_RESPONSE = {
 
   ORDER: {
     0: {
-      title: "Контактное лицо",
+      title: "Контактное лицо заказчика",
       validation: function (value) {
         if (value.length < 2) {
           return "Введено значение короче 2 букв";
@@ -122,7 +122,7 @@ const SESSION_RESPONSE = {
       },
     },
     7: {
-      title: "Мето прощания (Адрес в произвольной форме)",
+      title: "Место прощания (Адрес в произвольной форме)",
       option: option_order.placeWake,
       validation: function (value) {
         return false;

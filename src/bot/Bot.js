@@ -12,6 +12,20 @@ class Bot {
     this.bot = new TelegramBot(token, { polling: true });
   }
 
+    //быстрая проверка заполнено ли имя у пользователя телеграмм
+    checkUserName(chatId, chatUsername) {
+      let isCheckUserName = true;
+      if (!chatUsername) {
+        this.bot.sendMessage(
+          chatId,
+          `Вы не можете пользоваться ботом, заполните имя телеграмм ваш ИД ${chatId}`
+        );
+        isCheckUserName = false;
+      }
+      return isCheckUserName;
+    }
+  
+
   async _useCheskUser(tlgId) {
     let checkPost = {
       action: "check",
@@ -42,10 +56,19 @@ try {
       ]);
 
       const chatId = msg.chat.id;
+      const chatUsername = msg.chat.username;
       // очистка сесии регистрации
     new  SessionRegistration(msg, this.bot).clear(chatId);
       //
       this.bot.sendMessage(chatId, responseTemplate.start);
+
+
+      let isCheckUserName = this.checkUserName(chatId, chatUsername);
+      // проверка заполнено ли имя
+      if (!isCheckUserName) {
+        return;
+      }
+
       await this._useCheskUser(chatId).then((user) => {
         if (user) {
           setTimeout(async () => {

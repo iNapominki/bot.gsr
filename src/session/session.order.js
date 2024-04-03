@@ -282,7 +282,7 @@ class SessionOrder extends Session {
         case "20:30-21:00":
         case "21:00-21:30":
         case "21:30-22:00":
-        case  "option_order_timeWake_empty":
+        case  "option_order_timeWake_empty":          
           const timeWake = {
             "9:00-9:30": "9:00-9:30",
             "9:30-10:00": "9:30-10:00",
@@ -310,7 +310,7 @@ class SessionOrder extends Session {
             "20:30-21:00": "20:30-21:00",
             "21:00-21:30": "21:00-21:30",
             "21:30-22:00": "21:30-22:00",
-            "option_order_timeWake_empty": "пропущено",
+            "option_order_timeWake_empty": "пропущено",            
           };
 
           itemSession.step++;
@@ -339,6 +339,22 @@ class SessionOrder extends Session {
             chat_id: itemSession.tlgId,
             message_id: messageId,
           });
+          return { step: 0, message: message, option: option, status: true };
+          break;
+
+          case  "option_order_others_empty":          
+          itemSession.step = 9;
+          itemSession.timeWake = "пропущено";
+          itemSession.city = "Москва";
+          itemSession.comment = "комментариев нет";
+          message = this._getTitleStep(itemSession.step);
+          option = this._getOptionStep(itemSession.step);
+          this._writeToFile(dataSession, itemSession);
+          this.bot.editMessageText(`Вы пропустили остальные поля`, {
+            chat_id: itemSession.tlgId,
+            message_id: messageId,
+          });
+          this.endSession(this.FileName, chatId, "order");
           return { step: 0, message: message, option: option, status: true };
           break;
 
@@ -379,7 +395,7 @@ class SessionOrder extends Session {
           // пропустить ФИО
           case "button_order_fio_empty":
 
-          console.log("jj");
+          
           if(itemSession.step != 2) {
             return;
           }
