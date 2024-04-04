@@ -25,11 +25,7 @@ class FormCommand extends Command {
         }
         if (msg.text === "/help") {
           return;
-        }
-
-        // if (msg.text === "/form") {
-        //   return;
-        // }
+        }        
 
         if (msg.text === "/registration") {
           return;
@@ -55,6 +51,9 @@ class FormCommand extends Command {
           return;
         }
 
+        if(msg.text === "/cleancache") {
+          return;
+        }
         
         if (msg.chat.id == TELEGRAMM_ADMIN_CHAT) {
           this.requestMessage(chatId, "В этот чат может писать только бот");
@@ -79,12 +78,6 @@ class FormCommand extends Command {
         } else {
           console.log("Активных чатов нет");
         }
-
-       
-      //  return;
-
-
-
 
         /** начинаем проверять сессии, если есть то
          * ловим данные, приоритет у регистрации,
@@ -152,7 +145,7 @@ class FormCommand extends Command {
         }
       } catch (error) {
         new LoggerManager().logMessage("error", "error", error.message);
-        //console.log(error);
+        console.log(error);
       }
     });
   }

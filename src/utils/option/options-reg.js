@@ -1,12 +1,12 @@
-const option_registration = {
-  reply_markup: {
-    inline_keyboard: [
-      [{ text: "РЕГИСТРАЦИЯ", callback_data: "button_reg" }],
-    ],
-  },
-};
+// const option_registration = {
+//   reply_markup: {
+//     inline_keyboard: [
+//       [{ text: "РЕГИСТРАЦИЯ", callback_data: "button_reg" }],
+//     ],
+//   },
+// };
 
-module.exports = option_registration;
+// module.exports = option_registration;
 
 //   let webAppUrl = process.env.WEBAPPURL;
 

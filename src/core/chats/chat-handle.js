@@ -238,20 +238,17 @@ class ChatHandle {
 
   async checkInChat(chatId) {
     try {
-      console.log("Проверка чатов", chatId);
+     // console.log("Проверка чатов", chatId);
 
       // проверяем есть ли вообще чаты
       const chats = await getMyChats(chatId);
-      if (chats[0].length == 0) {
-        console.log(" чатов нет");
+      if (chats[0].length == 0) {        
         return { status: false, message: "У вас чатов нет" };
       }
 
       // если чаты есть получаем роль из первого чата
       // получаем любой чат считаем что менеджер не может быть агентом
-      const firstOrder = chats[0][0];
-
-      //const dataOrder = await getOrderForNumber(firstOrder, chatId);
+      const firstOrder = chats[0][0];      
 
       function getKeyByValue(object, value) {
         return Object.keys(object).find((key) => object[key] == value);
@@ -307,12 +304,7 @@ class ChatHandle {
       }
     // 1.2 менеджер агенту
       if (from != dataOrder[0][0].agent_id) {
-        try{
-        // this.requestMessage(
-        //   dataOrder[0][0].agent_id,
-        //   `Новое сообщение в чате ${chatNumber}:  ${msg.text}`,
-        //   option
-        // );
+        try{        
 
         const option = optionBtnApprove({message_id: msg.message_id, order_number:dataOrder[0][0].order_number });
 
@@ -325,8 +317,6 @@ class ChatHandle {
         console.error(e)
       }
       }
-
-
       
     } catch (e) {
       console.error(e);

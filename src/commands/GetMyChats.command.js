@@ -12,9 +12,7 @@ class GetMyChatsCommand extends Command {
   handle() {
     this.bot.onText(/\/chats/, async (msg) => {
       try {
-          
-
-
+        
         const chatId = msg.chat.id;
         const chatUsername = msg.chat.username;
 
@@ -31,9 +29,7 @@ class GetMyChatsCommand extends Command {
         if(!chat.status) {
           this.requestMessage(chatId, chat.message, {});
           return;
-        }
-
-        
+        }        
 
         const option = optionButtonChats(chat.button);
         

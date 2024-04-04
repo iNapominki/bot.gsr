@@ -1,6 +1,5 @@
 
 const ChatHandle = require("../core/chats/chat-handle");
-//const optionButtonChats = require("../utils/option/option_button_chats");
 const Command = require("./command.class");
 
 class LogOutChatsCommand extends Command {

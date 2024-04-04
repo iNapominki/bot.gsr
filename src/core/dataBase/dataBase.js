@@ -51,7 +51,8 @@ module.exports = DataBase;
 //   `agent_id_in_chat` tinyint(1) NOT NULL,
 //   `curator_id` varchar(255) NOT NULL,
 //   `curator_in_chat` tinyint(1) NOT NULL,
-//   `msg_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '[]',
+//   `msg_text` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '[]',
 //   `msg_id` int(11) NOT NULL,
-//   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+//   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+//   `customer_phone` varchar(255) NOT NULL DEFAULT 'ошибка'
 // ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

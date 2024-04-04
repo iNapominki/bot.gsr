@@ -30,19 +30,11 @@ class OrderCommand extends Command {
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;
       // проверка не нахожусь ли я в режиме чата
-      // const inChat = await this.checkinChat(chatId);
-
-      // if (inChat.status) {
-      //   this.requestMessage(chatId, inChat.message, {});
-      //   return;
-      // }
-
       await  new ChatHandle(this.bot).logoutChat(chatId);
 
       // первичная проверка при создании заявки, заявку может создать только зарегистрированный пользователь
       this._useCheskUser(chatId).then((user) => {
-
-        console.log("user", user);
+        
         if (user) {
           // оформлять заявки только менеджер
           if (user?.role != "agent") {

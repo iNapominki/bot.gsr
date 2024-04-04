@@ -12,9 +12,7 @@ class SessionRegistration extends Session {
     this.step = 0;
     this.msg = msg;
     this.tlgId = `${this.msg.from.id}`;
-    this.tlgName = this.msg.from.username;
-    //this.apiUseMethod = "updateUser";
-    //this.requestMethod = "requestUSer";
+    this.tlgName = this.msg.from.username;    
   }
 
   _writeToFile(data, session) {

@@ -1,6 +1,5 @@
 const options_btn = require("../../utils/option/options_btn");
 const responseTemplate = require("../responseTemplate/responseTemplate");
-
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 
 class RequestInChatAdmin {
@@ -10,10 +9,7 @@ class RequestInChatAdmin {
       }
 
        //простой текстовый ответ
-  requestOrder(post, user) {
-    console.log("this.request", this.request);
-
-   
+  requestOrder(post, user) {   
 
     setTimeout(async () => {
       await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT, responseTemplate.responseToAdminChat(this.request, post, user));

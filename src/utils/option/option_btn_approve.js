@@ -21,4 +21,3 @@ function optionBtnApprove({ message_id, order_number }) {
 
 module.exports = optionBtnApprove;
 
-//option_btn_approve?approve=true,message_id=12234,order=1234

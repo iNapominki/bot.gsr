@@ -14,15 +14,15 @@ const ChatsCommands = require("./src/commands/Chats.commands");
 const GetMyChatsCommand = require("./src/commands/GetMyChats.command");
 const LogOutChatsCommand = require("./src/commands/LogOutChats.command");
 const MyIdCommand = require("./src/commands/MyId.command");
-//const { createChat } = require("./src/core/chats/chat-controller");
+const CleanCacheCommand = require("./src/commands/CleanCache.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
 
 const bot = new Bot(token);
+
 try {
   
-  // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets
-  
+  // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets  
   bot.start();
   const loggerManager = new LoggerManager();
 
@@ -42,7 +42,10 @@ try {
   // выход из чатов
   const logoutChats = new LogOutChatsCommand(bot.bot);
   // запросить мой id 
-  const myid = new MyIdCommand(bot.bot)
+  const myid = new MyIdCommand(bot.bot);
+  // инициализация кэша
+  
+  const cleancache = new CleanCacheCommand(bot.bot);
 
   help.handle();
   registration.handle();
@@ -56,15 +59,12 @@ try {
   chat.handle();
   mychats.handle();
   logoutChats.handle();
-  myid.handle();
-
-  //createChat();
+  myid.handle();  
+  cleancache.handle();
   
   loggerManager.logMessage("log", "старт", "Произошел старт бота");
-  // Пример обработки ошибки
-
-  // Код, который может вызвать ошибку
-  //throw new Error('Example error');
+  // Пример обработки ошибки  
+  
 } catch (error) {
   new LoggerManager().logMessage("error", "error", error.message);
   console.log(error);
@@ -73,3 +73,4 @@ try {
   erronRequest.requestMessage(JSON.stringify(error));
  
 }
+

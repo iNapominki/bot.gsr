@@ -216,12 +216,12 @@ class SessionOrder extends Session {
 
   handleButton(command, chatId, messageId) {
 
-    console.log(command, chatId, messageId);
+   // console.log(command, chatId, messageId);
     // получаем данные о текущей сесии
     const itemSession = this.file.find((item) => item.tlgId == chatId);
     // получаем остальные сесии
     const dataSession = this.file.filter((item) => item.tlgId != chatId);
-    console.log(itemSession, command, chatId, messageId);
+    //console.log(itemSession, command, chatId, messageId);
     if (itemSession) {
       let message;
       let option;

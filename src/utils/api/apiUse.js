@@ -32,7 +32,9 @@ class AipUse {
     }
   }
 
-  async checkUser(postData) {    
+  async checkUser(postData) {  
+    
+    try {
     let res = await this.api.checkUser(postData);     
 
     if (!res) {
@@ -55,10 +57,13 @@ class AipUse {
       );
       return false;
     }
+
+  } catch (e) {
+    console.error(e);
+  }
   }
 
-  async postOrder(postData) {
-    console.log("AipUse postOrder", postData);
+  async postOrder(postData) {   
 
     let res = await this.api.postOrder(postData);
     if (!res) {

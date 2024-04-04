@@ -56,7 +56,7 @@ class HandleForm {
       dataFormToQuery.tlgId = `${this.message.from.id}`;
       dataFormToQuery.role = data.role;
 
-      console.log("dataFormToQuery", dataFormToQuery);
+     // console.log("dataFormToQuery", dataFormToQuery);
       this._useApiUpdate(dataFormToQuery);
     } else if (data.form == "order") {
       dataFormToQuery.tlgMessageId = `${this.message.message_id}`;

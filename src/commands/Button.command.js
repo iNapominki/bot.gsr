@@ -47,15 +47,14 @@ class Buttoncommand extends Command {
         let message = query?.message?.text;
         // так как кнопки динамические, записываю параметры фильтрации как в url после занка ?, далее json объект
         let command = query?.data.split("?")[0];
-
-       // return;
+       
         const messageId = query.message.message_id;
 
         // проверяем начилие нажатия в чате, кнопки динамические поэтому вынес, вид кнопок набор цифр например 13003
        const isPressChat = await this._checkChat(command, chatId, messageId);
 
        if(isPressChat) {        
-        console.log("Нажата кнопка чат, далее не выполнять")
+        
         return
        }
 

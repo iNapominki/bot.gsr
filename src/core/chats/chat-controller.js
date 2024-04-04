@@ -1,17 +1,5 @@
 const DataBase = require("../dataBase/dataBase");
 
-// тестирование
-// async function test() {
-//     try {
-//         let sql = 'SELECT * from chats;'
-//         const result = await new DataBase().query(sql);
-//         await console.log("Тестовый запрос", result[0]);
-
-//     } catch (e) {
-//         console.error("Ошибка при тестовом запросе", e)
-//     }
-// }
-
 async function getOrderForNumber(order = "ошибка") {
   //1 проверяем нет ли в базе данных номера с такой заявкой
   const sql = "SELECT * FROM chats WHERE order_number = ?";
@@ -115,7 +103,7 @@ async function writeToChat(chatNumber, msg) {
 
     // очищаем сам текст от ковычек что бы json не ломать
     msg.text = msg.text.replace(/["']/g, '');
-    console.log("Запись в чат", chatNumber);
+   // console.log("Запись в чат", chatNumber);
     // преобразовываем "" в '' иначе не записывается значение
     const changeQuote = JSON.stringify(msg).replace(/"/g, "'" );
     const sql = `UPDATE chats SET msg_text = JSON_ARRAY_APPEND(msg_text, '$', "${changeQuote}") WHERE order_number = ?;`;
@@ -144,23 +132,6 @@ async function logoutChat(idUSer = "ошибка", role="ошибка") {
     console.error("Ошибка при получении списка моих чатов", e);
   }
 }
-
-
-
-// для механизма согласования
-// async function approveMessage(message) {
-//   try {
-
-//     const sql = `UPDATE chats SET msg_text = JSON_SET(msg_text,'$[0].approve', true) WHERE JSON_EXTRACT(msg_text, '$[0].message_id') = ?;`;
-//     const res = await new DataBase().query(sql, [message]);
-
-//     console.log(res);
-//     // принимает id заказа
-//     // возвращает весь заказ как есть
-//   } catch (e) {
-//     console.error("Ошибка при получении списка моих чатов", e);
-//   }
-// }
 
 module.exports = { createChat, getOrderForNumber, getMyChats, getAllChats, toChat, checkInChat, writeToChat , logoutChat};
 

@@ -1,23 +1,6 @@
-// function optionButtonChats(data) {  
-
-//   const button = data.map((i) => {
-//     return { text: i.order_number, callback_data: i.order_number };
-//   });
-
-//   console.log(button);
-
-//   return {
-//     reply_markup: {
-//       inline_keyboard: [button],
-//     },
-//   };
-// }
-
-// module.exports = optionButtonChats;
 
 function optionButtonChats(data) {
 
-  console.log(data)
   const buttons = [];
   const chunkSize = 4;
 

@@ -13,7 +13,7 @@ class Session {
     // получаем нужный объект
     const itemSession = file.find((item) => item.tlgId == tlgId);
 
-    console.log(itemSession);
+   // console.log(itemSession);
 
     if (!itemSession) {
       return "Данных для очистки нет, для оформления заказа введите /order";
@@ -84,7 +84,7 @@ class Session {
   }
 
   endSession(fileName, tlgId, type = this._cheskParam("type")) {
-    console.log("endSession");
+   // console.log("endSession");
     // получаем файл
     let file = this.getfileJsonFormessage(fileName);
     // получаем нужный объект

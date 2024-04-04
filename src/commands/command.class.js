@@ -9,7 +9,7 @@ class Command {
   requestMessage(chatId, message, option) {
     setTimeout(async () => {
       await this.bot.sendMessage(chatId, message, option);
-    }, 2000);
+    }, 500);
   }
 
   //быстрая проверка заполнено ли имя у пользователя телеграмм

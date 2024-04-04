@@ -3,11 +3,13 @@ const GOOGLE_SHEETS_KEY_ORDERS = process.env.GOOGLE_SHEETS_KEY_ORDERS;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const fetch = require("node-fetch");
 const LoggerManager = require("../../log/LoggerManager");
+const cacheService = require("../../cache/CacheService");
+
 
 class Api {
   constructor(bot) {
-    this.bot = bot;
-  }
+    this.bot = bot;    
+  }  
 
   //простой текстовый ответ вынести в apiUse
   requestMessageOnApi(chatId, message, option = {}) {
@@ -31,12 +33,25 @@ class Api {
     } catch (error) {
       new LoggerManager().logMessage("error", "error", error.message);
       console.error("Ошибка при выполнении запроса updateUser:", error);
-      this.requestMessageOnApi(TELEGRAMM_ADMIN_CHAT, `Ошибка Google sheets при регистрации пользователя ${ JSON.stringify(postData) }`, {});
+      this.requestMessageOnApi(
+        TELEGRAMM_ADMIN_CHAT,
+        `Ошибка Google sheets при регистрации пользователя ${JSON.stringify(
+          postData
+        )}`,
+        {}
+      );
     }
   }
 
   async checkUser(postData) {
-    try {      
+    try {
+      //кэш для запросов
+      const { tlgId } = postData;
+      if (cacheService.has(tlgId)) {
+        console.log("кэш найден", cacheService.get(tlgId));
+        return cacheService.get(tlgId);
+      }
+      console.log("кэш не найден", tlgId);
       const response = await fetch(`${GOOGLE_SHEETS_KEY_USERS}`, {
         method: "POST",
         headers: {
@@ -46,12 +61,20 @@ class Api {
       });
 
       let res = await response.json();
-      console.log(res);
+
+      cacheService.set(tlgId, res);
+
       return res;
     } catch (error) {
       new LoggerManager().logMessage("error", "checkUser", error.message);
       console.error("Ошибка при выполнении запроса checkUser:", error);
-     this.requestMessageOnApi(TELEGRAMM_ADMIN_CHAT, `Ошибка Google sheets при проверки пользователя ${ JSON.stringify(postData) }`, {});
+      this.requestMessageOnApi(
+        TELEGRAMM_ADMIN_CHAT,
+        `Ошибка Google sheets при проверки пользователя, (выполнен первичный запрос к таблицам) ${JSON.stringify(
+          postData
+        )}`,
+        {}
+      );
     }
   }
 
@@ -66,11 +89,15 @@ class Api {
       });
 
       let res = await response.json();
-      console.log(res);
+      console.log("-res", res);
       return res;
     } catch (error) {
       console.error("Ошибка при выполнении запроса postOrder:", error);
-      this.requestMessageOnApi(TELEGRAMM_ADMIN_CHAT, `Ошибка Google sheets при отправке заказа ${ JSON.stringify(postData) }`, {});
+      this.requestMessageOnApi(
+        TELEGRAMM_ADMIN_CHAT,
+        `Ошибка Google sheets при отправке заказа ${JSON.stringify(postData)}`,
+        {}
+      );
     }
   }
 }

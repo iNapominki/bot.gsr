@@ -44,7 +44,7 @@ const responseTemplate = {
            let sponsor = user?.sponsor ? user?.sponsor : "не определено";
 
             return `Информация по заявке №${order}: \
-            \n \n Сообщение в чате под номером ${tlgMessageId} \
+            \n \n \
              \n ID агента ${spzId} \
              \n Тип заявки ${typeOrder} \
              \n Город ${city} \

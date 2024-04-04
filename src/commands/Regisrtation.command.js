@@ -7,8 +7,7 @@ class RegisrtationCommand extends Command {
     super(bot);
   }
 
-  handle() {
-    // this.bot.onText(/\/form/, (msg) => {
+  handle() {    
     this.bot.onText(/\/registration/, (msg) => {
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;

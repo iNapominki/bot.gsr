@@ -31,7 +31,7 @@ class ChatsCommands extends Command {
         const { status, id } = chat;
 
         if (!status) {
-          console.log("Канал создавать не нужно");
+         // "Канал создавать не нужно"
           return;
         }
 

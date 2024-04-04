@@ -20,7 +20,7 @@ const SESSION_RESPONSE = {
     1: {
       title: "Введите номер телефона в формате 89013337722, начиная с 8ки",
       validation: function (value) {
-        console.log("validationMessage", value);
+        //console.log("validationMessage", value);
         if (!regularRegex.phone.test(value)) {
           return "Введено значение телефона не по формату, номер должен начинаться с 89 и содержать 11 цыфр";
         } else {
@@ -57,8 +57,7 @@ const SESSION_RESPONSE = {
     },
     1: {
       title: "Телефон заказчика в формате 89013337722, начиная с 8ки",
-      validation: function (value) {
-        console.log("validationMessage", value);
+      validation: function (value) {        
         if (!regularRegex.phone.test(value)) {
           return "Введено значение телефона не по формату, номер должен начинаться с 89 и содержать 11 цыфр";
         } else {

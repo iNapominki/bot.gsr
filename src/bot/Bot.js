@@ -1,12 +1,10 @@
 const TelegramBot = require("node-telegram-bot-api");
 const responseTemplate = require("../commands/responseTemplate/responseTemplate");
-//const startMiddelware = require("../middleware/startMiddelware");
 const AipUse = require("../utils/api/apiUse");
 const Api = require("../utils/api/api");
-//const option_registration = require("../utils/option/options-reg");
-const option_test = require("../utils/option/option_test");
 const SessionRegistration = require("../session/session.registration");
-//const use = require("node-telegram-bot-api-middleware").use;
+const cacheService = require("../cache/CacheService");
+
 class Bot {
   constructor(token) {
     this.bot = new TelegramBot(token, { polling: true });
@@ -27,6 +25,10 @@ class Bot {
   
 
   async _useCheskUser(tlgId) {
+
+    // очистить кэш, так как после регистрации данные изменятся
+    cacheService.del(`${tlgId}`);
+
     let checkPost = {
       action: "check",
       tlgId: `${tlgId}`,
@@ -58,10 +60,9 @@ try {
       const chatId = msg.chat.id;
       const chatUsername = msg.chat.username;
       // очистка сесии регистрации
-    new  SessionRegistration(msg, this.bot).clear(chatId);
+      new  SessionRegistration(msg, this.bot).clear(chatId);
       //
       this.bot.sendMessage(chatId, responseTemplate.start);
-
 
       let isCheckUserName = this.checkUserName(chatId, chatUsername);
       // проверка заполнено ли имя
