@@ -6,10 +6,11 @@ const LoggerManager = require("../../log/LoggerManager");
 const cacheService = require("../../cache/CacheService");
 
 
+
 class Api {
   constructor(bot) {
     this.bot = bot;    
-  }  
+  } 
 
   //простой текстовый ответ вынести в apiUse
   requestMessageOnApi(chatId, message, option = {}) {
