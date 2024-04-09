@@ -36,7 +36,7 @@ class SessionOrder extends Session {
     return SESSION_RESPONSE.ORDER[step].option;
   }
 
-  createSession() {
+  createSession(spzId) {
     if (this.file.length < 1) {
       // [] это для первого значения, если сессий нет
       // собираем сессию
@@ -46,6 +46,7 @@ class SessionOrder extends Session {
         tlgId: this.tlgId,
         tlgName: this.tlgName,
         step: this.step,
+        agentIdSPZ: spzId,
       };
       this._writeToFile([], session);
       let message = this._getTitleStep(this.step);
@@ -71,6 +72,7 @@ class SessionOrder extends Session {
         tlgId: this.tlgId,
         tlgName: this.tlgName,
         step: this.step,
+        agentIdSPZ: spzId,
       };
       this._writeToFile(this.file, session);
       let message = this._getTitleStep(this.step);

@@ -29,6 +29,7 @@ class DataBase {
 
   async query(sql, values) {
     try {
+      
       const connection = await this._connect(); 
       const result = await connection.execute(sql, values);     
       await connection.end();

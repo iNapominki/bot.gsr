@@ -237,11 +237,16 @@ class ChatHandle {
   }
 
   async checkInChat(chatId) {
-    try {
-     // console.log("Проверка чатов", chatId);
+    try {     
 
       // проверяем есть ли вообще чаты
-      const chats = await getMyChats(chatId);
+      const chats = await getMyChats(chatId);      
+
+      if(!chats) {
+        return { status: false };
+      }
+
+
       if (chats[0].length == 0) {        
         return { status: false, message: "У вас чатов нет" };
       }
@@ -324,8 +329,15 @@ class ChatHandle {
   }
 
   async logoutChat(chatId) {
+
+try {
+
+
     //получаем все заказы
     const dataOrder = await getMyChats(chatId);
+
+    console.log("ataOrder", dataOrder)
+
     if (dataOrder[0].length == 0) {
       return {
         status: false,
@@ -347,6 +359,10 @@ class ChatHandle {
       message: "Вы вышли из чата, и можете оформить заказ /order",
       activChats: "",
     };
+  } catch (e) {
+    console.error(e);
+  }
+
   }
 }
 

@@ -50,12 +50,14 @@ class OrderCommand extends Command {
           // проверка заполнено ли имя
           if (!isCheckUserName) {
             return;
-          }
+          }          
+
+          const { spzId } = user;
 
           let { step, message, option } = new SessionOrder(
             msg,
             this.bot
-          ).createSession();
+          ).createSession(`${spzId}`);
           this.requestMessage(chatId, message, option);
           return;
         } else {
