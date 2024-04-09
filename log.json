@@ -1,17 +1,5 @@
 [
   {
-    "timestamp": "2024-04-03T14:02:53.262Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12383,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152972,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:03:06.740Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
     "timestamp": "2024-04-03T14:03:14.796Z",
     "type": "log",
     "message": "bot.on(message)",
@@ -1198,5 +1186,17 @@
     "type": "log",
     "message": "bot.on(callback_query)",
     "stack": "{\n  \"id\": \"4002155592175131164\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 408,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647075,\n    \"text\": \"Ваша заявка принята под №33496:             \\n             \\n \\n Тип заявки поминальные обеды              \\n Город МО              \\n Время прощания  21:00-21:30             \\n Контактное лицо (Лид) Как то             \\n Номер телефона 89013437024             \\n ФИО  ФИО усопшего пропущено             \\n Дата смерти неизвестна             \\n Дата прощания  неизвестна            \\n             \\n  Комментарии:  место прощания неизвестно комментарий пропущен             \\n             \\n Написать куратору @Andre_roz\",\n    \"entities\": [\n      {\n        \"offset\": 496,\n        \"length\": 10,\n        \"type\": \"mention\"\n      }\n    ],\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Запросить статус\",\n            \"callback_data\": \"button_status\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_status\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:43:04.361Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-09T07:43:14.146Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
   }
 ]
