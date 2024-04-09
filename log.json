@@ -1,179 +1,5 @@
 [
   {
-    "timestamp": "2024-04-03T13:59:38.734Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T13:59:38.992Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12360,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152083,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T13:59:39.006Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12361,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152582,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T13:59:39.012Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12362,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152775,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:12.344Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:00:12.590Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12360,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152083,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:12.604Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12361,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152582,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:12.610Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12362,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152775,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:18.411Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:00:18.853Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12360,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152083,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:18.863Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12361,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152582,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:18.869Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12362,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152775,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:29.353Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:00:29.626Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12360,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152083,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:29.639Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12361,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152582,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:00:29.645Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12362,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152775,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:01:17.715Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:01:17.977Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12360,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152083,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:01:17.993Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12361,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152582,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:01:18.001Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12362,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152775,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:01:29.242Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12366,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152888,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:01:54.896Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:02:09.400Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:02:11.785Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12368,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152931,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:02:21.182Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12371,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152940,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:02:33.946Z",
-    "type": "log",
-    "message": "старт",
-    "stack": "\"Произошел старт бота\""
-  },
-  {
-    "timestamp": "2024-04-03T14:02:35.933Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12374,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152955,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:02:43.531Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12377,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152962,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
-    "timestamp": "2024-04-03T14:02:49.857Z",
-    "type": "log",
-    "message": "bot.on(message)",
-    "stack": "{\n  \"message_id\": 12380,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712152969,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
-  },
-  {
     "timestamp": "2024-04-03T14:02:53.262Z",
     "type": "log",
     "message": "bot.on(message)",
@@ -1198,5 +1024,179 @@
     "type": "log",
     "message": "bot.on(callback_query)",
     "stack": "{\n  \"id\": \"4002155593166706981\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 12694,\n    \"from\": {\n      \"id\": 6597713702,\n      \"is_bot\": true,\n      \"first_name\": \"debugging.gsr.bot\",\n      \"username\": \"debugging_gsr_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712232090,\n    \"text\": \"Перейдите в чат по номеру заказа\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"31076\",\n            \"callback_data\": \"31076\"\n          },\n          {\n            \"text\": \"31077\",\n            \"callback_data\": \"31077\"\n          },\n          {\n            \"text\": \"31073\",\n            \"callback_data\": \"31073\"\n          },\n          {\n            \"text\": \"31066\",\n            \"callback_data\": \"31066\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"4484303776134839497\",\n  \"data\": \"31066\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:13:04.260Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-09T07:13:13.384Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 365,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646793,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:13:39.192Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 368,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646819,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:13:46.370Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 371,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646826,\n  \"text\": \"/registration\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 13,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:14:00.512Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 373,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646840,\n  \"text\": \"Михаил К\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:14:04.859Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 375,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646844,\n  \"text\": \"89013437024\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:14:07.524Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155593165491639\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 376,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712646845,\n    \"text\": \"Выберите роль\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Агент\",\n            \"callback_data\": \"button_reg_agent\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_reg_agent\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:14:13.446Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 379,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646853,\n  \"text\": \"/order\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:15:39.548Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-09T07:15:53.589Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 382,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646953,\n  \"text\": \"/start\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:16:06.451Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 385,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646966,\n  \"text\": \"/registration\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 13,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:16:30.762Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-09T07:16:32.441Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 386,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712646992,\n  \"text\": \"/registration\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 13,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:16:47.000Z",
+    "type": "log",
+    "message": "старт",
+    "stack": "\"Произошел старт бота\""
+  },
+  {
+    "timestamp": "2024-04-09T07:16:48.537Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 387,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712647008,\n  \"text\": \"/registration\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 13,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:00.037Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 389,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712647019,\n  \"text\": \"Михаил АК\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:05.038Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 391,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712647024,\n  \"text\": \"89013437024\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:06.613Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155591793418346\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 392,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647025,\n    \"text\": \"Выберите роль\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Агент\",\n            \"callback_data\": \"button_reg_agent\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_reg_agent\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:14.293Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 395,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712647034,\n  \"text\": \"/order\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 6,\n      \"type\": \"bot_command\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:27.288Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 397,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712647047,\n  \"text\": \"Как то\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:32.437Z",
+    "type": "log",
+    "message": "bot.on(message)",
+    "stack": "{\n  \"message_id\": 399,\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"chat\": {\n    \"id\": 931824462,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"type\": \"private\"\n  },\n  \"date\": 1712647051,\n  \"text\": \"89013437024\",\n  \"entities\": [\n    {\n      \"offset\": 0,\n      \"length\": 11,\n      \"type\": \"phone_number\"\n    }\n  ]\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:35.133Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155592160824704\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 400,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647052,\n    \"text\": \"ФИО усопшего\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"пропустить\",\n            \"callback_data\": \"button_order_fio_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_order_fio_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:36.645Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155590035763109\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 401,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647055,\n    \"text\": \"Дата смерти в формате 21.01\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"неизвестна\",\n            \"callback_data\": \"option_data_dateLeft_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"option_data_dateLeft_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:37.895Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155591720225455\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 402,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647057,\n    \"text\": \"Дата прощания в формате 21.01\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"неизвестна\",\n            \"callback_data\": \"option_data_dateWake_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"option_data_dateWake_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:40.722Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155593700967353\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 403,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647058,\n    \"text\": \"Время прощания\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"9:00-9:30\",\n            \"callback_data\": \"9:00-9:30\"\n          },\n          {\n            \"text\": \"9:30-10:00\",\n            \"callback_data\": \"9:30-10:00\"\n          },\n          {\n            \"text\": \"10:00-10:30\",\n            \"callback_data\": \"10:00-10:30\"\n          },\n          {\n            \"text\": \"10:30-11:00\",\n            \"callback_data\": \"10:30-10:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"11:00-11:30\",\n            \"callback_data\": \"11:00-11:30\"\n          },\n          {\n            \"text\": \"11:30-12:00\",\n            \"callback_data\": \"11:30-12:00\"\n          },\n          {\n            \"text\": \"12:00-12:30\",\n            \"callback_data\": \"12:00-12:30\"\n          },\n          {\n            \"text\": \"12:30-13:00\",\n            \"callback_data\": \"12:30-13:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"13:00-13:30\",\n            \"callback_data\": \"13:00-13:30\"\n          },\n          {\n            \"text\": \"13:30-14:00\",\n            \"callback_data\": \"13:30-14:00\"\n          },\n          {\n            \"text\": \"14:00-14:30\",\n            \"callback_data\": \"14:00-14:30\"\n          },\n          {\n            \"text\": \"14:30-15:00\",\n            \"callback_data\": \"14:30-15:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"15:00-15:30\",\n            \"callback_data\": \"15:00-15:30\"\n          },\n          {\n            \"text\": \"15:30-16:00\",\n            \"callback_data\": \"15:30-16:00\"\n          },\n          {\n            \"text\": \"16:00-16:30\",\n            \"callback_data\": \"16:00-16:30\"\n          },\n          {\n            \"text\": \"16:30-17:00\",\n            \"callback_data\": \"16:30-17:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"17:00-17:30\",\n            \"callback_data\": \"17:00-17:30\"\n          },\n          {\n            \"text\": \"17:30-18:00\",\n            \"callback_data\": \"17:30-18:00\"\n          },\n          {\n            \"text\": \"18:00-18:30\",\n            \"callback_data\": \"18:00-18:30\"\n          },\n          {\n            \"text\": \"18:30-19:00\",\n            \"callback_data\": \"18:30-19:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"19:00-19:30\",\n            \"callback_data\": \"19:00-19:30\"\n          },\n          {\n            \"text\": \"19:30-20:00\",\n            \"callback_data\": \"19:30-20:00\"\n          },\n          {\n            \"text\": \"20:00-20:30\",\n            \"callback_data\": \"20:00-20:30\"\n          },\n          {\n            \"text\": \"20:30-21:00\",\n            \"callback_data\": \"20:30-21:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"21:00-21:30\",\n            \"callback_data\": \"21:00-21:30\"\n          },\n          {\n            \"text\": \"21:30-22:00\",\n            \"callback_data\": \"21:30-22:00\"\n          }\n        ],\n        [\n          {\n            \"text\": \"время неизвестно\",\n            \"callback_data\": \"option_order_timeWake_empty\"\n          }\n        ],\n        [\n          {\n            \"text\": \"Пропустить это и остальные поля\",\n            \"callback_data\": \"option_order_others_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"21:00-21:30\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:42.188Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155590861122005\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 404,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647061,\n    \"text\": \"Город\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Москва\",\n            \"callback_data\": \"button_order_moscow\"\n          },\n          {\n            \"text\": \"МО\",\n            \"callback_data\": \"button_order_mo\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_order_mo\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:43.447Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155592502820437\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 405,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647062,\n    \"text\": \"Место прощания (Адрес в произвольной форме)\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"пропустить, если неизвестно\",\n            \"callback_data\": \"button_order_place_wake_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_order_place_wake_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:17:44.694Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155592064011611\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 406,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647063,\n    \"text\": \"Комментарий\",\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"пропустить, если нету\",\n            \"callback_data\": \"button_order_comment_empty\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_order_comment_empty\"\n}"
+  },
+  {
+    "timestamp": "2024-04-09T07:18:03.657Z",
+    "type": "log",
+    "message": "bot.on(callback_query)",
+    "stack": "{\n  \"id\": \"4002155592175131164\",\n  \"from\": {\n    \"id\": 931824462,\n    \"is_bot\": false,\n    \"first_name\": \"Михаил\",\n    \"username\": \"MihailDiper\",\n    \"language_code\": \"ru\"\n  },\n  \"message\": {\n    \"message_id\": 408,\n    \"from\": {\n      \"id\": 7049148758,\n      \"is_bot\": true,\n      \"first_name\": \"Сеть Поминальных Залов\",\n      \"username\": \"SPZ_napominki_bot\"\n    },\n    \"chat\": {\n      \"id\": 931824462,\n      \"first_name\": \"Михаил\",\n      \"username\": \"MihailDiper\",\n      \"type\": \"private\"\n    },\n    \"date\": 1712647075,\n    \"text\": \"Ваша заявка принята под №33496:             \\n             \\n \\n Тип заявки поминальные обеды              \\n Город МО              \\n Время прощания  21:00-21:30             \\n Контактное лицо (Лид) Как то             \\n Номер телефона 89013437024             \\n ФИО  ФИО усопшего пропущено             \\n Дата смерти неизвестна             \\n Дата прощания  неизвестна            \\n             \\n  Комментарии:  место прощания неизвестно комментарий пропущен             \\n             \\n Написать куратору @Andre_roz\",\n    \"entities\": [\n      {\n        \"offset\": 496,\n        \"length\": 10,\n        \"type\": \"mention\"\n      }\n    ],\n    \"reply_markup\": {\n      \"inline_keyboard\": [\n        [\n          {\n            \"text\": \"Запросить статус\",\n            \"callback_data\": \"button_status\"\n          }\n        ]\n      ]\n    }\n  },\n  \"chat_instance\": \"5009976966642023713\",\n  \"data\": \"button_status\"\n}"
   }
 ]
