@@ -54,8 +54,7 @@ const responseTemplate = {
              \n ФИО ${fio}\
              \n Дата смерти ${dateLeft}\
              \n Дата прощания ${dateWake}\            
-             \n  Комментарии: ${comment}\
-             \n \n Написать агенту @${tlgName}\
+             \n  Комментарии: ${comment}\             
              \n Куратор @${sponsor}\
             `;
         },
