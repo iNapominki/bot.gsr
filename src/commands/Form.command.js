@@ -14,7 +14,8 @@ class FormCommand extends Command {
   }
   handle() {
     this.bot.on("message", async (msg) => {
-      try {
+      try {        
+
         new LoggerManager().logMessage("log", "bot.on(message)", msg);
         const chatId = msg.chat.id;
         const chatUsername = msg.chat.username;
@@ -71,6 +72,7 @@ class FormCommand extends Command {
          */
 
         const inChatData = await  new ChatHandle(this.bot).checkInChat(chatId);       
+        
         if(inChatData.status) {
           const activChats = inChatData.activChats;
           const writeToChat = await new ChatHandle(this.bot).writeToChat(activChats, msg);

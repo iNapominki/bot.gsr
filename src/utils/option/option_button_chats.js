@@ -1,13 +1,13 @@
 
-function optionButtonChats(data) {
+function optionButtonChats(data) { 
 
   const buttons = [];
-  const chunkSize = 4;
+  const chunkSize = 1;
 
   for (let i = 0; i < data.length; i += chunkSize) {
     const chunk = data.slice(i, i + chunkSize);
     const formattedChunk = chunk.map((item) => {
-      return { text: item.order_number, callback_data: item.order_number };
+      return { text: `${item.lid} ${item.customer_phone}`, callback_data: item.order_number };
     });
     buttons.push(formattedChunk);
   }  

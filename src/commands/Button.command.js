@@ -13,6 +13,7 @@ class Buttoncommand extends Command {
 
   async _checkChat(command, chatId, messageId) {
    const order = await getAllChats();
+   
    // проверяем есть ли чаты
    const findOrder = await order[0].find(item => item.order_number === command);   
    if(!findOrder) {
@@ -23,11 +24,12 @@ class Buttoncommand extends Command {
     await new ChatHandle(this.bot).logoutChat(chatId);
     // устанавливаем чат
     // внутренним методом отправляем сообщение полователю который подключился к чату
-    const res = await new ChatHandle(this.bot).toChat(findOrder.order_number, chatId); 
+    const res = await new ChatHandle(this.bot).toChat(findOrder.order_number, chatId);   
     
-    this.bot.editMessageText(`Вы выбрали чат ${findOrder.order_number}.`, {
+    this.bot.editMessageText(`*Вы выбрали чат:* ${findOrder.lid} ${findOrder.customer_phone}.`, {
       chat_id: chatId,
       message_id: messageId,
+      parse_mode: "Markdown"
     });
 
     

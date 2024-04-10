@@ -44,7 +44,7 @@ class ChatHandle {
     const {approve, message_id, order_number} = dataQuery;  
     
     // готовим кнопки
-    const option = optionToChat(order_number);
+    const option = optionToChat(order_number, order_number, "");
 
     // получаем заказ
     const order = await getOrderForNumber(order_number);
@@ -109,7 +109,7 @@ class ChatHandle {
 
 
 
-  async createChat(orderNumber, managerId, agentId, customer) {
+  async createChat(orderNumber, managerId, agentId, customer, lid) {
     // проверяем уникальный ли ордер
     const order = await getOrderForNumber(orderNumber);
     // если не уникальный то прерываем
@@ -117,7 +117,7 @@ class ChatHandle {
       return { status: false };
     }
     // если уникальный создаем
-    const res = await createChat(orderNumber, managerId, agentId, customer);
+    const res = await createChat(orderNumber, managerId, agentId, customer, lid);
     return { status: true, id: res[0][0].id, order: res[0][0].order_number };
   }
 
@@ -125,12 +125,12 @@ class ChatHandle {
     const res = await getMyChats(chatId);
     if (res[0].length == 0) {
       return { status: false, message: "У вас чатов нет" };
-    }
+    }    
 
     return {
       status: true,
       button: res[0],
-      message: "Перейдите в чат по номеру заказа",
+      message: "Перейдите в чат по номеру телефона заказчика",
     };
   }
 
@@ -173,12 +173,8 @@ class ChatHandle {
 
       const pleaseWait = await this.bot.sendMessage(chatId, "Идет загрузка данных. Пожалуйста, подождите...", {});
 
-      const {manager, agent} = await this._getInfoAboutUsers(manager_id, agent_id, pleaseWait, chatId);
-      
-      // показ номера телефона заказчика по номеру заказа
+      const {manager, agent} = await this._getInfoAboutUsers(manager_id, agent_id, pleaseWait, chatId);      
 
-      this.requestMessage(chatId, `Номер телефона заказчика по данному заказу ${customer_phone}`);
-      //console.log("manager, agent", manager, agent);
       // преобразование несколько раз из за формата хранения в базе данных      
       parsData.forEach((element) => {
         try {
@@ -237,7 +233,7 @@ class ChatHandle {
   }
 
   async checkInChat(chatId) {
-    try {     
+    try {      
 
       // проверяем есть ли вообще чаты
       const chats = await getMyChats(chatId);      
@@ -245,7 +241,6 @@ class ChatHandle {
       if(!chats) {
         return { status: false };
       }
-
 
       if (chats[0].length == 0) {        
         return { status: false, message: "У вас чатов нет" };
@@ -284,17 +279,22 @@ class ChatHandle {
     try {
       //получаем заказ
 
-      const from = msg.from.id;
-      const dataOrder = await getOrderForNumber(chatNumber);     
+      
 
-      const option = optionToChat(chatNumber);
+      const from = msg.from.id;
+      const dataOrder = await getOrderForNumber(chatNumber); 
+      
+      const {order_number, customer_phone, lid} = dataOrder[0][0];      
+     
+      const option = optionToChat(order_number, customer_phone, lid);
+      
       // 1 смотри кто написал, и если отправляем на противоположную роль
       //1.1 агент менеджеру
       if (from != dataOrder[0][0].manager_id) {
         try{
            this.requestMessage(
           dataOrder[0][0].manager_id,
-          `Новое сообщение в чате ${chatNumber}: ${msg.text}`,
+          `Новое сообщение в чате ${chatNumber}: ${msg.text}, для того что бы ответить перейдите в чат нажав кнопку ниже`,
           option
         );
 

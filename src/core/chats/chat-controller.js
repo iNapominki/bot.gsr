@@ -13,13 +13,14 @@ async function createChat(
   managerId = "ошибка",
   agentId = "ошибка",
   customer = "ошибка",
+  lid = "ошибка",
 ) {
   try {
     // возвращает : id в базе данных и номер заказа из операционки
     // если такого канала нет создает новый
     const sql =
-      "INSERT INTO `chats`(`order_number`, `manager_id`, `agent_id`, `customer_phone`) VALUES (?, ?, ?, ?)";
-    const values = [orderNumber, managerId, agentId, customer];
+      "INSERT INTO `chats`(`order_number`, `manager_id`, `agent_id`, `customer_phone`, `lid`) VALUES (?, ?, ?, ?, ?)";
+    const values = [orderNumber, managerId, agentId, customer, lid];
     const result = await new DataBase().query(sql, values);
     const selectSql = "SELECT * FROM chats WHERE id = ?";
     const res = await new DataBase().query(selectSql, [result[0].insertId]);
@@ -51,7 +52,7 @@ async function getMyChats(chatId) {
 async function getAllChats() {
     try {      
       const sql =
-        "SELECT `order_number` FROM `chats`";
+        "SELECT `order_number`, `lid`, `customer_phone`  FROM `chats`";
       const res = await new DataBase().query(sql, []);
       return res;  
       // возвращет все номера заказов
@@ -91,13 +92,14 @@ async function checkInChat(role, tlgChatId) {
 
 // положить сообщение, думаю просто в массив добавить json не важно от кого не привязывая к id, все равно я имя не смогу подгружить из google sheets
 async function writeToChat(chatNumber, msg) {
-  try {
+  try {    
 
     // проверяем есть ли вообще ключ согласования (показа сообщения, для сообщение от агента по умолчанию true) в msg
     if (!('approve' in msg)) {
       console.log('Ключ "approve" присутствует в объекте.');
       return;
     }
+
 
     
 

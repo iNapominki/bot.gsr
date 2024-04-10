@@ -15,18 +15,20 @@ class ChatsCommands extends Command {
         const validMessage = message.replace(
           /(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
           '"$2": '
-        );
+        );        
 
         // Преобразуем строку в объект
-        const chatData = JSON.parse(validMessage);        
+        const chatData = JSON.parse(validMessage);     
+       
         let order = chatData?.order ? chatData?.order : "order не найден";
         let employee = chatData?.employee
           ? chatData?.employee
           : "employee не найден";
         let agent = chatData?.agent ? chatData?.agent : "agent не найден";
         let customer = chatData?.customer ? chatData?.customer : "номер заказчика не найден";
+        let lid = chatData?.lid ? chatData?.lid : "заказчик";
 
-        const chat = await new ChatHandle(this.bot).createChat(order, employee, agent, customer);        
+        const chat = await new ChatHandle(this.bot).createChat(order, employee, agent, customer, lid);        
         // возвращает
         const { status, id } = chat;
 
