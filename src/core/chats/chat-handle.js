@@ -41,10 +41,13 @@ class ChatHandle {
 
     const dataQuery = parsQueryButton(query);    
 
-    const {approve, message_id, order_number} = dataQuery;  
-    
+    const {approve, message_id, order_number} = dataQuery;
+   
+    const orderData = await getOrderForNumber(order_number);
+
+    const {lid, customer_phone} = orderData[0][0];    
     // готовим кнопки
-    const option = optionToChat(order_number, order_number, "");
+    const option = optionToChat(order_number, lid, customer_phone);
 
     // получаем заказ
     const order = await getOrderForNumber(order_number);
