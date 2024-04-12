@@ -116,8 +116,7 @@ const responseTemplate = {
            let role = user.role ? user.role  : "не определено" ;
 
            return `Пользователь внес данные в таблицу пользователей: \            
-           \n Имя ${name} \
-           \n Имя телеграмм @${tlgName} \           
+           \n Имя ${name} \                     
            \n Роль ${role} \
            
           `;
