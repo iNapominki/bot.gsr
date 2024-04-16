@@ -1,3 +1,5 @@
+ // @ts-check
+
 const cacheService = require("../cache/CacheService");
 const ChatHandle = require("../core/chats/chat-handle");
 const SessionRegistration = require("../session/session.registration");

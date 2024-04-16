@@ -1,3 +1,5 @@
+// @ts-check
+
 const ChatHandle = require("../core/chats/chat-handle");
 const SessionOrder = require("../session/session.order");
 const Api = require("../utils/api/api");
@@ -52,12 +54,12 @@ class OrderCommand extends Command {
             return;
           }          
 
-          const { spzId } = user;
+          const { spzId, sponsorName, name } = user;          
 
           let { step, message, option } = new SessionOrder(
             msg,
             this.bot
-          ).createSession(`${spzId}`);
+          ).createSession(`${spzId}`, sponsorName, name);
           this.requestMessage(chatId, message, option);
           return;
         } else {

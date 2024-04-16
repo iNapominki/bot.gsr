@@ -1,3 +1,5 @@
+// @ts-check
+
 const DataBase = require("../dataBase/dataBase");
 
 async function getOrderForNumber(order = "ошибка") {
@@ -31,6 +33,10 @@ async function createChat(
 }
 
 // показать мои чаты
+/** * 
+ * @param {number} chatId 
+ * 
+ */
 async function getMyChats(chatId) {
   try {
     //1 проверяем нет ли в базе данных номера с такой заявкой
@@ -43,8 +49,8 @@ async function getMyChats(chatId) {
 
     // принимает id и смотрит в каких чатах
     // возвращает id частов и номер от заказа
-  } catch (e) {
-    console.error("Ошибка при получении списка моих чатов", e);
+  } catch (e) {    
+    console.error("Ошибка при получении списка моих чатов", e);    
   }
 }
 
@@ -78,15 +84,22 @@ async function toChat(order = "ошибка", role="ошибка") {
 }
 
 // проверка в чате ли агент или менеджер (любой пользователь)
-async function checkInChat(role, tlgChatId) {
+/** * 
+ * @param {string} role 
+ * @param {number} tlgChatId  
+ * @returns {Promise<[import("mysql2").QueryResult, import("mysql2").FieldPacket[]] | undefined>}
+ */
+async function checkInChat(role, tlgChatId) {  
     try {
       const sql = `SELECT order_number FROM chats WHERE ${role} = ? AND ${role}_in_chat = ?;`;
-        const res = await new DataBase().query(sql, [tlgChatId, true]);      
+      const res = await new DataBase().query(sql, [tlgChatId, true]); 
+        
       return res; 
       // ищет по id в колонках у менеджера и агента или куратора находится ли он в чате
       // возвращает: id чата или false
-    } catch (e) {
+    } catch (e) {      
       console.error("Ошибка проверка в чате ли пользователь", e);
+      return undefined;
     }
   }
 

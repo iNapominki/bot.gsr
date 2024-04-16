@@ -1,3 +1,5 @@
+// @ts-check
+
 const fs = require("fs");
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");
@@ -78,12 +80,15 @@ class Session {
     this.writeTofilesession("heaporders.json", buffer);
   }
 
-  _cheskParam(message) {
-    console.log(`В функции endSession Отсутствует параметр ${message}`);
-    throw new Error(`В функции endSession Отсутствует параметр ${message}`);
-  }
+  //endSession(fileName, tlgId, type = this._cheskParam("type")) {
+/**
+ * Собрать полное имя пользователя
+ * @param {string} fileName — имя
+ * @param {string} tlgId — фамилия
+ * @param {string} type — фамилия * 
+ */
 
-  endSession(fileName, tlgId, type = this._cheskParam("type")) {
+  endSession(fileName, tlgId, type) {
    // console.log("endSession");
     // получаем файл
     let file = this.getfileJsonFormessage(fileName);

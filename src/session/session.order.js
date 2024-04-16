@@ -1,5 +1,10 @@
+//@ts-check
+
+const Api = require("../utils/api/api");
+const AipUse = require("../utils/api/apiUse");
 const Session = require("./session");
 const SESSION_RESPONSE = require("./session.respons");
+
 class SessionOrder extends Session {
   constructor(msg, bot) {
     super(bot);
@@ -36,7 +41,14 @@ class SessionOrder extends Session {
     return SESSION_RESPONSE.ORDER[step].option;
   }
 
-  createSession(spzId) {
+  /** * 
+   * @param {string} spzId 
+   * @param {string} sponsorName
+   * @param {string} name
+   * @returns {{ step: number, message: string, option: {reply_markup: any} | {}, status: boolean }}
+   */
+
+  createSession(spzId, sponsorName, name) {
     if (this.file.length < 1) {
       // [] это для первого значения, если сессий нет
       // собираем сессию
@@ -47,6 +59,8 @@ class SessionOrder extends Session {
         tlgName: this.tlgName,
         step: this.step,
         agentIdSPZ: spzId,
+        sponsorName: sponsorName,
+        comment: `Имя агента ${name}`,
       };
       this._writeToFile([], session);
       let message = this._getTitleStep(this.step);
@@ -73,6 +87,8 @@ class SessionOrder extends Session {
         tlgName: this.tlgName,
         step: this.step,
         agentIdSPZ: spzId,
+        sponsorName: sponsorName,
+        comment: `Имя агента ${name}`,
       };
       this._writeToFile(this.file, session);
       let message = this._getTitleStep(this.step);
@@ -80,18 +96,18 @@ class SessionOrder extends Session {
     }
   }
 
-  async _useCheskUser(tlgId) {
-    let checkPost = {
-      action: "check",
-      tlgId: `${tlgId}`,
-    };
-    const api = new Api(this.bot);
-    const request = await new AipUse(api).checkUser(checkPost);
-    if (!request) {
-      return;
-    }
-    return request;
-  }
+  // async _useCheskUser(tlgId) {
+  //   let checkPost = {
+  //     action: "check",
+  //     tlgId: `${tlgId}`,
+  //   };
+  //   const api = new Api(this.bot);
+  //   const request = await new AipUse(api).checkUser(checkPost);
+  //   if (!request) {
+  //     return;
+  //   }
+  //   return request;
+  // }
 
   // обновление сессии
   handleSession() {
@@ -179,7 +195,7 @@ class SessionOrder extends Session {
 
           case 7:
             itemSession.step++;
-            itemSession.comment = text;
+            itemSession.comment = itemSession.comment + " " + text;
             this._writeToFile(dataSession, itemSession);
             message = this._getTitleStep(itemSession.step);
             // завершение сесии  
@@ -348,7 +364,7 @@ class SessionOrder extends Session {
           itemSession.step = 9;
           itemSession.timeWake = "пропущено";
           itemSession.city = "Москва";
-          itemSession.comment = "комментариев нет";
+          itemSession.comment = itemSession.comment + " комментариев нет ";
           message = this._getTitleStep(itemSession.step);
           option = this._getOptionStep(itemSession.step);
           this._writeToFile(dataSession, itemSession);
@@ -383,7 +399,7 @@ class SessionOrder extends Session {
             return;
           }
           itemSession.step++;
-          itemSession.comment = " место прощания неизвестно";
+          itemSession.comment = itemSession.comment + "место прощания неизвестно";
           this._writeToFile(dataSession, itemSession);
           option = this._getOptionStep(itemSession.step);
           message = this._getTitleStep(itemSession.step);

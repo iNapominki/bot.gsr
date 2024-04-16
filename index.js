@@ -1,3 +1,5 @@
+// @ts-check
+
 require("dotenv").config();
 const Bot = require("./src/bot/Bot");
 const LoggerManager = require("./src/log/LoggerManager");
@@ -17,6 +19,7 @@ const MyIdCommand = require("./src/commands/MyId.command");
 const CleanCacheCommand = require("./src/commands/CleanCache.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
+const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 
 const bot = new Bot(token);
 
@@ -70,7 +73,10 @@ try {
   console.log(error);
 
   const erronRequest = new Command(bot.bot);
-  erronRequest.requestMessage(JSON.stringify(error));
+
+  if (TELEGRAMM_ADMIN_CHAT) {
+    erronRequest.requestMessage(TELEGRAMM_ADMIN_CHAT, JSON.stringify(error));
+  }  
  
 }
 

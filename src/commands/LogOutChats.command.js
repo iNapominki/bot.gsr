@@ -1,3 +1,4 @@
+// @ts-check
 
 const ChatHandle = require("../core/chats/chat-handle");
 const Command = require("./command.class");
@@ -20,7 +21,9 @@ class LogOutChatsCommand extends Command {
 
         const logout = await new ChatHandle(this.bot).logoutChat(chatId);
 
-        const {status, message } = logout;
+        const { message } = logout;
+
+        console.log("message", message)
 
         this.requestMessage(chatId, message, {});
         return;

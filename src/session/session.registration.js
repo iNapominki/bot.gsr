@@ -1,3 +1,5 @@
+// @ts-check
+
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");
 const Session = require("./session");
@@ -76,8 +78,8 @@ class SessionRegistration extends Session {
 
   }
 
-  // обновление сессии
-  handleSession() {
+  // обновление сессии 
+  handleSession() {    
     const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
     const dataSession = this.file.filter((item) => item.tlgId != this.tlgId);
 
@@ -140,6 +142,14 @@ class SessionRegistration extends Session {
       };
     }
   }
+
+  /**
+ * Собрать полное имя пользователя
+ * @param {string} command — имя
+ * @param {string} chatId — фамилия
+ * @param {string} messageId — фамилия
+ * @returns {{ step: number, message: string, option: object, status: boolean}} — полное имя
+ */
 
   handleButton(command, chatId, messageId) {
     // получаем данные о текущей сесии

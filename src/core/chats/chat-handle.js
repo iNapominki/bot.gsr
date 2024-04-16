@@ -1,4 +1,5 @@
-//const option_btn_approve = require("../../utils/option/option_btn_approve");
+// @ts-check
+
 const Api = require("../../utils/api/api");
 const AipUse = require("../../utils/api/apiUse");
 const optionBtnApprove = require("../../utils/option/option_btn_approve");
@@ -235,44 +236,72 @@ class ChatHandle {
     return res;
   }
 
+  /** * 
+   * @param {number} chatId 
+   * @returns { Promise<{ status: boolean; message: string; activChats: string; }> }
+   */
+
   async checkInChat(chatId) {
-    try {      
+    try {     
 
       // проверяем есть ли вообще чаты
       const chats = await getMyChats(chatId);      
 
-      if(!chats) {
-        return { status: false };
+      if(!chats || !Array.isArray(chats[0])) {
+        return { status: false, message: "", activChats: "" };
       }
 
       if (chats[0].length == 0) {        
-        return { status: false, message: "У вас чатов нет" };
+        return { status: false, message: "У вас чатов нет", activChats: "" };
       }
 
       // если чаты есть получаем роль из первого чата
       // получаем любой чат считаем что менеджер не может быть агентом
-      const firstOrder = chats[0][0];      
+      const firstOrder = chats[0][0];
+      
+      /** * 
+       * @param {object} object 
+       * @param {number} value 
+       * @returns {string | false}
+       */
 
       function getKeyByValue(object, value) {
-        return Object.keys(object).find((key) => object[key] == value);
-      }
+        const role = Object.keys(object).find((key) => object[key] == value);
+        if(!role) {
+          return false;
+        }
+        return role;
+      }      
+
       // определяем кто сделал запрос менеджер или агент
-      const role = await getKeyByValue(firstOrder, chatId);
+      const role = getKeyByValue(firstOrder, chatId);
+
+      if(!role) {
+        return { status: false, message: "нет открытых чатов", activChats: "" };
+      }
 
       // проверка чатов
       const res = await checkInChat(role, chatId);
 
-      if (res[0].length == 0) {
+      if(!res || !Array.isArray(res[0])) {
+        return { status: false, message: "нет открытых чатов", activChats: "" };
+      }
+
+      if ( res[0].length == 0) {
         return { status: false, message: "нет открытых чатов", activChats: "" };
       } else {
+
+        const order_number = res[0][0]["order_number"] ? res[0][0]["order_number"] : "ошибка";       
+        
         return {
           status: true,
           message: "",
-          activChats: res[0][0].order_number,
+          activChats: order_number,
         };
       }
-    } catch (e) {
+    } catch (e) {      
       console.error(e);
+      return { status: false, message: "нет открытых чатов", activChats: "" };
     }
   }
 
@@ -331,15 +360,18 @@ class ChatHandle {
     }
   }
 
+  /**
+   * 
+   * @param {number} chatId 
+   * @returns 
+   */
+
   async logoutChat(chatId) {
 
-try {
-
+try {  
 
     //получаем все заказы
-    const dataOrder = await getMyChats(chatId);
-
-    console.log("ataOrder", dataOrder)
+    const dataOrder = await getMyChats(chatId);    
 
     if (dataOrder[0].length == 0) {
       return {

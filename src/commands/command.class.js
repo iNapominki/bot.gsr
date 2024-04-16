@@ -1,3 +1,5 @@
+ // @ts-check
+
 const ChatHandle = require("../core/chats/chat-handle");
 
 class Command {
@@ -6,6 +8,11 @@ class Command {
   }
 
   //простой текстовый ответ
+  /** * 
+   * @param {string} chatId 
+   * @param {string} message 
+   * @param {object} option 
+   */
   requestMessage(chatId, message, option = {}) {
     setTimeout(async () => {
       await this.bot.sendMessage(chatId, message, option);
@@ -13,6 +20,12 @@ class Command {
   }
 
   //быстрая проверка заполнено ли имя у пользователя телеграмм
+/** * 
+ * @param {string} chatId 
+ * @param {string} chatUsername 
+ * @returns {boolean}
+ */
+
   checkUserName(chatId, chatUsername) {
     let isCheckUserName = true;
     if (!chatUsername) {
@@ -25,6 +38,10 @@ class Command {
     return isCheckUserName;
   }
 
+  /** * 
+   * @param {number} chatId 
+   * @returns {Promise<{ status: boolean; message: string; }>}
+   */
   async checkinChat(chatId) {
     const inChatData = await new ChatHandle(this.bot).checkInChat(chatId);
     if (inChatData.status) {      
