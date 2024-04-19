@@ -71,11 +71,12 @@ class FormCommand extends Command {
          * 
          */
 
-        const inChatData = await  new ChatHandle(this.bot).checkInChat(chatId);       
-        
+        const inChatData = await  new ChatHandle(this.bot).checkInChat(chatId); 
+       
         if(inChatData.status) {
           const activChats = inChatData.activChats;
-          const writeToChat = await new ChatHandle(this.bot).writeToChat(activChats, msg);
+          await new ChatHandle(this.bot).writeToChat(activChats, msg);
+          
           return;
         } else {
           console.log("Активных чатов нет");
@@ -100,51 +101,58 @@ class FormCommand extends Command {
           return;
         } else {
           console.log("сессия по заявке");
-          let { step, message, option } = new SessionOrder(
+          let { step, message, option, status } = new SessionOrder(
             msg,
             this.bot
           ).handleSession();
-          this.requestMessage(chatId, message, option);
+
+          if(status == true) {
+            this.requestMessage(chatId, message, option);
+          } else {
+            this.requestMessage(chatId, message, option);
+          }
+
+          
           return;
         }
 
-        this.requestMessage(
-          chatId,
-          "Я не знаю что нужно сделать обратитесь к администратору"
-        );
+        // this.requestMessage(
+        //   chatId,
+        //   "Я не знаю что нужно сделать обратитесь к администратору"
+        // );
 
-        return;
+        // return;
 
-        if (!isMessageForm) {
-          this.requestMessage(
-            chatId,
-            "Вы не можете отправлять сообщения, для взаимодействия заполните необходимую форму"
-          );
-          return;
-        }
-        console.log("Обработка формы");
+        // if (!isMessageForm) {
+        //   this.requestMessage(
+        //     chatId,
+        //     "Вы не можете отправлять сообщения, для взаимодействия заполните необходимую форму"
+        //   );
+        //   return;
+        // }
+        // console.log("Обработка формы");
 
-        this.requestMessage(
-          chatId,
-          "Ваша заявка обрабатывается, если не пришел ответ пожалуйста обратитесь к администратору"
-        );
+        // this.requestMessage(
+        //   chatId,
+        //   "Ваша заявка обрабатывается, если не пришел ответ пожалуйста обратитесь к администратору"
+        // );
 
-        try {
-          const handleForm = new HandleForm(this.bot, msg);
-          handleForm.start();
-        } catch (e) {
-          console.log("NEW ERROR", e);
-          this.requestMessage(
-            chatId,
-            `Проблемы с отправкой формы, попробуйте еще или обратитесь к администратору. Текст ошибки и класс: ${e.message}`
-          );
-          new LoggerManager().logMessage(
-            "error",
-            "Проблема с отправкой формы",
-            e.message
-          );
-          return;
-        }
+        // try {
+        //   const handleForm = new HandleForm(this.bot, msg);
+        //   handleForm.start();
+        // } catch (e) {
+        //   console.log("NEW ERROR", e);
+        //   this.requestMessage(
+        //     chatId,
+        //     `Проблемы с отправкой формы, попробуйте еще или обратитесь к администратору. Текст ошибки и класс: ${e.message}`
+        //   );
+        //   new LoggerManager().logMessage(
+        //     "error",
+        //     "Проблема с отправкой формы",
+        //     e.message
+        //   );
+        //   return;
+        // }
       } catch (error) {
         new LoggerManager().logMessage("error", "error", error.message);
         console.log(error);

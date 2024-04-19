@@ -1,3 +1,5 @@
+//@ts-check
+
 const cacheService = require("../cache/CacheService");
 const Command = require("./command.class");
 

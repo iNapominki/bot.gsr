@@ -89,13 +89,14 @@ class Session {
  */
 
   endSession(fileName, tlgId, type) {
-   // console.log("endSession");
+   
     // получаем файл
     let file = this.getfileJsonFormessage(fileName);
+    
     // получаем нужный объект
-    const itemSession = this.file.find((item) => item.tlgId == tlgId);
+    const itemSession = file.find((item) => item.tlgId == tlgId);
     // фильтруем файд
-    const dataSession = this.file.filter((item) => item.tlgId != tlgId);
+    const dataSession = file.filter((item) => item.tlgId != tlgId);
     // перезаписываем файл
     this.writeTofilesession(fileName, dataSession);
     // отправляем API для записи в google sheets

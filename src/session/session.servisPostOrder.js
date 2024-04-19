@@ -1,3 +1,5 @@
+//@ts-check
+
 const RequestInChatAdmin = require("../commands/handle/RequestInChatAdmin");
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");

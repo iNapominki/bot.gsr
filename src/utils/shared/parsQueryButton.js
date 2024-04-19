@@ -1,11 +1,26 @@
+//@ts-check
+
 /** Данное преобразование требуется из за того то в 
- * параметр кнопки нельзя записать длинный текст и приглось 
+ * параметр кнопки нельзя записать длинный текст и пришлось 
  * сокращать таким образом  
- */
+ * на вход data: 'option_btn_approve?opa1=false,opa2=14203,opa3=33509' на выход 
+ * на выход { approve: false, message_id: '14232', order_number: '33509' } 
+*/
 
 const query_btn = require("../const/query_btn");
 
-function parsQueryButton (queru) {
+/**
+ * @typedef PropertiesQuery
+ * @type {object}
+ * @property {string} data - колбэк значения кнопки. 
+ */
+
+/** 
+ * @param {PropertiesQuery} queru 
+ * @returns  {{ approve: boolean, message_id: string, order_number: string}} 
+ */
+ 
+function parsQueryButton (queru) {    
 
 const buttonValue = queru?.data;
 // Получаем все после знака "?"
@@ -20,7 +35,8 @@ keyValuePairs.forEach(pair => {
 });
 
 // собираем исходный объект
-const newObject = {};
+
+const newObject = {approve: false, message_id: '', order_number: ''};
 Object.keys(query_btn).forEach(key => {
     if (key === "approve") {
         newObject[key] = params[query_btn[key]] === "true";

@@ -1,3 +1,5 @@
+//@ts-check
+
 const ChatHandle = require("../core/chats/chat-handle");
 const Command = require("./command.class");
 const responseTemplate = require("./responseTemplate/responseTemplate");

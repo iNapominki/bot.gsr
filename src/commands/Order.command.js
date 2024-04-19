@@ -39,7 +39,7 @@ class OrderCommand extends Command {
         
         if (user) {
           // оформлять заявки только менеджер
-          if (user?.role != "agent") {
+          if (!(typeof user == "string" || typeof user == "boolean") && user?.role != "agent") {
             this.bot.sendMessage(
               chatId,
               "Оформлять заявки может только агент, обратитесь к администратору /help",
@@ -52,7 +52,11 @@ class OrderCommand extends Command {
           // проверка заполнено ли имя
           if (!isCheckUserName) {
             return;
-          }          
+          }  
+          
+          if((typeof user == "string" || typeof user == "boolean") ) {
+            return;
+          }
 
           const { spzId, sponsorName, name } = user;          
 

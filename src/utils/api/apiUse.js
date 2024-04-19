@@ -1,3 +1,5 @@
+//@ts-check
+
 const copirite_text = require("../const/copirite_admin");
 
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
@@ -32,39 +34,67 @@ class AipUse {
     }
   }
 
-  async checkUser(postData) {  
-    
+  /**
+   *
+   * @param {{action: string, tlgId: string}} postData
+   * @returns {Promise< {rowNumber: number, spzId: number, number: number, name: string, tlgId: number, tlgName: string, status: string, role: string, sponsor: string, sponsorName: string} | string | boolean >}
+   */
+
+  async checkUser(postData) {
     try {
-    let res = await this.api.checkUser(postData);     
+      /**
+       * 
 
-    if (!res) {
-      return;
-    }
-    if (res.result.code === 200) {
-      const { result } = res;
-      const { message } = result;
-      return message;
-    } else if (res.result.code === 403) {
-      const { tlgId } = postData;
+@type {{ result: {
+    type: string,
+    code: number,
+    message: {
+      rowNumber: number,
+      spzId: number,
+      number: number,       
+      name: string,
+      tlgId: number,
+      tlgName: string,    
+      status: string,
+      role: string,
+      sponsor: string,
+      sponsorName: string
+    } | string
+  }}}
+       */
 
-      this.api.requestMessageOnApi(tlgId, `${res.result.message}, для регистрации нажмите: /registration`);
+      let res = await this.api.checkUser(postData);
+
+      if (!res) {
+        return false;
+      }
+      if (res.result.code === 200) {
+        const { result } = res;
+        const { message } = result;
+        return message;
+      } else if (res.result.code === 403) {
+        const { tlgId } = postData;
+
+        this.api.requestMessageOnApi(
+          tlgId,
+          `${res.result.message}, для регистрации нажмите: /registration`
+        );
+        return false;
+      } else {
+        const { tlgId } = postData;
+        this.api.requestMessageOnApi(
+          tlgId,
+          "Произошла ошибка, обратитесь к администратору 89165692673 или @Andre_roz"
+        );
+        return false;
+      }
+    } catch (e) {
+      console.error(e);
       return false;
-    } else {
-      const { tlgId } = postData;
-      this.api.requestMessageOnApi(
-        tlgId,
-        "Произошла ошибка, обратитесь к администратору 89165692673 или @Andre_roz"
-      );
-      return false;
     }
-
-  } catch (e) {
-    console.error(e);
-  }
   }
 
-  async postOrder(postData) {   
-
+  async postOrder(postData) {
     let res = await this.api.postOrder(postData);
     if (!res) {
       return;

@@ -27,10 +27,9 @@ class DataBase {
     }
   }
 
-  /**
-   * 
+  /** * 
    * @param {string} sql 
-   * @param {string[]} values
+   * @param {any[]} values
    * @returns 
    */
 

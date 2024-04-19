@@ -96,20 +96,11 @@ class SessionOrder extends Session {
     }
   }
 
-  // async _useCheskUser(tlgId) {
-  //   let checkPost = {
-  //     action: "check",
-  //     tlgId: `${tlgId}`,
-  //   };
-  //   const api = new Api(this.bot);
-  //   const request = await new AipUse(api).checkUser(checkPost);
-  //   if (!request) {
-  //     return;
-  //   }
-  //   return request;
-  // }
-
   // обновление сессии
+  /**
+   * 
+   * @returns {{ step: number, message: string, option: object, status: boolean }}
+   */
   handleSession() {
     const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
     const dataSession = this.file.filter((item) => item.tlgId != this.tlgId);
@@ -231,7 +222,11 @@ class SessionOrder extends Session {
       };
     }
   }
-
+  
+ /**
+   * 
+   * @returns {{ step: number, message: string, option: object, status: boolean }}
+   */
   handleButton(command, chatId, messageId) {
 
    // console.log(command, chatId, messageId);
@@ -346,7 +341,7 @@ class SessionOrder extends Session {
         case "option_data_dateLeft_empty":
           // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
           if (itemSession.step != 3) {
-            return;
+            return { step: 3, message: "кнопка не активна", option: {}, status: false };
           }
           itemSession.step++;
           itemSession.dateLeft = "неизвестна";
@@ -379,7 +374,7 @@ class SessionOrder extends Session {
         case "option_data_dateWake_empty":
           // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
           if (itemSession.step != 4) {
-            return;
+            return { step: 4, message: "кнопка не активна", option: {}, status: false };
           }
           itemSession.step++;
           itemSession.dateWake = " неизвестна";
@@ -396,7 +391,7 @@ class SessionOrder extends Session {
         // это связано с тем что бы кнопка срабатывала только если относится к шагу, иначе значение записшется в другое поле
         case "button_order_place_wake_empty":
           if (itemSession.step != 7) {
-            return;
+            return { step: 7, message: "кнопка не активна", option: {}, status: false };
           }
           itemSession.step++;
           itemSession.comment = itemSession.comment + "место прощания неизвестно";
@@ -415,7 +410,7 @@ class SessionOrder extends Session {
 
           
           if(itemSession.step != 2) {
-            return;
+            return { step: 2, message: "кнопка не активна", option: {}, status: false };
           }
 
           itemSession.step++;

@@ -1,6 +1,27 @@
+//@ts-check
 
-function optionButtonChats(data) { 
+/**
+ * @typedef ArrayData
+ * @type {object}
+ * @property {string} lid
+ * @property {string} customer_phone
+ * @property {string} order_number
+ */
 
+
+/**
+ * @typedef PropertiesData
+ * @type {Array<ArrayData>}
+ * 
+ */
+
+/** 
+ * @param {PropertiesData} data 
+ * @returns  
+ */
+
+function optionButtonChats(data) {
+  
   const buttons = [];
   const chunkSize = 1;
 

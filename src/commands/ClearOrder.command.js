@@ -1,3 +1,5 @@
+//@ts-check
+
 const SessionOrder = require("../session/session.order");
 const Command = require("./command.class");
 
