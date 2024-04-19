@@ -1,4 +1,4 @@
- // @ts-check
+// @ts-check
 
 const ChatHandle = require("../core/chats/chat-handle");
 
@@ -8,23 +8,27 @@ class Command {
   }
 
   //простой текстовый ответ
-  /** * 
-   * @param {string} chatId 
-   * @param {string} message 
-   * @param {object} option 
+  /** *
+   * @param {string} chatId
+   * @param {string} message
+   * @param {object} option
    */
   requestMessage(chatId, message, option = {}) {
-    setTimeout(async () => {
-      await this.bot.sendMessage(chatId, message, option);
-    }, 500);
+    try {
+      setTimeout(async () => {
+        await this.bot.sendMessage(chatId, message, option);
+      }, 500);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   //быстрая проверка заполнено ли имя у пользователя телеграмм
-/** * 
- * @param {string} chatId 
- * @param {string} chatUsername 
- * @returns {boolean}
- */
+  /** *
+   * @param {string} chatId
+   * @param {string} chatUsername
+   * @returns {boolean}
+   */
 
   checkUserName(chatId, chatUsername) {
     let isCheckUserName = true;
@@ -38,13 +42,13 @@ class Command {
     return isCheckUserName;
   }
 
-  /** * 
-   * @param {number} chatId 
+  /** *
+   * @param {number} chatId
    * @returns {Promise<{ status: boolean; message: string; }>}
    */
   async checkinChat(chatId) {
     const inChatData = await new ChatHandle(this.bot).checkInChat(chatId);
-    if (inChatData.status) {      
+    if (inChatData.status) {
       return {
         status: true,
         message:

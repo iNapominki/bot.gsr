@@ -185,7 +185,6 @@ class SessionRegistration extends Session {
           itemSession.step = 3;
           itemSession.role = "agent";
           this._writeToFile(dataSession, itemSession);
-
           
           // завершение сесии
           this.endSession(this.FileName, chatId, "user");
