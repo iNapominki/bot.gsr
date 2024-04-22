@@ -13,8 +13,11 @@ class ChatsCommands extends Command {
     this.bot.on("channel_post", async (msg) => {
       try {
         const message = msg.text;
+
+        // Удаляем все переносы строк из переменной message
+        const cleanedMessage = message.replace(/\n/g, '');
         // ВАЖНО, данные берутся их google sheets и просто парс не работает, приходится удалять все лишнее
-        const validMessage = message.replace(
+        const validMessage = cleanedMessage.replace(
           /(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
           '"$2": '
         );
