@@ -1,3 +1,5 @@
+// @ts-check
+
 const TelegramBot = require("node-telegram-bot-api");
 const responseTemplate = require("../commands/responseTemplate/responseTemplate");
 const AipUse = require("../utils/api/apiUse");
@@ -23,6 +25,11 @@ class Bot {
       return isCheckUserName;
     }
   
+    /**
+     * 
+     * @param {number} tlgId 
+     * @returns 
+     */
 
   async _useCheskUser(tlgId) {
 

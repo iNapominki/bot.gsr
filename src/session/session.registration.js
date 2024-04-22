@@ -79,6 +79,11 @@ class SessionRegistration extends Session {
   }
 
   // обновление сессии 
+
+  /**
+   * 
+   * @returns {{ step: number, message: string, option: object, status: boolean  }}
+   */
   handleSession() {    
     const itemSession = this.file.find((item) => item.tlgId == this.tlgId);
     const dataSession = this.file.filter((item) => item.tlgId != this.tlgId);
@@ -122,7 +127,12 @@ class SessionRegistration extends Session {
 
           case 2:           
           this.bot.sendMessage(itemSession.tlgId, "Выберите вариант по кнопке", {});
-          return
+          return {
+            step: 3,
+            message: "Выберите вариант по кнопке",
+            option: {},
+            status: false
+          };
           break
           
 
@@ -175,7 +185,6 @@ class SessionRegistration extends Session {
           itemSession.step = 3;
           itemSession.role = "agent";
           this._writeToFile(dataSession, itemSession);
-
           
           // завершение сесии
           this.endSession(this.FileName, chatId, "user");

@@ -1,3 +1,5 @@
+//@ts-check
+
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const LoggerManager = require("../log/LoggerManager");
 const SessionRegistration = require("../session/session.registration");
@@ -11,10 +13,26 @@ class Buttoncommand extends Command {
     super(bot);
   }
 
+  /**
+   * 
+   * @param {string} command - ! номер чата из операционки
+   * @param {number} chatId 
+   * @param {number} messageId 
+   * @returns {Promise<boolean>}
+   */
+
   async _checkChat(command, chatId, messageId) {
-   const order = await getAllChats();
-   
+   const order = await getAllChats();   
    // проверяем есть ли чаты
+
+   if(!order) {
+    return false;
+   }
+
+   if(!Array.isArray(order[0]) ) {
+       return false;
+   }
+
    const findOrder = await order[0].find(item => item.order_number === command);   
    if(!findOrder) {
       return false;
@@ -26,10 +44,10 @@ class Buttoncommand extends Command {
     // внутренним методом отправляем сообщение полователю который подключился к чату
     const res = await new ChatHandle(this.bot).toChat(findOrder.order_number, chatId);   
     
-    this.bot.editMessageText(`*Вы выбрали чат:* ${findOrder.lid} ${findOrder.customer_phone}.`, {
+    this.bot.editMessageText(`<b>Вы выбрали чат:</b> ${findOrder.lid} ${findOrder.customer_phone}.`, {
       chat_id: chatId,
       message_id: messageId,
-      parse_mode: "Markdown"
+      parse_mode: "HTML"
     });
 
     
@@ -39,10 +57,13 @@ class Buttoncommand extends Command {
     
   }
 
-  handle() {
-    this.bot.on("callback_query", async (query) => {
-      new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
+ 
+
+  handle() {  
+ 
+    this.bot.on("callback_query", async (query) => {      
       try {
+        new LoggerManager().logMessage("log", "bot.on(callback_query)", query);
 
        // console.log(query);
         let chatId = query.from.id;
@@ -76,6 +97,10 @@ class Buttoncommand extends Command {
               chatId,
               "Администратору направлен запрос уточнить статус"
             );
+
+            if(!TELEGRAMM_ADMIN_CHAT) {
+              return;
+            }
             this.requestMessage(
               TELEGRAMM_ADMIN_CHAT,
               `Просьба уточнить статус по зявке \n\n ${message}`

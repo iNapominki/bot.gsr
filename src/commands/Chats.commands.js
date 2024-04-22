@@ -1,3 +1,5 @@
+//@ts-check
+
 const ChatHandle = require("../core/chats/chat-handle");
 const Command = require("./command.class");
 const responseTemplate = require("./responseTemplate/responseTemplate");
@@ -15,7 +17,9 @@ class ChatsCommands extends Command {
         const validMessage = message.replace(
           /(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
           '"$2": '
-        );        
+        );
+        
+        console.log(message);
 
         // Преобразуем строку в объект
         const chatData = JSON.parse(validMessage);     
@@ -37,11 +41,24 @@ class ChatsCommands extends Command {
           return;
         }
 
+        if(!TELEGRAMM_ADMIN_CHAT) {
+          return
+        }
+
         await this.requestMessage(
           TELEGRAMM_ADMIN_CHAT,
-          `Создан чат по заявке ${order}`
+          `Менеджер взял заявку и создал чат по заявке ${order}`
         );
       } catch (e) {
+
+        if(!TELEGRAMM_ADMIN_CHAT) {
+          return
+        }
+
+        this.requestMessage(
+          TELEGRAMM_ADMIN_CHAT,
+          `Чат по заявке не создан, менеджер заявку взял`
+        );
         console.error(e);
       }
     });

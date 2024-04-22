@@ -1,3 +1,4 @@
+//@ts-check
 
 const ChatHandle = require("../core/chats/chat-handle");
 const SessionOrder = require("../session/session.order");
@@ -29,7 +30,11 @@ class GetMyChatsCommand extends Command {
         if(!chat.status) {
           this.requestMessage(chatId, chat.message, {});
           return;
-        }        
+        }
+        
+        if(!chat.button) {
+          return
+        }
 
         const option = optionButtonChats(chat.button);
         

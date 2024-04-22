@@ -9,7 +9,7 @@ const responseTemplate = {
           \n \nПо вопросам обработки заказов обращаться ${copirite_text.admin}`, 
 
     responseToAdminChat: function(numberOrder, message, user) {
-        console.log(numberOrder, message, user);
+        
            // определение номера
            let order = numberOrder ? numberOrder: "!Внимание данные не записались в таблицу!";
            // определение текста сообщения
