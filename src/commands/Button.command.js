@@ -1,6 +1,11 @@
 //@ts-check
 
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
+
+
+const TELEGRAMM_MANAGER_GROUP = process.env.TELEGRAMM_MANAGER_GROUP;
+
+
 const LoggerManager = require("../log/LoggerManager");
 const SessionRegistration = require("../session/session.registration");
 const Command = require("./command.class");
@@ -8,6 +13,7 @@ const SESSION_RESPONSE = require("../session/session.respons");
 const SessionOrder = require("../session/session.order");
 const { getAllChats } = require("../core/chats/chat-controller");
 const ChatHandle = require("../core/chats/chat-handle");
+const { responseToManagerChatAboutQuesrion } = require("./responseTemplate/responseTemplate");
 class Buttoncommand extends Command {
   constructor(bot) {
     super(bot);
@@ -103,8 +109,21 @@ class Buttoncommand extends Command {
             }
             this.requestMessage(
               TELEGRAMM_ADMIN_CHAT,
-              `Просьба уточнить статус по зявке \n\n ${message}`
+              `В группу к менеждерам отправлено уведомление о том что нужно уточнить статус \n\n ${message}`
             );
+
+            if(!TELEGRAMM_MANAGER_GROUP) {
+              this.requestMessage(
+                TELEGRAMM_ADMIN_CHAT,
+                `!! Внимание !! в группу менеджеров оповещение не прошло ${message}`
+              );
+              return;
+            }
+            this.requestMessage(
+              TELEGRAMM_MANAGER_GROUP,
+            await responseToManagerChatAboutQuesrion(message)
+            );
+
 
             return;
             break;
