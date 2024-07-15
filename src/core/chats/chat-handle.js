@@ -62,20 +62,25 @@ class ChatHandle {
       // получаем все сообщения
       const allMessages = order[0][0].msg_text;
 
-      const objAllMessages = await JSON.parse(allMessages);
+      const idManager = order[0][0].manager_id;
+      const idAgent = order[0][0].agent_id;
+      const infoManager = await this._useCheskUser(idManager);
+      const infoAgent = await this._useCheskUser(idAgent); 
+
+      const objAllMessages = await JSON.parse(allMessages);      
 
       objAllMessages.forEach((element) => {
         // обязательно условия для распарсивания
         const msgSrting = element.replace(/'/g, '"');
-        const dataMessage = JSON.parse(msgSrting);
+        const dataMessage = JSON.parse(msgSrting);           
 
         if (dataMessage.message_id == message_id) {
           dataMessage.approve = approve;
-          // нашли сообщение которое нужно согласовать
+          // нашли сообщение которое нужно согласовать          
 
           if (approve) {
             this.bot.editMessageText(
-              `Вы согласовали сообщение по номеру заказа ${order_number} : ${dataMessage.text}`,
+              `Вы согласовали сообщение по номеру заказа ${order_number} : ${dataMessage.text} \n\n Информация о заказе: \n Агент:${infoAgent.spzId} \n Менеджер: ${infoManager.spzId}`,
               {
                 chat_id: TELEGRAMM_ADMIN_CHAT,
                 message_id: messageId,
@@ -84,7 +89,7 @@ class ChatHandle {
 
             this.requestMessage(
               order[0][0].agent_id,
-              `По заказу № ${order_number}, новое сообщение`,
+              `По заказу № ${order_number}, новое сообщение : \n\n ${dataMessage.text} , \n\n что бы прочитать переписку нажмите кнопку под этим сообщением`,
               option
             );
 
@@ -97,7 +102,7 @@ class ChatHandle {
             );
 
             this.bot.editMessageText(
-              `Вы не согласовали сообщение по номеру заказа ${order_number} : ${dataMessage.text}`,
+              `Вы не согласовали сообщение по номеру заказа ${order_number} : \n\n ${dataMessage.text}, \n\n Информация о заказе: \n Агент:${infoAgent.spzId} \n Менеджер: ${infoManager.spzId}`,
               {
                 chat_id: TELEGRAMM_ADMIN_CHAT,
                 message_id: messageId,
