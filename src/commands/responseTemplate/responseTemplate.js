@@ -2,12 +2,13 @@ const { getOrderForNumber } = require("../../core/chats/chat-controller");
 const Api = require("../../utils/api/api");
 const AipUse = require("../../utils/api/apiUse");
 const copirite_text = require("../../utils/const/copirite_admin");
+const BOT_API_URL = process.env.BOT_API_URL;
 
 const responseTemplate = {
-  start: `Добро пожаловать в бот Сети поминальных залов, меня зовут Аркадий, я могу отправить заявку в сеть поминальных залов.\
+  start: `Добро пожаловать в бот Сети поминальных залов, меня зовут Аркадий, я могу отправить заявку в Сеть поминальных залов.\
           \n \nПо вопросам обработки заказов обращаться ${copirite_text.admin}`,
 
-  help: `Первое что нужно сделать это ЗАРЕГИСТРИРОВАТЬСЯ, для этого нажмите /registration\
+  help: `Первое, что нужно сделать - это ЗАРЕГИСТРИРОВАТЬСЯ, для этого нажмите /registration\
           \n \nПо вопросам обработки заказов обращаться ${copirite_text.admin}`,
 
   responseToAdminChat: function (numberOrder, message, user) {
@@ -62,8 +63,8 @@ const responseTemplate = {
              \n Дата смерти ${dateLeft}\
              \n Дата прощания ${dateWake}\            
              \n  Комментарии: ${comment}\             
-             \n Куратор @${sponsor}\
-             \n Агент @${tlgName}\
+             \n Куратор ${sponsor}\
+             \n Агент ${tlgName}\
             `;
   },
 
@@ -117,7 +118,7 @@ const responseTemplate = {
              \n Дата смерти ${dateLeft}\
              \n Дата прощания ${dateWake}\            
              \n  Комментарии: ${comment}\             
-             \n Написать куратору @${sponsor}\
+             \n Написать куратору ${sponsor}\
             `;
   },
 
@@ -127,11 +128,17 @@ const responseTemplate = {
     let tlgName = user.tlgName ? user.tlgName : "не определено";
     let number = user.number ? user.number : "не определено";
     let role = user.role ? user.role : "не определено";
+    let tlgId = user.tlgId ? user.tlgId : "не определено";
+
+    let numberTrim = number.replace(/\+/g, ''); // Удаляет все символы '+'
+
+    console.log(numberTrim);
 
     return `Пользователь внес данные в таблицу пользователей: \            
-           \n Имя ${name} \                     
-           \n Роль ${role} \
-           
+           \n Телефон +${numberTrim} \                     
+           \n id телеграм ${tlgId} \
+           \n Внести информацию по ссылке:\
+           \n  ${BOT_API_URL}Auth_sfp/index\
           `;
   },
 

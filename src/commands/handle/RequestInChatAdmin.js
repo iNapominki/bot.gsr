@@ -20,7 +20,7 @@ class RequestInChatAdmin {
   requestUSer(post) {    
     setTimeout(async () => {
       await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT,  responseTemplate.responseToAdminChatAboutRegostration(post));
-      await this.bot.sendMessage(post.tlgId, "Ваши данные обновлены, оформить заказ можно нажав /order");
+      await this.bot.sendMessage(post.tlgId, `${this.request}`);
     }, 1000);    
   }
 

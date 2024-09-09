@@ -17,6 +17,7 @@ const GetMyChatsCommand = require("./src/commands/GetMyChats.command");
 const LogOutChatsCommand = require("./src/commands/LogOutChats.command");
 const MyIdCommand = require("./src/commands/MyId.command");
 const CleanCacheCommand = require("./src/commands/CleanCache.command");
+const ContactCommand = require("./src/commands/Contact.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
@@ -46,9 +47,9 @@ try {
   const logoutChats = new LogOutChatsCommand(bot.bot);
   // запросить мой id 
   const myid = new MyIdCommand(bot.bot);
-  // инициализация кэша
-  
+  // инициализация кэша  
   const cleancache = new CleanCacheCommand(bot.bot);
+  const contactcommand = new ContactCommand(bot.bot);
 
   help.handle();
   registration.handle();
@@ -64,6 +65,7 @@ try {
   logoutChats.handle();
   myid.handle();  
   cleancache.handle();
+  contactcommand.handle();
   
   loggerManager.logMessage("log", "старт", "Произошел старт бота");
   // Пример обработки ошибки  

@@ -120,11 +120,11 @@ try {
       //
       this.bot.sendMessage(chatId, responseTemplate.start);
 
-      let isCheckUserName = this.checkUserName(chatId, chatUsername);
-      // проверка заполнено ли имя
-      if (!isCheckUserName) {
-        return;
-      }
+      // let isCheckUserName = this.checkUserName(chatId, chatUsername);
+      // // проверка заполнено ли имя
+      // if (!isCheckUserName) {
+      //   return;
+      // }
 
       await this._useCheskUser(chatId).then((user) => {
         if (user) {

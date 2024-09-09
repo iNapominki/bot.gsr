@@ -61,10 +61,10 @@ class FormCommand extends Command {
           return;
         }
 
-        let isCheckUserName = this.checkUserName(chatId, chatUsername);
-        if (!isCheckUserName) {
-          return;
-        }
+        // let isCheckUserName = this.checkUserName(chatId, chatUsername);
+        // if (!isCheckUserName) {
+        //   return;
+        // }
 
 
         /** Проверка сесии чатов  

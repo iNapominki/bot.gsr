@@ -20,11 +20,11 @@ class GetMyChatsCommand extends Command {
         // очистка заявок
         await new SessionOrder(msg, this.bot).clear(chatId);
 
-        let isCheckUserName = this.checkUserName(chatId, chatUsername);
-        // проверка заполнено ли имя
-        if (!isCheckUserName) {
-          return;
-        }
+        // let isCheckUserName = this.checkUserName(chatId, chatUsername);
+        // // проверка заполнено ли имя
+        // if (!isCheckUserName) {
+        //   return;
+        // }
         const chat = await new ChatHandle(this.bot).getMyChats(chatId);        
 
         if(!chat.status) {

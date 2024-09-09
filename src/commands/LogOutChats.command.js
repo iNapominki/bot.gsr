@@ -13,11 +13,11 @@ class LogOutChatsCommand extends Command {
       try {
         const chatId = msg.chat.id;
         const chatUsername = msg.chat.username;
-        let isCheckUserName = this.checkUserName(chatId, chatUsername);
-        // проверка заполнено ли имя
-        if (!isCheckUserName) {
-          return;
-        }
+        // let isCheckUserName = this.checkUserName(chatId, chatUsername);
+        // // проверка заполнено ли имя
+        // if (!isCheckUserName) {
+        //   return;
+        // }
 
         const logout = await new ChatHandle(this.bot).logoutChat(chatId);
 

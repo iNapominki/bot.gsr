@@ -29,25 +29,17 @@ class Api {
   }
 
   async updateUser(postData) {
-
-
-    console.log(postData);
-
-
     try {
-      const response = await fetch(`${BOT_API_URL}/api/bot/user/registration`, {
+      const response = await fetch(`${GOOGLE_SHEETS_KEY_USERS}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization" : BOT_API_TOKEN,
+          
         },
         body: JSON.stringify(postData),
       });
 
       let res = await response.json();
-
-
-      console.log(res);
       return res;
     } catch (error) {
       new LoggerManager().logMessage("error", "error", error.message);
@@ -73,7 +65,13 @@ class Api {
 
   async checkUser(postData) {
     try {
-     
+      //кэш для запросов
+      // const { tlgId } = postData;
+      // if (cacheService.has(tlgId)) {
+      //   console.log("кэш найден", cacheService.get(tlgId));
+      //   return cacheService.get(tlgId);
+      // }
+      //console.log("кэш не найден", tlgId);
       const response = await fetch(`${BOT_API_URL}/api/bot/user/tlg`, {
         method: "POST",
         headers: {
@@ -83,7 +81,11 @@ class Api {
         body: JSON.stringify(postData),
       });
 
-      let res = await response.json();   
+      let res = await response.json();
+
+      console.log(res);
+
+      //cacheService.set(tlgId, res);
 
       return res;
     } catch (error) {

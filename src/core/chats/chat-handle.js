@@ -349,7 +349,13 @@ class ChatHandle {
 
       const { order_number, customer_phone, lid } = dataOrder[0][0];
 
-      const option = optionToChat(order_number, customer_phone, lid);     
+      const option = optionToChat(order_number, customer_phone, lid); 
+      
+      
+      const {  spzId: writerName } = await this._useCheskUser(from);
+
+     
+
 
       // 1 смотри кто написал, и если отправляем на противоположную роль
       //1.1 агент менеджеру
@@ -360,11 +366,14 @@ class ChatHandle {
             dataOrder[0][0].manager_id,
             `Новое сообщение в чате ${chatNumber}: ${msg.text}, для того что бы ответить перейдите в чат нажав кнопку ниже`,
             option
-          );
+          );      
+
+ const {  spzId: writerToManager } = await this._useCheskUser(dataOrder[0][0].manager_id);
+
 
           this.requestMessage(
             TELEGRAMM_ADMIN_CHAT,
-            `Агент написал менеджеру по номеру заказа ${dataOrder[0][0].order_number}: ${msg.text}`,
+            `Агент ${writerName} написал менеджеру ${writerToManager} по номеру заказа ${dataOrder[0][0].order_number}: ${msg.text}`,
             {}
           );
           msg.approve = true;
@@ -382,9 +391,12 @@ class ChatHandle {
             order_number: dataOrder[0][0].order_number,
           });
 
+          const {  spzId: writerToAgent } = await this._useCheskUser(dataOrder[0][0].agent_id);
+         
+
           this.requestMessage(
             TELEGRAMM_ADMIN_CHAT,
-            `Менеджер написал агенту по номеру заказа ${dataOrder[0][0].order_number}: ${msg.text}`,
+            `Менеджер ${writerName} написал агенту ${writerToAgent} по номеру заказа ${dataOrder[0][0].order_number}: ${msg.text}`,
             option
           );
 

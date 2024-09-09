@@ -22,7 +22,7 @@ const SESSION_RESPONSE = {
       validation: function (value) {
         //console.log("validationMessage", value);
         if (!regularRegex.phone.test(value)) {
-          return "Введено значение телефона не по формату, номер должен начинаться с 89 и содержать 11 цыфр";
+          return "Введено значение телефона не в правильном формате. Номер должен начинаться с 89 и содержать 11 цифр.";
         } else {
           return false;
         }
@@ -59,7 +59,7 @@ const SESSION_RESPONSE = {
       title: "Телефон заказчика в формате 89013337722, начиная с 8ки",
       validation: function (value) {        
         if (!regularRegex.phone.test(value)) {
-          return "Введено значение телефона не по формату, номер должен начинаться с 89 и содержать 11 цыфр";
+          return "Введено значение телефона не в правильном формате. Номер должен начинаться с 89 и содержать 11 цифр.";
         } else {
           return false;
         }
@@ -81,7 +81,7 @@ const SESSION_RESPONSE = {
       option: option_data_dateLeft,
       validation: function (value) {
         if (!regularRegex.date.test(value)) {
-          return "Формат даты быбран неправильно";
+          return "Формат даты выбран неправильно";
         } else {
           return false;
         }
@@ -103,7 +103,7 @@ const SESSION_RESPONSE = {
       option: option_order.timeWake,
       validation: function (value) {
         if (value) {
-          return "Выберите один из вариантов по кнопке, если не знаете то выберите первую кнопку";
+          return "Выберите один из вариантов по кнопке, если не знаете, то выберите первую кнопку";
         } else {
           return false;
         }
@@ -136,7 +136,7 @@ const SESSION_RESPONSE = {
     },
     9: {
       title:
-        `Заявка оформлена, дождитесь ответа, с информацией по заявке, если ответа нет обратитесь к администратору ${copirite_text.admin}`,
+        `Заявка оформлена, дождитесь ответа с информацией по заявке, если ответа нет, обратитесь к администратору ${copirite_text.admin}`,
       validation: function (value) {
         return false;
       },

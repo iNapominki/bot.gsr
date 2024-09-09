@@ -48,11 +48,11 @@ class OrderCommand extends Command {
             return;
           }
 
-          let isCheckUserName = this.checkUserName(chatId, chatUsername);
-          // проверка заполнено ли имя
-          if (!isCheckUserName) {
-            return;
-          }  
+          // let isCheckUserName = this.checkUserName(chatId, chatUsername);
+          // // проверка заполнено ли имя
+          // if (!isCheckUserName) {
+          //   return;
+          // }  
           
           if((typeof user == "string" || typeof user == "boolean") ) {
             return;
@@ -68,7 +68,7 @@ class OrderCommand extends Command {
           return;
         } else {
           // если что то с таблицами не так, то пользователь получит это сообщение
-          this.requestMessage(chatId, `Произошла ошибка, обратитесь к администратору ${copirite_text.admin}` , {});
+          this.requestMessage(chatId, `Пока нельзя оформлять заявки, если есть вопросы обратитесь к ${copirite_text.admin}` , {});
         }
       });
     });
