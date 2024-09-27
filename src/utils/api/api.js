@@ -85,6 +85,8 @@ class Api {
 
       let res = await response.json();   
 
+      console.log(res);
+
       return res;
     } catch (error) {
       new LoggerManager().logMessage("error", "checkUser", error.message);
