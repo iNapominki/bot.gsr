@@ -6,7 +6,8 @@ const AipUse = require("../utils/api/apiUse");
 const Api = require("../utils/api/api");
 const SessionRegistration = require("../session/session.registration");
 const cacheService = require("../cache/CacheService");
-const express = require('express')
+const express = require('express');
+const ApiWeb = require("../utils/api/apiWeb");
 const port = process.env.EXPRESS_PORT || 8000;
 
 class Bot {
@@ -114,11 +115,32 @@ try {
       ]);
 
       const chatId = msg.chat.id;
-      const chatUsername = msg.chat.username;
+      // const messageId = msg.message_id;
+
+      // this.bot.editMessageText("Ожидаю...", {
+      //   chat_id: chatId,
+      //   message_id: messageId,
+      // });
+
+      console.log(msg.message_id);
+
+       // Отправляем начальное сообщение
+       //const sentMessage = await this.bot.sendMessage(chatId, "Ожидайте...");
+
+       // Изменяем сообщение на "Ожидаю..."
+      //  await this.bot.editMessageText("Ожидаю...", {
+      //    chat_id: chatId,
+      //    message_id: sentMessage.message_id,
+      //  });
+
+      //await this.bot.deleteMessage(chatId, msg.message_id);
+
+      new ApiWeb(this.bot).botCommandStart(chatId);
+     // const chatUsername = msg.chat.username;
       // очистка сесии регистрации
-      new  SessionRegistration(msg, this.bot).clear(chatId);
+     // new  SessionRegistration(msg, this.bot).clear(chatId);
       //
-      this.bot.sendMessage(chatId, responseTemplate.start);
+     // this.bot.sendMessage(chatId, responseTemplate.start);
 
       // let isCheckUserName = this.checkUserName(chatId, chatUsername);
       // // проверка заполнено ли имя
@@ -126,18 +148,18 @@ try {
       //   return;
       // }
 
-      await this._useCheskUser(chatId).then((user) => {
-        if (user) {
-          setTimeout(async () => {
-            this.bot.sendMessage(
-              chatId,
-              "Для оформление заявки, нажмите /order"
-            );
-          }, 1000);
-          return;
-        } else {
-        }
-      });
+      // await this._useCheskUser(chatId).then((user) => {
+      //   if (user) {
+      //     setTimeout(async () => {
+      //       this.bot.sendMessage(
+      //         chatId,
+      //         "Для оформление заявки, нажмите /order"
+      //       );
+      //     }, 1000);
+      //     return;
+      //   } else {
+      //   }
+      // });
     });
 
   } catch (e) {
