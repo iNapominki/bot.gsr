@@ -14,6 +14,13 @@ class RequestInChatAdmin {
     setTimeout(async () => {
       await this.bot.sendMessage(TELEGRAMM_ADMIN_CHAT, responseTemplate.responseToAdminChat(this.request, post, user));
       await this.bot.sendMessage(post.tlgId, responseTemplate.responseToAgentChat(this.request, post, user), options_btn);
+
+      let sponsor = user?.sponsor ? user?.sponsor : false;
+      if(sponsor && sponsor == "89039718590") {
+        await this.bot.sendMessage("427671786", responseTemplate.responseToAgentChat(this.request, post, user), options_btn);
+        await this.bot.sendMessage("931824462", responseTemplate.responseToAgentChat(this.request, post, user), options_btn);
+      }  
+
     }, 500);    
   }
 

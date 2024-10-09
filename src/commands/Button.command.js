@@ -140,6 +140,9 @@ class Buttoncommand extends Command {
             );
             break;
             case "fast":
+
+            await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);     
+
             new ApiWeb(this.bot).botButtonsOrderFast(
               query.message.chat.id,
               valueCommand              
