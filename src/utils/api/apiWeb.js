@@ -27,6 +27,11 @@ class ApiWeb {
     this.requestMessageOnApi(TELEGRAMM_ADMIN_CHAT, message, {});
   }
 
+
+
+
+
+
   async postData(postData, url) {
     try {
       const { tlgId } = postData;
@@ -53,6 +58,14 @@ class ApiWeb {
       this.requestError(JSON.stringify(postData));
     }
   }
+ 
+  async botContact(tlgId, phone) {
+    let url = BOT_API_URL + "/api/bot/user/registration";
+    const post = { tlgId: tlgId, phone: phone };
+    this.postData(post, url);
+  }
+
+
 
   // стартовая
   async botCommandStart(tlgId) {
@@ -66,7 +79,7 @@ class ApiWeb {
     let url = BOT_API_URL + "/api/bot/command/order";
     const post = { tlgId: tlgId };
     this.postData(post, url);
-  }
+  }  
 
   // очистить оформление заявка и сбросить чаты
   async botCommandClear(tlgId) {

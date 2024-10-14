@@ -15,7 +15,11 @@ class FormCommand extends Command {
   }
   handle() {
     this.bot.on("message", async (msg) => {
-      try {        
+      try {      
+        console.log("ttttttttttttttttttttttttttttttttttttttt"); 
+        
+        console.log(msg.text, "gggggggggggggggggggggggggggggggg");
+        console.log("dddddddddddddddddddddddddddddddddddddddd");
 
         new LoggerManager().logMessage("log", "bot.on(message)", msg);
         const chatId = msg.chat.id;
@@ -54,6 +58,10 @@ class FormCommand extends Command {
         }
 
         if(msg.text === "/cleancache") {
+          return;
+        }
+
+        if(!msg.text) {
           return;
         }
 
