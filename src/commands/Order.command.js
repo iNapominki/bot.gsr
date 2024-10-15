@@ -32,7 +32,18 @@ class OrderCommand extends Command {
     this.bot.onText(/\/order/, async (msg) => {
       const chatId = msg.chat.id;
       //await this.bot.deleteMessage(chatId, msg.message_id);
-      await this.bot.sendMessage(chatId, 'Начато оформление заявки, заполняйте информацию по очереди');
+
+
+          // Отправляем сообщение с пустой клавиатурой
+          const options = {
+            reply_markup: {
+              remove_keyboard: true, // Удаляем клавиатуру
+            },
+          };
+
+
+
+      await this.bot.sendMessage(chatId, 'Начато оформление заявки, заполняйте информацию по очереди', options );
      new ApiWeb(this.bot).botCommandOrder(chatId);
       // проверка не нахожусь ли я в режиме чата
       //await  new ChatHandle(this.bot).logoutChat(chatId);

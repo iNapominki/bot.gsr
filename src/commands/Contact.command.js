@@ -48,7 +48,11 @@ class ContactCommand extends Command {
       // // проверка заполнено ли имя
       // if (!isCheckUserName) {
       //   return;
-      // }      
+      // } 
+      
+      
+    
+  
   
       if (contact) {
           const phoneNumber = contact.phone_number;
