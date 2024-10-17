@@ -7,6 +7,7 @@ const HandleForm = require("./handle/HandleForm");
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const SessionOrder = require("../session/session.order");
 const ChatHandle = require("../core/chats/chat-handle");
+const ApiWeb = require("../utils/api/apiWeb");
 
 class FormCommand extends Command {
   constructor(bot) {
@@ -14,7 +15,11 @@ class FormCommand extends Command {
   }
   handle() {
     this.bot.on("message", async (msg) => {
-      try {        
+      try {      
+        console.log("ttttttttttttttttttttttttttttttttttttttt"); 
+        
+        console.log(msg.text, "gggggggggggggggggggggggggggggggg");
+        console.log("dddddddddddddddddddddddddddddddddddddddd");
 
         new LoggerManager().logMessage("log", "bot.on(message)", msg);
         const chatId = msg.chat.id;
@@ -55,6 +60,17 @@ class FormCommand extends Command {
         if(msg.text === "/cleancache") {
           return;
         }
+
+        if(!msg.text) {
+          return;
+        }
+
+       new ApiWeb(this.bot).botMessage(chatId, msg.text, msg.message_id, msg.message_id);
+
+       console.log(msg);
+       
+
+        return;
         
         if (msg.chat.id == TELEGRAMM_ADMIN_CHAT) {
           this.requestMessage(chatId, "В этот чат может писать только бот");

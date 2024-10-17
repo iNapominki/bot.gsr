@@ -20,10 +20,12 @@ class RequestInChatAdmin {
         await this.bot.sendMessage("427671786", responseTemplate.responseToAgentChat(this.request, post, user), options_btn);
         await this.bot.sendMessage("931824462", responseTemplate.responseToAgentChat(this.request, post, user), options_btn);
 
-        console.log(post, user);
       }  
 
 
+
+        console.log(post, user);
+      
 
     }, 500);    
   }

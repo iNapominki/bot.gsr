@@ -5,6 +5,7 @@ const Command = require("./command.class");
 const Api = require("../utils/api/api");
 const AipUse = require("../utils/api/apiUse");
 const RequestInChatAdmin = require("../commands/handle/RequestInChatAdmin");
+const ApiWeb = require("../utils/api/apiWeb");
 
 class ContactCommand extends Command {
   constructor(bot) {
@@ -16,20 +17,22 @@ class ContactCommand extends Command {
 
     //return;
 
-    const postData = {
-      phone, tlgId
-    };
+    // const postData = {
+    //   phone, tlgId
+    // };
     
-    const api = new Api(this.bot);
-    const request = await new AipUse(api).updateUser(postData); // updateUser
+    //const api = new Api(this.bot);
+
+    const request = new ApiWeb(this.bot).botContact(tlgId , phone);
+    //const request = await new AipUse(api).updateUser(postData); // updateUser
 
     console.log(request);
 
-    if (!request) {
-      return;
-    }
+    // if (!request) {
+    //   return;
+    // }
 
-    await new RequestInChatAdmin(this.bot, request).requestUSer({number: phone, tlgId: tlgId });
+    // await new RequestInChatAdmin(this.bot, request).requestUSer({number: phone, tlgId: tlgId });
     return;
   }
 
@@ -45,7 +48,11 @@ class ContactCommand extends Command {
       // // проверка заполнено ли имя
       // if (!isCheckUserName) {
       //   return;
-      // }      
+      // } 
+      
+      
+    
+  
   
       if (contact) {
           const phoneNumber = contact.phone_number;
