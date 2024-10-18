@@ -3,6 +3,7 @@
 const GOOGLE_SHEETS_KEY_USERS = process.env.GOOGLE_SHEETS_KEY_USERS;
 const GOOGLE_SHEETS_KEY_ORDERS = process.env.GOOGLE_SHEETS_KEY_ORDERS;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
+const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
 // const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
 
 const BOT_API_URL = process.env.BOT_API_URL;
@@ -40,7 +41,7 @@ class ApiWeb {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "1837857hgh232d37f49268c4c0fa062b3",
+          Authorization: BOT_API_TOKEN,
         },
         body: JSON.stringify(postData),
       });
