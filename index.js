@@ -43,12 +43,10 @@ try {
     new ContactCommand(bot.bot),
     new PhotoCommand(bot.bot)
   ];
-
-  // Инициализируем все команды
+  
   commands.forEach(command => command.handle());
   
-  loggerManager.logMessage("log", "старт", "Произошел старт бота");
-  // Пример обработки ошибки  
+  loggerManager.logMessage("log", "старт", "Произошел старт бота");   
   
 } catch (error) {
   new LoggerManager().logMessage("error", "error", error.message);
