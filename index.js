@@ -8,7 +8,7 @@ const HelpCommand = require("./src/commands/Help.command");
 const OrderCommand = require("./src/commands/Order.command");
 const FormCommand = require("./src/commands/Form.command");
 const Command = require("./src/commands/command.class");
-const Buttoncommand = require("./src/commands/Button.command");
+const ButtonsCommand = require("./src/commands/Button.command");
 const ClearOrderCommand = require("./src/commands/ClearOrder.command");
 const ChatsCommands = require("./src/commands/Chats.commands");
 const GetMyChatsCommand = require("./src/commands/GetMyChats.command");
@@ -34,7 +34,7 @@ try {
     new HelpCommand(bot.bot),
     new OrderCommand(bot.bot),
     new FormCommand(bot.bot),
-    new Buttoncommand(bot.bot),
+    new ButtonsCommand(bot.bot),
     new ClearOrderCommand(bot.bot),
     new ChatsCommands(bot.bot),
     new GetMyChatsCommand(bot.bot),

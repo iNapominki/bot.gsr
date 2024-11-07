@@ -3,7 +3,7 @@
 const LoggerManager = require("../log/LoggerManager");
 const Command = require("./command.class");
 const ApiWeb = require("../utils/api/apiWeb");
-class Buttoncommand extends Command {
+class ButtonsCommand extends Command {
   constructor(bot) {
     super(bot);
   }
@@ -121,4 +121,4 @@ class Buttoncommand extends Command {
   }
 }
 
-module.exports = Buttoncommand;
+module.exports = ButtonsCommand;

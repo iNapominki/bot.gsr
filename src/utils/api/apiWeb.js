@@ -1,7 +1,5 @@
 //@ts-check
 
-const GOOGLE_SHEETS_KEY_USERS = process.env.GOOGLE_SHEETS_KEY_USERS;
-const GOOGLE_SHEETS_KEY_ORDERS = process.env.GOOGLE_SHEETS_KEY_ORDERS;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
 // const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
