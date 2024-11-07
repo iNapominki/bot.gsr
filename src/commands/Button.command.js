@@ -2,9 +2,6 @@
 
 const LoggerManager = require("../log/LoggerManager");
 const Command = require("./command.class");
-const {
-  responseToManagerChatAboutQuesrion,
-} = require("./responseTemplate/responseTemplate");
 const ApiWeb = require("../utils/api/apiWeb");
 class Buttoncommand extends Command {
   constructor(bot) {
