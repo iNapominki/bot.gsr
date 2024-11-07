@@ -18,6 +18,7 @@ const LogOutChatsCommand = require("./src/commands/LogOutChats.command");
 const MyIdCommand = require("./src/commands/MyId.command");
 const CleanCacheCommand = require("./src/commands/CleanCache.command");
 const ContactCommand = require("./src/commands/Contact.command");
+const PhotoCommand = require("./src/commands/Photo.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
@@ -36,7 +37,7 @@ try {
   const form = new FormCommand(bot.bot);
   const button = new  Buttoncommand(bot.bot);
   const clear = new ClearOrderCommand(bot.bot);
-  const sessionServisPostOrder = new SessionServisPostOrder(bot.bot);
+  //const sessionServisPostOrder = new SessionServisPostOrder(bot.bot);
   // подключаем базу данных
   const batabase = new DataBase();
   // подключаем чаты менеджер - агент - куратор
@@ -50,6 +51,9 @@ try {
   // инициализация кэша  
   const cleancache = new CleanCacheCommand(bot.bot);
   const contactcommand = new ContactCommand(bot.bot);
+  const photoCommand = new PhotoCommand(bot.bot);
+
+  
 
   help.handle();
   registration.handle();
@@ -58,14 +62,15 @@ try {
   button.handle();
   clear.handle();
   // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets
-  sessionServisPostOrder.start();
-  batabase.initial();
+  //sessionServisPostOrder.start();
+  //batabase.initial();
   chat.handle();
   mychats.handle();
-  logoutChats.handle();
+  //logoutChats.handle();
   myid.handle();  
   cleancache.handle();
   contactcommand.handle();
+  photoCommand.handle();
   
   loggerManager.logMessage("log", "старт", "Произошел старт бота");
   // Пример обработки ошибки  

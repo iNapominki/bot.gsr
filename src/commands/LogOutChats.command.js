@@ -19,13 +19,13 @@ class LogOutChatsCommand extends Command {
         //   return;
         // }
 
-        const logout = await new ChatHandle(this.bot).logoutChat(chatId);
+        // const logout = await new ChatHandle(this.bot).logoutChat(chatId);
 
-        const { message } = logout;
+        // const { message } = logout;
 
-        console.log("message", message)
+        // console.log("message", message)
 
-        this.requestMessage(chatId, message, {});
+        this.requestMessage(chatId, 'Кнопка не работает', {});
         return;
       } catch (e) {
         console.error(e);
