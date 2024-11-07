@@ -14,36 +14,8 @@ class GetMyChatsCommand extends Command {
   handle() {
     this.bot.onText(/\/chats/, async (msg) => {
       try {
-        
         const chatId = msg.chat.id;
-
-        new ApiWeb(this.bot).botCommandChats(chatId)
-      //   const chatUsername = msg.chat.username;
-
-      //   // очистка заявок
-      //   await new SessionOrder(msg, this.bot).clear(chatId);
-
-      //   // let isCheckUserName = this.checkUserName(chatId, chatUsername);
-      //   // // проверка заполнено ли имя
-      //   // if (!isCheckUserName) {
-      //   //   return;
-      //   // }
-      //   const chat = await new ChatHandle(this.bot).getMyChats(chatId);        
-
-      //   if(!chat.status) {
-      //     this.requestMessage(chatId, chat.message, {});
-      //     return;
-      //   }
-        
-      //   if(!chat.button) {
-      //     return
-      //   }
-
-      //   const option = optionButtonChats(chat.button);
-        
-      //   this.requestMessage(chatId, chat.message, option);
-
-      //   return;
+        new ApiWeb(this.bot).botCommandChats(chatId);
       } catch (e) {
         console.error(e);
       }
