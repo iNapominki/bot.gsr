@@ -17,7 +17,7 @@ class PhotoCommand extends Command {
         const largestPhoto = photo[photo.length - 1];
         const fileId = largestPhoto.file_id;
         const customersId = msg.from.id;
-        const caption = msg.caption;
+        const caption = msg.caption ? msg.caption : false;
         new ApiWeb(this.bot).botFile(tlgId, customersId, fileId, caption);
       }
       return;

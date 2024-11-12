@@ -26,7 +26,7 @@ class ButtonsCommand extends Command {
             );
             new ApiWeb(this.bot).botButtonsReviewApprove(
               query.message.chat.id,
-              query.message.from.id,
+              query.from.id,
               valueCommand,
               valueSecondCommand
             );

@@ -22,9 +22,8 @@ const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 
 const bot = new Bot(token);
 
-try {
-  
-  // запускаем 1 раз сервис который будет по очереди отправлять запрос в Google Sheets  
+try {  
+    
   bot.start();
   const loggerManager = new LoggerManager();
 
@@ -36,7 +35,7 @@ try {
     new FormCommand(bot.bot),
     new ButtonsCommand(bot.bot),
     new ClearOrderCommand(bot.bot),
-    new ChatsCommands(bot.bot),
+    //new ChatsCommands(bot.bot),
     new GetMyChatsCommand(bot.bot),
     new MyIdCommand(bot.bot),
     new CleanCacheCommand(bot.bot),
