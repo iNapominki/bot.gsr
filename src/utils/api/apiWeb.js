@@ -1,7 +1,5 @@
 //@ts-check
 
-const GOOGLE_SHEETS_KEY_USERS = process.env.GOOGLE_SHEETS_KEY_USERS;
-const GOOGLE_SHEETS_KEY_ORDERS = process.env.GOOGLE_SHEETS_KEY_ORDERS;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
 const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
 // const BOT_API_TOKEN = process.env.BOT_API_TOKEN;
@@ -27,11 +25,6 @@ class ApiWeb {
     }
     this.requestMessageOnApi(TELEGRAMM_ADMIN_CHAT, message, {});
   }
-
-
-
-
-
 
   async postData(postData, url) {
     try {
@@ -59,14 +52,12 @@ class ApiWeb {
       this.requestError(JSON.stringify(postData));
     }
   }
- 
+
   async botContact(tlgId, phone) {
     let url = BOT_API_URL + "/api/bot/user/registration";
     const post = { tlgId: tlgId, phone: phone };
     this.postData(post, url);
   }
-
-
 
   // стартовая
   async botCommandStart(tlgId) {
@@ -80,7 +71,7 @@ class ApiWeb {
     let url = BOT_API_URL + "/api/bot/command/order";
     const post = { tlgId: tlgId };
     this.postData(post, url);
-  }  
+  }
 
   // очистить оформление заявка и сбросить чаты
   async botCommandClear(tlgId) {
@@ -127,22 +118,52 @@ class ApiWeb {
   // любое сообщение
   async botMessage(tlgId, message, deleMessage, messageId) {
     let url = BOT_API_URL + "/api/bot/message";
-    const post = { tlgId: tlgId, message: message, deleMessage: deleMessage, messageId: messageId};
+    const post = {
+      tlgId: tlgId,
+      message: message,
+      deleMessage: deleMessage,
+      messageId: messageId,
+    };
     this.postData(post, url);
   }
 
   // согласование сообщений
-  async botButtonsApprove(tlgId, messageId, statusApprove ) {
+  async botButtonsApprove(tlgId, messageId, statusApprove) {
     let url = BOT_API_URL + "/api/bot/buttons/approve";
-    const post = { tlgId: tlgId, messageId: messageId, statusApprove: statusApprove };
+    const post = {
+      tlgId: tlgId,
+      messageId: messageId,
+      statusApprove: statusApprove,
+    };
     this.postData(post, url);
   }
   // быстрая заявка, с авто заполнением некоторых шагов
-     
-     async botButtonsOrderFast(tlgId, pendingId) {
-      let url = BOT_API_URL + "/api/bot/buttons/order/fast";
-      const post = { tlgId: tlgId, pendingId: pendingId };
-      this.postData(post, url);
-}
+
+  async botButtonsOrderFast(tlgId, pendingId) {
+    let url = BOT_API_URL + "/api/bot/buttons/order/fast";
+    const post = { tlgId: tlgId, pendingId: pendingId };
+    this.postData(post, url);
+  }
+
+  // отправка фото
+  async botFile(tlgId, customersId, fileId, caption) {
+    let url = BOT_API_URL + "/api/bot/user/file";
+    const post = {
+      tlgId: tlgId, // либо конкретно пользователь/либо чат
+      customersId: customersId,
+      fileId: fileId,
+      caption: caption,
+    };
+
+    console.log(post);
+    this.postData(post, url);
+  }
+
+  // оценка фотографий
+  async botButtonsReviewApprove(tlgId, customersId, reviewId, value) {
+    let url = BOT_API_URL + "/api/bot/buttons/review/approve";
+    const post = { tlgId: tlgId, customersId: customersId, reviewId: reviewId, value:value};   
+    this.postData(post, url);
+  }
 }
 module.exports = ApiWeb;
