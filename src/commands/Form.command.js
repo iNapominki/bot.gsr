@@ -11,7 +11,7 @@ class FormCommand extends Command {
   handle() {
     this.bot.on("message", async (msg) => {
       try {
-       // console.log(msg);
+      //   console.log(msg);
 
         new LoggerManager().logMessage("log", "bot.on(message)", msg);
         const chatId = msg.chat.id;       
@@ -53,6 +53,11 @@ class FormCommand extends Command {
         if (!msg.text) {
           return;
         }
+
+
+        // console.log( msg.text);
+
+       //  console.log("ddddddddddddddddddddddddddd");
 
         new ApiWeb(this.bot).botMessage(
           chatId,

@@ -35,7 +35,7 @@ try {
     new FormCommand(bot.bot),
     new ButtonsCommand(bot.bot),
     new ClearOrderCommand(bot.bot),
-    //new ChatsCommands(bot.bot),
+    new ChatsCommands(bot.bot),
     new GetMyChatsCommand(bot.bot),
     new MyIdCommand(bot.bot),
     new CleanCacheCommand(bot.bot),

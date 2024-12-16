@@ -18,14 +18,14 @@ class RegisrtationCommand extends Command {
         return;
       }  
 
-      new ChatHandle(this.bot).logoutChat(chatId);
+     // new ChatHandle(this.bot).logoutChat(chatId);
 
       const options = {
         reply_markup: {
           keyboard: [
             [
               {
-                text: "Регистрация, НАЖМИТЕЕ СЮДА 🚨",
+                text: "Регистрация, НАЖМИТЕ СЮДА 🚨",
                 request_contact: true,
               },
             ],

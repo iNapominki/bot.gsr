@@ -18,6 +18,17 @@ class ButtonsCommand extends Command {
         const valueCommand = commandData.split("_")[1];
         const valueSecondCommand = commandData.split("_")[2];
         switch (nameCommand) {
+          // отработка промо
+          case "promo":
+            await this.bot.deleteMessage(
+              query.message.chat.id,
+              query.message.message_id
+            );
+            new ApiWeb(this.bot).botPromo(              
+              query.from.id,
+              valueCommand,              
+            );
+          break;
           //для работы с отзывами
           case "rewiewApprove":
             await this.bot.deleteMessage(

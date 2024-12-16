@@ -53,6 +53,13 @@ class ApiWeb {
     }
   }
 
+  async botPromo(tlgId, promo) {
+    let url = BOT_API_URL + "/api/bot/promo";
+    const post = { tlgId: tlgId, promo: promo };
+    this.postData(post, url);
+  }
+
+
   async botContact(tlgId, phone) {
     let url = BOT_API_URL + "/api/bot/user/registration";
     const post = { tlgId: tlgId, phone: phone };

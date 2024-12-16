@@ -43,7 +43,7 @@ class OrderCommand extends Command {
 
 
 
-      await this.bot.sendMessage(chatId, 'Начато оформление заявки, заполняйте информацию по очереди', options );
+      await this.bot.sendMessage(chatId, '.', options );  //Начато оформление заявки, заполняйте информацию по очереди
      new ApiWeb(this.bot).botCommandOrder(chatId);
       // проверка не нахожусь ли я в режиме чата
       //await  new ChatHandle(this.bot).logoutChat(chatId);
