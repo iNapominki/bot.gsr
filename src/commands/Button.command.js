@@ -52,6 +52,7 @@ class ButtonsCommand extends Command {
           case "default":
           case "dataDeath":
           case "dataGoodbyes":
+          case "fioDeath":
             //  console.log(query.message.chat.id, query.data, query.message.message_id, query.message.message_id);
             await this.bot.deleteMessage(
               query.message.chat.id,
