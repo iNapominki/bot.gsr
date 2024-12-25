@@ -11,7 +11,7 @@ class HelpCommand extends Command {
   handle() {
       this.bot.onText(/\/help/, (msg) => {
         const chatId = msg.chat.id;
-        new ChatHandle(this.bot).logoutChat(chatId);
+        //new ChatHandle(this.bot).logoutChat(chatId);
         this.bot.sendMessage(chatId, responseTemplate.help);
       });
     }
