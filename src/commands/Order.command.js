@@ -31,9 +31,6 @@ class OrderCommand extends Command {
   handle() {
     this.bot.onText(/\/order/, async (msg) => {
       const chatId = msg.chat.id;
-      //await this.bot.deleteMessage(chatId, msg.message_id);
-
-
           // Отправляем сообщение с пустой клавиатурой
           const options = {
             reply_markup: {

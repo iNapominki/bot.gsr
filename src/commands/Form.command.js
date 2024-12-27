@@ -50,14 +50,13 @@ class FormCommand extends Command {
           return;
         }
 
+        if (msg.text === "/about") {
+          return;
+        }        
+
         if (!msg.text) {
           return;
         }
-
-
-        // console.log( msg.text);
-
-       //  console.log("ddddddddddddddddddddddddddd");
 
         new ApiWeb(this.bot).botMessage(
           chatId,

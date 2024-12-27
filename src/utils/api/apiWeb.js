@@ -66,6 +66,13 @@ class ApiWeb {
     this.postData(post, url);
   }
 
+  // о нас
+  async botCommandAbout(tlgId) {
+    let url = BOT_API_URL + "/api/bot/command/about";
+    const post = { tlgId: tlgId };
+    this.postData(post, url);
+  }
+
   // стартовая
   async botCommandStart(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/start";
