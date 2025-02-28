@@ -73,6 +73,20 @@ class ApiWeb {
     this.postData(post, url);
   }
 
+  // наши услуги
+  async botCommandServices(tlgId) {
+    let url = BOT_API_URL + "/api/bot/command/services";
+    const post = { tlgId: tlgId };
+    this.postData(post, url);
+  }
+
+  // меню
+  async botCommandMenu(tlgId) {
+    let url = BOT_API_URL + "/api/bot/command/menu";
+    const post = { tlgId: tlgId };
+    this.postData(post, url);
+  }
+
   // стартовая
   async botCommandStart(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/start";

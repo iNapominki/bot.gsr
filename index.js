@@ -17,6 +17,8 @@ const CleanCacheCommand = require("./src/commands/CleanCache.command");
 const ContactCommand = require("./src/commands/Contact.command");
 const PhotoCommand = require("./src/commands/Photo.command");
 const AboutCommand = require("./src/commands/About.command");
+const ServicesCommand = require("./src/commands/Services.command");
+const MenuCommand = require("./src/commands/Menu.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
 const TELEGRAMM_ADMIN_CHAT = process.env.TELEGRAMM_ADMIN_CHAT;
@@ -42,7 +44,9 @@ try {
     new CleanCacheCommand(bot.bot),
     new ContactCommand(bot.bot),
     new PhotoCommand(bot.bot),
-    new AboutCommand(bot.bot)
+    new AboutCommand(bot.bot),
+    new ServicesCommand(bot.bot),
+    new MenuCommand(bot.bot)
   ];
   
   commands.forEach(command => command.handle());

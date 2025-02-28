@@ -25,14 +25,13 @@ class Bot {
           { command: "/start", description: "Начальное приветствие" },
           { command: "/help", description: "Получить справку" },
           { command: "/order", description: "Оформить заявку" },
-          {
-            command: "/clear",
-            description: "Отменить заполнение заявки/выйти из чатов",
-          },
+          { command: "/clear", description: "Отменить заполнение заявки/выйти из чатов"},
           { command: "/chats", description: "Мои заказы" },
           // { command: "/logoutchat", description: "Выйти из чатов" },
           { command: "/myid", description: "Запросить мой id" },
           { command: "/about", description: "О нас" },
+          { command: "/services", description: "Наши услуги" },
+          { command: "/menu", description: "Актуальное меню" },
         ]);
         const chatId = msg.chat.id;
         console.log(msg.message_id);
