@@ -32,6 +32,7 @@ class Bot {
           { command: "/about", description: "О нас" },
           { command: "/services", description: "Наши услуги" },
           { command: "/menu", description: "Актуальное меню" },
+          { command: "/fast", description: "Оформить быструю заявку" },
         ]);
         const chatId = msg.chat.id;
         console.log(msg.message_id);

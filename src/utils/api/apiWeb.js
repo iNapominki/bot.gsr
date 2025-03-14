@@ -101,6 +101,13 @@ class ApiWeb {
     this.postData(post, url);
   }
 
+  // начать оформлять быструю заявку
+  async botCommandOrderFast(tlgId) {
+    let url = BOT_API_URL + "/api/bot/command/fast";
+    const post = { tlgId: tlgId };
+    this.postData(post, url);
+  }
+
   // очистить оформление заявка и сбросить чаты
   async botCommandClear(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/clear";
