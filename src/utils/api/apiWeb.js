@@ -73,6 +73,13 @@ class ApiWeb {
     this.postData(post, url);
   }
 
+  // реквизиты
+  async botCommandRequisite(tlgId) {
+    let url = BOT_API_URL + "/api/bot/command/requisite";
+    const post = { tlgId: tlgId };
+    this.postData(post, url);
+  }
+
   // наши услуги
   async botCommandServices(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/services";
