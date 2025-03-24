@@ -19,6 +19,7 @@ const PhotoCommand = require("./src/commands/Photo.command");
 const AboutCommand = require("./src/commands/About.command");
 const ServicesCommand = require("./src/commands/Services.command");
 const MenuCommand = require("./src/commands/Menu.command");
+const RequisiteCommand = require("./src/commands/Requisite.command");
 const OrderFastCommand = require("./src/commands/OrderFast.command");
 
 const token = process.env.TELEGRAMM_TOKEN;
@@ -48,6 +49,7 @@ try {
     new AboutCommand(bot.bot),
     new ServicesCommand(bot.bot),
     new MenuCommand(bot.bot),
+    new RequisiteCommand(bot.bot),
     new OrderFastCommand(bot.bot)
   ];
   
