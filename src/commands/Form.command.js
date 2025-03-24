@@ -66,6 +66,10 @@ class FormCommand extends Command {
           return;
         }
 
+        if (msg.text === "/requisite") {
+          return;
+        }
+
         if (!msg.text) {
           return;
         }
