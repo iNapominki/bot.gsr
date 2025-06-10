@@ -197,7 +197,11 @@ class ApiWeb {
   // оценка фотографий
   async botButtonsReviewApprove(tlgId, customersId, reviewId, value) {
     let url = BOT_API_URL + "/api/bot/buttons/review/approve";
-    const post = { tlgId: tlgId, customersId: customersId, reviewId: reviewId, value:value};   
+    const post = { tlgId: tlgId, customersId: customersId, reviewId: reviewId, value:value}; 
+    
+    console.log(url);
+    console.log(post);
+    
     this.postData(post, url);
   }
 }

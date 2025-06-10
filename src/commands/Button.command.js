@@ -24,17 +24,24 @@ class ButtonsCommand extends Command {
               query.message.chat.id,
               query.message.message_id
             );
-            new ApiWeb(this.bot).botPromo(              
-              query.from.id,
-              valueCommand,              
-            );
-          break;
+            new ApiWeb(this.bot).botPromo(query.from.id, valueCommand);
+            break;
           //для работы с отзывами
           case "rewiewApprove":
             await this.bot.deleteMessage(
               query.message.chat.id,
               query.message.message_id
             );
+
+            console.log("rewiewApprove - УРА!!!!");
+
+            console.log(
+              query.message.chat.id,
+              query.from.id,
+              valueCommand,
+              valueSecondCommand
+            );
+
             new ApiWeb(this.bot).botButtonsReviewApprove(
               query.message.chat.id,
               query.from.id,
