@@ -11,7 +11,7 @@ class ButtonsCommand extends Command {
   handle() {
     this.bot.on("callback_query", async (query) => {
       try {
-        console.log(query);
+      //  console.log(query);
 
         const commandData = query.data;
         const nameCommand = commandData.split("_")[0];
