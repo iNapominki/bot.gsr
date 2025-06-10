@@ -31,10 +31,10 @@ class ButtonsCommand extends Command {
             break;
           //для работы с отзывами
           case "rewiewApprove":
-            await this.bot.deleteMessage(
-              query.message.chat.id,
-              query.message.message_id
-            );
+            // await this.bot.deleteMessage(
+            //   query.message.chat.id,
+            //   query.message.message_id
+            // );
 
             console.log("rewiewApprove - УРА!!!!");
 
@@ -45,12 +45,12 @@ class ButtonsCommand extends Command {
               valueSecondCommand
             );
 
-            new ApiWeb(this.bot).botButtonsReviewApprove(
-              query.message.chat.id,
-              query.from.id,
-              valueCommand,
-              valueSecondCommand
-            );
+            // new ApiWeb(this.bot).botButtonsReviewApprove(
+            //   query.message.chat.id,
+            //   query.from.id,
+            //   valueCommand,
+            //   valueSecondCommand
+            // );
 
             break;
           // варианты для оформления заявки
