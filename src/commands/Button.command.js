@@ -31,12 +31,15 @@ class ButtonsCommand extends Command {
             break;
           //для работы с отзывами
           case "rewiewApprove":
+
+            console.log("rewiewApprove - до удаления");
+
             // await this.bot.deleteMessage(
             //   query.message.chat.id,
             //   query.message.message_id
-            // );
-
-            console.log("rewiewApprove - УРА!!!!");
+            // );    
+            
+             console.log("rewiewApprove - после удаления");
 
             console.log(
                query.message.chat.id,
