@@ -17,6 +17,8 @@ class ButtonsCommand extends Command {
         const nameCommand = commandData.split("_")[0];
         const valueCommand = commandData.split("_")[1];
         const valueSecondCommand = commandData.split("_")[2];
+
+        console.log(nameCommand);
         switch (nameCommand) {
           // отработка промо
           case "promo":
