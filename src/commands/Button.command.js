@@ -34,10 +34,10 @@ class ButtonsCommand extends Command {
 
             console.log("rewiewApprove - до удаления");
 
-            // await this.bot.deleteMessage(
-            //   query.message.chat.id,
-            //   query.message.message_id
-            // );    
+            await this.bot.deleteMessage(
+              query.message.chat.id,
+              query.message.message_id
+            );    
             
              console.log("rewiewApprove - после удаления");
 
