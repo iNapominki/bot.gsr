@@ -45,12 +45,12 @@ class ButtonsCommand extends Command {
               valueSecondCommand
             );
 
-            // new ApiWeb(this.bot).botButtonsReviewApprove(
-            //   query.message.chat.id,
-            //   query.from.id,
-            //   valueCommand,
-            //   valueSecondCommand
-            // );
+            new ApiWeb(this.bot).botButtonsReviewApprove(
+              query.message.chat.id,
+              query.from.id,
+              valueCommand,
+              valueSecondCommand
+            );
 
             break;
           // варианты для оформления заявки
