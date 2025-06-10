@@ -39,18 +39,16 @@ class ButtonsCommand extends Command {
             console.log("rewiewApprove - УРА!!!!");
 
             console.log(
-              query.message.chat.id,
-              query.from.id,
-              valueCommand,
-              valueSecondCommand
+               query.message.chat.id,
+               query.message.message_id
             );
 
-            new ApiWeb(this.bot).botButtonsReviewApprove(
-              query.message.chat.id,
-              query.from.id,
-              valueCommand,
-              valueSecondCommand
-            );
+            // new ApiWeb(this.bot).botButtonsReviewApprove(
+            //   query.message.chat.id,
+            //   query.from.id,
+            //   valueCommand,
+            //   valueSecondCommand
+            // );
 
             break;
           // варианты для оформления заявки
