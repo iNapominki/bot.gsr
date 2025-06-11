@@ -31,45 +31,31 @@ class ButtonsCommand extends Command {
             break;
           //для работы с отзывами
           case "rewiewApprove":
-
-            console.log("rewiewApprove - до удаления");
-
-            // await this.bot.deleteMessage(
-            //   query.message.chat.id,
-            //   query.message.message_id
-            // );    
-
-
-
-
-                  new ApiWeb(this.bot).botButtonsReviewApprove(
+            new ApiWeb(this.bot).botButtonsReviewApprove(
               query.message.chat.id,
               query.from.id,
               valueCommand,
               valueSecondCommand
             );
             
-try {
-  if (
-    typeof query.message.chat.id === 'number' &&
-    typeof query.message.message_id === 'number'
-  ) {
-      console.log("Приведены к числу");
-      await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
-  } else {
-      console.log("Нужно привести к числу");
-  }
-} catch (err) {
-  console.error(err);
-}
-
-
+            try {
+              if (
+                typeof query.message.chat.id === 'number' &&
+                typeof query.message.message_id === 'number'
+              ) {
+                  console.log("Приведены к числу");
+                  await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
+              } else {
+                  console.log("Нужно привести к числу");
+              }
+            } catch (err) {
+              console.error(err);
+            }
+            
             console.log(
                query.message.chat.id,
                query.message.message_id
             );
-
-      
 
             break;
           // варианты для оформления заявки
