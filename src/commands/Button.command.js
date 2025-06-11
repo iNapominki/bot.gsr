@@ -50,7 +50,7 @@ try {
       console.log("Нужно привести к числу");
   }
 } catch (err) {
-  //console.error(err);
+  console.error(err);
 }
 
 
