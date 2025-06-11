@@ -39,7 +39,19 @@ class ButtonsCommand extends Command {
             //   query.message.message_id
             // );    
             
-             console.log("rewiewApprove - после удаления");
+            try {
+  if (
+    typeof query.message.chat.id === 'number' &&
+    typeof query.message.message_id === 'number'
+  ) {
+    await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
+  } else {
+    throw new Error('Invalid chat or message id type');
+  }
+} catch (err) {
+  console.error(err);
+}
+
 
             console.log(
                query.message.chat.id,
