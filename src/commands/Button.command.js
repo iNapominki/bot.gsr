@@ -46,7 +46,7 @@ class ButtonsCommand extends Command {
   ) {
     await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
   } else {
-    throw new Error('Invalid chat or message id type');
+      console.log("Нужно привести к числу");
   }
 } catch (err) {
   console.error(err);
