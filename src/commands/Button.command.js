@@ -19,7 +19,7 @@ class ButtonsCommand extends Command {
         const valueSecondCommand = commandData.split("_")[2];
 
         console.log(nameCommand);
-        //console.log(commandData);
+        console.log(commandData);
         switch (nameCommand) {
           // отработка промо
           case "promo":
@@ -49,7 +49,7 @@ try {
       console.log("Нужно привести к числу");
   }
 } catch (err) {
-  console.error(err);
+  //console.error(err);
 }
 
 
