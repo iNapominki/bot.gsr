@@ -38,6 +38,16 @@ class ButtonsCommand extends Command {
             //   query.message.chat.id,
             //   query.message.message_id
             // );    
+
+
+
+
+                  new ApiWeb(this.bot).botButtonsReviewApprove(
+              query.message.chat.id,
+              query.from.id,
+              valueCommand,
+              valueSecondCommand
+            );
             
 try {
   if (
@@ -59,12 +69,7 @@ try {
                query.message.message_id
             );
 
-            new ApiWeb(this.bot).botButtonsReviewApprove(
-              query.message.chat.id,
-              query.from.id,
-              valueCommand,
-              valueSecondCommand
-            );
+      
 
             break;
           // варианты для оформления заявки
