@@ -50,8 +50,9 @@ class ButtonsCommand extends Command {
               }
             } catch (err) {
               console.error(err);
+              await this.bot.sendMessage(query.message.chat.id, 'Отзыв отправлен! Нумерция сообщений сбита - кнопки не удалены!');
             }
-            
+
             console.log(
                query.message.chat.id,
                query.message.message_id
