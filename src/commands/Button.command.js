@@ -44,7 +44,8 @@ try {
     typeof query.message.chat.id === 'number' &&
     typeof query.message.message_id === 'number'
   ) {
-    await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
+      console.log("Приведены к числу");
+      await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
   } else {
       console.log("Нужно привести к числу");
   }
