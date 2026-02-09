@@ -37,26 +37,29 @@ class ButtonsCommand extends Command {
               valueCommand,
               valueSecondCommand
             );
-            
+
             try {
               if (
-                typeof query.message.chat.id === 'number' &&
-                typeof query.message.message_id === 'number'
+                typeof query.message.chat.id === "number" &&
+                typeof query.message.message_id === "number"
               ) {
-                  console.log("Приведены к числу");
-                  await this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
+                console.log("Приведены к числу");
+                await this.bot.deleteMessage(
+                  query.message.chat.id,
+                  query.message.message_id
+                );
               } else {
-                  console.log("Нужно привести к числу");
+                console.log("Нужно привести к числу");
               }
             } catch (err) {
               console.error(err);
-              await this.bot.sendMessage(query.message.chat.id, 'Отзыв отправлен! Нумерция сообщений сбита - кнопки не удалены!');
+              await this.bot.sendMessage(
+                query.message.chat.id,
+                "Отзыв отправлен! Нумерция сообщений сбита - кнопки не удалены!"
+              );
             }
 
-            console.log(
-               query.message.chat.id,
-               query.message.message_id
-            );
+            console.log(query.message.chat.id, query.message.message_id);
 
             break;
           // варианты для оформления заявки
@@ -135,6 +138,59 @@ class ButtonsCommand extends Command {
               query.message.chat.id,
               valueCommand
             );
+
+          case "approve-rejection":
+            //       const nameCommand = commandData.split("_")[0];
+            // const valueCommand = commandData.split("_")[1];
+            // const valueSecondCommand = commandData.split("_")[2];
+
+            try {
+              const encodedText = encodeURIComponent(query.message.text);
+
+              await this.bot.deleteMessage(
+                query.message.chat.id,
+                query.message.message_id
+              );
+              // не отправлять текст отказа
+              if (valueSecondCommand == 0) {
+                this.bot.sendMessage(
+                  query.message.chat.id,
+                  "Отказ не отправлен - " + query.message.text
+                );
+                return;
+              }
+              // отправить текст отказа как есть
+              if (valueSecondCommand == 1) {
+                this.bot.sendMessage(
+                  query.message.chat.id,
+                  "Отправлен - " + query.message.text
+                );
+                this.bot.sendMessage(valueCommand, query.message.text);
+                return;
+              }
+
+              this.bot.sendMessage(
+                query.message.chat.id,
+                "Напишите другое сообщение агенту",
+                {
+                  reply_markup: {
+                    keyboard: [
+                      [
+                        {
+                          text: "Написать сообщение",
+                          web_app: {
+                            url: `https://form-bot.e-funeral.ru/frontend-for-bot/message?tlgId=${valueCommand}&message=${encodedText}`,
+                          },
+                        },
+                      ],
+                    ],
+                  },
+                }
+              );
+            } catch (err) {
+              console.error(err); // Логируем ошибку
+            }
+
             break;
           default:
             console.log("Кнопка не распознана", query.data);

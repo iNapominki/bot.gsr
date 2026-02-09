@@ -11,10 +11,10 @@ class FormCommand extends Command {
   handle() {
     this.bot.on("message", async (msg) => {
       try {
-      //   console.log(msg);
+        //   console.log(msg);
 
         new LoggerManager().logMessage("log", "bot.on(message)", msg);
-        const chatId = msg.chat.id;       
+        const chatId = msg.chat.id;
 
         if (msg.text === "/start") {
           return;
@@ -63,6 +63,31 @@ class FormCommand extends Command {
         }
 
         if (msg.text === "/fast") {
+          return;
+        }
+
+        const dataFromWebApp = msg.web_app_data?.data;
+
+        if (dataFromWebApp) {
+          try {
+            const parsedData = JSON.parse(dataFromWebApp);
+
+             await this.bot.sendMessage(
+              chatId,
+              `Вы отправили сообщение: ${parsedData.comment}`
+            );
+           
+            await this.bot.sendMessage(
+              parsedData.tlgId,
+              `Сообщение от куратора: ${parsedData.comment}`
+            );
+          } catch (err) {
+            await this.bot.sendMessage(
+              chatId,
+              "Ошибка чтения данных из Web App."
+            );
+          }
+
           return;
         }
 
