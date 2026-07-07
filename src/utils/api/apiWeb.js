@@ -55,98 +55,98 @@ class ApiWeb {
 
   async botPromo(tlgId, promo) {
     let url = BOT_API_URL + "/api/bot/promo";
-    const post = { tlgId: tlgId, promo: promo };
+    const post = { tlgId: tlgId, promo: promo, messenger: "tlg" };
     this.postData(post, url);
   }
 
 
   async botContact(tlgId, phone) {
     let url = BOT_API_URL + "/api/bot/user/registration";
-    const post = { tlgId: tlgId, phone: phone };
+    const post = { tlgId: tlgId, phone: phone, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // о нас
   async botCommandAbout(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/about";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // наши услуги
   async botCommandServices(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/services";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // меню
   async botCommandMenu(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/menu";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // стартовая
   async botCommandStart(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/start";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // начать оформлять заявку
   async botCommandOrder(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/order";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // начать оформлять быструю заявку
   async botCommandOrderFast(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/fast";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // очистить оформление заявка и сбросить чаты
   async botCommandClear(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/clear";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // последние 4 заказа получить кнопки
   async botCommandChats(tlgId) {
     let url = BOT_API_URL + "/api/bot/command/chats";
-    const post = { tlgId: tlgId };
+    const post = { tlgId: tlgId, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // войти в чат по номеру заказа
   async botButtonsChat(tlgId, numberOrder) {
     let url = BOT_API_URL + "/api/bot/buttons/chat";
-    const post = { tlgId: tlgId, numberOrder: numberOrder };
+    const post = { tlgId: tlgId, numberOrder: numberOrder, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // отправить вариант для заказа
   async botButtonsOrderVariant(tlgId, orderVariant) {
     let url = BOT_API_URL + "/api/bot/buttons/order/variant";
-    const post = { tlgId: tlgId, orderVariant: orderVariant };
+    const post = { tlgId: tlgId, orderVariant: orderVariant, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // уточнить быстрый статус
   async botButtonsOrderStatus(tlgId, numberOrder) {
     let url = BOT_API_URL + "/api/bot/buttons/order/status";
-    const post = { tlgId: tlgId, numberOrder: numberOrder };
+    const post = { tlgId: tlgId, numberOrder: numberOrder, messenger: "tlg" };
     this.postData(post, url);
   }
 
   // запросить другой вопрос по заказу
   async botButtonsOrderNumber(tlgId, numberOrder) {
     let url = BOT_API_URL + "/api/bot/buttons/order/number";
-    const post = { tlgId: tlgId, numberOrder: numberOrder };
+    const post = { tlgId: tlgId, numberOrder: numberOrder, messenger: "tlg" };
     this.postData(post, url);
   }
 
@@ -158,6 +158,7 @@ class ApiWeb {
       message: message,
       deleMessage: deleMessage,
       messageId: messageId,
+      messenger: "tlg",
     };
     this.postData(post, url);
   }
@@ -169,6 +170,7 @@ class ApiWeb {
       tlgId: tlgId,
       messageId: messageId,
       statusApprove: statusApprove,
+      messenger: "tlg"
     };
     this.postData(post, url);
   }
@@ -176,7 +178,7 @@ class ApiWeb {
 
   async botButtonsOrderFast(tlgId, pendingId) {
     let url = BOT_API_URL + "/api/bot/buttons/order/fast";
-    const post = { tlgId: tlgId, pendingId: pendingId };
+    const post = { tlgId: tlgId, pendingId: pendingId, messenger: "tlg" };
     this.postData(post, url);
   }
 
@@ -188,6 +190,7 @@ class ApiWeb {
       customersId: customersId,
       fileId: fileId,
       caption: caption,
+      messenger: "tlg"
     };
 
     console.log(post);
